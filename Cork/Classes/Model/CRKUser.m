@@ -8,7 +8,7 @@
 
 #import "CRKUser.h"
 
-static NSString * const SRKUserIDKey = @"SRKUserIDKey";
+static NSString * const CRKUserIDKey = @"CRKUserIDKey";
 
 @implementation CRKUser
 
