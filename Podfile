@@ -2,7 +2,8 @@
 # platform :ios, '6.0'
 
 target 'Cork' do
-	pod 'YmsCoreBluetooth'
+    pod 'MDMCoreData'
+    pod 'CocoaLumberjack'
 end
 
 target 'CorkTests' do

@@ -1,10 +1,34 @@
 PODS:
-  - YmsCoreBluetooth (1.09.1)
+  - CocoaLumberjack (2.0.0):
+    - CocoaLumberjack/Default (= 2.0.0)
+    - CocoaLumberjack/Extensions (= 2.0.0)
+  - CocoaLumberjack/Core (2.0.0)
+  - CocoaLumberjack/Default (2.0.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.0.0):
+    - CocoaLumberjack/Default
+  - MDMCoreData (1.5.0):
+    - MDMCoreData/MDMCoreDataCore (= 1.5.0)
+    - MDMCoreData/MDMFetchedResultsCollectionDataSource (= 1.5.0)
+    - MDMCoreData/MDMFetchedResultsTableDataSource (= 1.5.0)
+    - MDMCoreData/MDMPersistenceController (= 1.5.0)
+    - MDMCoreData/NSManagedObject+MDMCoreDataAdditions (= 1.5.0)
+  - MDMCoreData/MDMCoreDataCore (1.5.0)
+  - MDMCoreData/MDMFetchedResultsCollectionDataSource (1.5.0):
+    - MDMCoreData/MDMCoreDataCore
+  - MDMCoreData/MDMFetchedResultsTableDataSource (1.5.0):
+    - MDMCoreData/MDMCoreDataCore
+  - MDMCoreData/MDMPersistenceController (1.5.0):
+    - MDMCoreData/MDMCoreDataCore
+  - MDMCoreData/NSManagedObject+MDMCoreDataAdditions (1.5.0):
+    - MDMCoreData/MDMCoreDataCore
 
 DEPENDENCIES:
-  - YmsCoreBluetooth
+  - CocoaLumberjack
+  - MDMCoreData
 
 SPEC CHECKSUMS:
-  YmsCoreBluetooth: e731659f7f791f3f7b3a63f2b1a937d4618a8bae
+  CocoaLumberjack: a6f77d987d65dc7ba86b0f84db7d0b9084f77bcb
+  MDMCoreData: 402f754cda90865026a209243f1667824e775649
 
 COCOAPODS: 0.36.4

@@ -7,360 +7,550 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00236214AC17D6026E668C53 /* YMSCBUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BD78CC02F8AAAD84C324749D /* YMSCBUtils.h */; };
-		03254DD7DBD7D8ADD0F02A78 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE87B8D6B0D4D4031D34E27 /* CoreBluetooth.framework */; };
-		0C84B2C7E3907EC2EF99059B /* NSMutableArray+fifoQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 49148AC090F00D33F41F90E3 /* NSMutableArray+fifoQueue.m */; };
-		0D47B054ABD09640CCD26E7A /* YMS128.c in Sources */ = {isa = PBXBuildFile; fileRef = E9CCF6DACA685032BD61B993 /* YMS128.c */; };
-		26AB73073F56D1632768B2C2 /* YMSCBDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BC69690E7950BC70268A981 /* YMSCBDescriptor.h */; };
-		34D88D0C23CB78D74B21B783 /* YMSCBDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF8B2C559DD05C2DCDDDBF1 /* YMSCBDescriptor.m */; };
-		3564D1298F2B511430383509 /* YMSCBPeripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE6C0BA44255DBBFDCD4904 /* YMSCBPeripheral.m */; };
-		3790BB3E739A8198AA9B3D09 /* YMSCBCentralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0596796750C3D2C466C940AF /* YMSCBCentralManager.m */; };
-		3C0E30803F9D0D5CC8431628 /* NSMutableArray+fifoQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CEF65649AEEE2DA91CA813C /* NSMutableArray+fifoQueue.h */; };
-		512E1E786BA98B8DF2F99742 /* YMSCBCentralManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 14D833A027F63E82046EC4F3 /* YMSCBCentralManager.h */; };
-		5E3DA52ED78C2C8D44266582 /* Pods-Cork-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 514FF9832B4A430E0F1BDB28 /* Pods-Cork-dummy.m */; };
-		698EE0997F109BE0A1008F31 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CB39760B59C952F4918D05B /* Foundation.framework */; };
-		85A761BD52EB72343EC9E10D /* YMSCBUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CCFD8B97102A8F6B1347D9B /* YMSCBUtils.m */; };
-		912E2308214E6858AD4FFEDD /* Pods-Cork-YmsCoreBluetooth-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB935589F7A651447D4A572 /* Pods-Cork-YmsCoreBluetooth-dummy.m */; };
-		A4C7B82F55D8482978C58B7F /* YMSCBService.h in Headers */ = {isa = PBXBuildFile; fileRef = FB0F72D8BEF505BDA09AE599 /* YMSCBService.h */; };
-		BC4A856E6296D9364B3083E3 /* YMSCBPeripheral.h in Headers */ = {isa = PBXBuildFile; fileRef = C643D7E0F49D90D28DE10505 /* YMSCBPeripheral.h */; };
-		C6C15A07D7AB700CCC837F25 /* YMSCBStoredPeripherals.m in Sources */ = {isa = PBXBuildFile; fileRef = 693E0BAC860CC59054FDFA5E /* YMSCBStoredPeripherals.m */; };
-		CAE81DC80FEF49E753196D7D /* YMS128.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F992CD7993E149726E4A8EA /* YMS128.h */; };
-		CDF79725D54824531FE1779B /* YMSCBCharacteristic.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F7E44FE18214F47B1B84878 /* YMSCBCharacteristic.h */; };
-		DDC127806F81285696C07D19 /* YMSCBStoredPeripherals.h in Headers */ = {isa = PBXBuildFile; fileRef = F4A2AA215B1C5EB916AB06DB /* YMSCBStoredPeripherals.h */; };
-		E219A6DDDA13091A2CBDC9D7 /* YMSCBService.m in Sources */ = {isa = PBXBuildFile; fileRef = AB9FF392CAF4C49E8F51B9D8 /* YMSCBService.m */; };
-		ED115032813A098992672597 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CB39760B59C952F4918D05B /* Foundation.framework */; };
-		F47A8CCAF66DAB3E2A7C7277 /* YMSCBCharacteristic.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ABD65AFF676BF720C949D3 /* YMSCBCharacteristic.m */; };
+		0C54BE4412F705EDF4C82F8F /* DDFileLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = AE06826EC65EA4D4683F4C51 /* DDFileLogger.h */; };
+		0CF0CCE66B71113CBB059C45 /* DDLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 405099E91BC46BC3BC4C8282 /* DDLog.h */; };
+		121A7F13FBDE574BB7A96F35 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF052676402F706A7B4F297 /* DDLog.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		13DDA67F4294D0338946C6A2 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C194374D5BB73BB34048A3 /* DDAbstractDatabaseLogger.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		22A5BE669F70E4FB81508F27 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00A23318D5CB41554A66B18 /* CoreData.framework */; };
+		31293E7C2D2F30F9B8E35571 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 222DD7BF10D4309E8DAFDB26 /* DDFileLogger.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		388D2C939307C2D6DBBACE77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32ECCDFD442E8C5753F3F93B /* Foundation.framework */; };
+		42A0B96F94BDA2F82678D012 /* DDLegacyMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 883603AF4142DB22FFE79A93 /* DDLegacyMacros.h */; };
+		43952E764219D4BA9971F5D4 /* MDMFetchedResultsCollectionDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EAD0081A1285A49CBC5AF1 /* MDMFetchedResultsCollectionDataSource.m */; };
+		469A1A365B80E5666FDCE099 /* DDASLLogCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE8FC12234ACD0AB5B87D0 /* DDASLLogCapture.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		51CB5212F121AC5EF7D6F7DD /* DDAbstractDatabaseLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 92B93DEED5ED67D952676084 /* DDAbstractDatabaseLogger.h */; };
+		55EE1519ACBFE2910AEA73B4 /* DDASLLogCapture.h in Headers */ = {isa = PBXBuildFile; fileRef = D470E767BCDC786ACCED0534 /* DDASLLogCapture.h */; };
+		565C9F46E24B6A0DE4B0BA3B /* MDMCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = FF704698D76D5D8ABF69EF9E /* MDMCoreData.h */; };
+		56C02B8013E70BFD7DC6B350 /* DDLog+LOGV.h in Headers */ = {isa = PBXBuildFile; fileRef = 134141ED877E2E93BA4F31BA /* DDLog+LOGV.h */; };
+		584925F7C779018B6CFBE1D5 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = D1EF859B5D3A8F99F9B6E453 /* DDTTYLogger.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		59CC27C0FF657EFB3CC5B3EE /* Pods-Cork-CocoaLumberjack-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 925F5DE969126A2C475780FC /* Pods-Cork-CocoaLumberjack-dummy.m */; };
+		664A83B57F48A92BDF5717AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32ECCDFD442E8C5753F3F93B /* Foundation.framework */; };
+		69479C9606CDEE1B07DF2EEC /* DDMultiFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = B11D1A2B8AF123213960EB15 /* DDMultiFormatter.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		78BDF36E727072F037BB7F59 /* DDTTYLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = DBBFA3EB7F6C705AE1CBA85E /* DDTTYLogger.h */; };
+		81962EE0AF8DB8D10880B8FE /* DDLogMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = EA9D9EC9E5E2935858A06F4E /* DDLogMacros.h */; };
+		8AB3995D3E2893C383E35C39 /* DDContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B1572A0F0C81418D4E770D /* DDContextFilterLogFormatter.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		8B3B5D80CAA8FC632B171D9C /* DDMultiFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 8951C9D0656A8A25DB92C9BE /* DDMultiFormatter.h */; };
+		8CF1DA3D8686A4F00D91DBDE /* MDMCoreDataMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 969B787000661AF8A8FF78BA /* MDMCoreDataMacros.h */; };
+		93F5291E0CBAAE1CE3B5A1AD /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B3AF340D48CEFC03251843 /* DDASLLogger.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		995928BA78AC9B98392A36AA /* Pods-Cork-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7308BAA7041D1B57532F81 /* Pods-Cork-dummy.m */; };
+		A291575D82CA960664797332 /* DDASLLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 37CD943F5AC51B71AD7F25DA /* DDASLLogger.h */; };
+		A6427878C808616052300D58 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32ECCDFD442E8C5753F3F93B /* Foundation.framework */; };
+		A936A19F88DB7288AA011554 /* DDAssertMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 93DA26A398221271CC49398F /* DDAssertMacros.h */; };
+		B43DA6F30248B236707AECCF /* NSManagedObject+MDMCoreDataAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 804AF3254A80064CB2FB358F /* NSManagedObject+MDMCoreDataAdditions.h */; };
+		B96F91785FCCEDBD4B70EF1A /* MDMPersistenceController.h in Headers */ = {isa = PBXBuildFile; fileRef = 547C6F83DDB49B7722B23F6C /* MDMPersistenceController.h */; };
+		BCED39B26EEAF45B450D2706 /* DDDispatchQueueLogFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A346E03B60E220CD2AF2AB4 /* DDDispatchQueueLogFormatter.h */; };
+		D415FBF202E339F873A758B4 /* MDMFetchedResultsTableDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = CE85085C4EEEB6A08A79C2D9 /* MDMFetchedResultsTableDataSource.h */; };
+		D4D217C16C36EC86E63D1EEC /* MDMFetchedResultsTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C6EEFC093916668552824C62 /* MDMFetchedResultsTableDataSource.m */; };
+		D721AF9CDF3F051230710824 /* MDMFetchedResultsCollectionDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A5F483D36F851FFF801AF85 /* MDMFetchedResultsCollectionDataSource.h */; };
+		DB194CC108B4828827FF1F80 /* Pods-Cork-MDMCoreData-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 696FDBD676315086DDEE8D68 /* Pods-Cork-MDMCoreData-dummy.m */; };
+		DBEAC86EF2A07C7D875DC5C1 /* NSManagedObject+MDMCoreDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EAEA55561E232F3C84E5278 /* NSManagedObject+MDMCoreDataAdditions.m */; };
+		E10CC3A8988645789E4BE4CD /* DDContextFilterLogFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = DF3BA6CBB266FA44C22A2F6E /* DDContextFilterLogFormatter.h */; };
+		E38D6A3E158B034E8CCE779A /* MDMPersistenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5425B9E6BA28E9C54E283A19 /* MDMPersistenceController.m */; };
+		EEC3B350D44F1DF77F8876EB /* CocoaLumberjack.h in Headers */ = {isa = PBXBuildFile; fileRef = C4A26C58FF2D6ADDABBAF8B0 /* CocoaLumberjack.h */; };
+		FCCCD6C0C3E913D04F493A93 /* DDDispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A60E1AEB96245BA10E32296 /* DDDispatchQueueLogFormatter.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E8AB1F0EB246F868EA6F0589 /* PBXContainerItemProxy */ = {
+		173993F4499AF2DC4F7C62B1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B6363A31D62034994D1908FF /* Project object */;
+			containerPortal = A556DBB683B5376713DD2C67 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 7DD3DFC2FDE6473BA08C2C56;
-			remoteInfo = "Pods-Cork-YmsCoreBluetooth";
+			remoteGlobalIDString = 8ED015D1E83F0C65F9C880CF;
+			remoteInfo = "Pods-Cork-MDMCoreData";
+		};
+		2BF803564A287E36185B3970 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A556DBB683B5376713DD2C67 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D7C196B6E867208E40170441;
+			remoteInfo = "Pods-Cork-CocoaLumberjack";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0262AD6F04A4B9B5DB83F1A7 /* Pods-Cork-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Cork-environment.h"; sourceTree = "<group>"; };
-		0596796750C3D2C466C940AF /* YMSCBCentralManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YMSCBCentralManager.m; path = YmsCoreBluetooth/YMSCBCentralManager.m; sourceTree = "<group>"; };
-		14D833A027F63E82046EC4F3 /* YMSCBCentralManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YMSCBCentralManager.h; path = YmsCoreBluetooth/YMSCBCentralManager.h; sourceTree = "<group>"; };
-		2CB39760B59C952F4918D05B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		2F992CD7993E149726E4A8EA /* YMS128.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YMS128.h; path = YmsCoreBluetooth/YMS128.h; sourceTree = "<group>"; };
-		35C6E49C9F545DA5A73FA4D0 /* libPods-Cork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cork.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3CEF65649AEEE2DA91CA813C /* NSMutableArray+fifoQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+fifoQueue.h"; path = "YmsCoreBluetooth/NSMutableArray+fifoQueue.h"; sourceTree = "<group>"; };
-		3F7E44FE18214F47B1B84878 /* YMSCBCharacteristic.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YMSCBCharacteristic.h; path = YmsCoreBluetooth/YMSCBCharacteristic.h; sourceTree = "<group>"; };
-		49148AC090F00D33F41F90E3 /* NSMutableArray+fifoQueue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+fifoQueue.m"; path = "YmsCoreBluetooth/NSMutableArray+fifoQueue.m"; sourceTree = "<group>"; };
-		4E9A5C75BAC83BA109750B71 /* Pods-Cork-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Cork-acknowledgements.plist"; sourceTree = "<group>"; };
-		514FF9832B4A430E0F1BDB28 /* Pods-Cork-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Cork-dummy.m"; sourceTree = "<group>"; };
-		516EA2FD18B347B188628FCF /* Pods-Cork-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Cork-resources.sh"; sourceTree = "<group>"; };
-		59ABD65AFF676BF720C949D3 /* YMSCBCharacteristic.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YMSCBCharacteristic.m; path = YmsCoreBluetooth/YMSCBCharacteristic.m; sourceTree = "<group>"; };
-		5BC69690E7950BC70268A981 /* YMSCBDescriptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YMSCBDescriptor.h; path = YmsCoreBluetooth/YMSCBDescriptor.h; sourceTree = "<group>"; };
-		6126C8E3FA00E79BAF9E3891 /* Pods-Cork-YmsCoreBluetooth-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cork-YmsCoreBluetooth-Private.xcconfig"; sourceTree = "<group>"; };
-		693E0BAC860CC59054FDFA5E /* YMSCBStoredPeripherals.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YMSCBStoredPeripherals.m; path = YmsCoreBluetooth/YMSCBStoredPeripherals.m; sourceTree = "<group>"; };
-		7BB935589F7A651447D4A572 /* Pods-Cork-YmsCoreBluetooth-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Cork-YmsCoreBluetooth-dummy.m"; sourceTree = "<group>"; };
-		7CCFD8B97102A8F6B1347D9B /* YMSCBUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YMSCBUtils.m; path = YmsCoreBluetooth/YMSCBUtils.m; sourceTree = "<group>"; };
-		864D8DD345A9C66DC5ADF926 /* Pods-Cork-YmsCoreBluetooth-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Cork-YmsCoreBluetooth-prefix.pch"; sourceTree = "<group>"; };
-		8A2F93A693D9E59F07982593 /* Pods-Cork-YmsCoreBluetooth.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cork-YmsCoreBluetooth.xcconfig"; sourceTree = "<group>"; };
-		8D85CC6F1D971BF89EF90CA9 /* Pods-Cork-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Cork-acknowledgements.markdown"; sourceTree = "<group>"; };
-		93167D8DD9612EFD5AAFAD9A /* Pods-Cork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cork.debug.xcconfig"; sourceTree = "<group>"; };
-		AB9FF392CAF4C49E8F51B9D8 /* YMSCBService.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YMSCBService.m; path = YmsCoreBluetooth/YMSCBService.m; sourceTree = "<group>"; };
-		BD78CC02F8AAAD84C324749D /* YMSCBUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YMSCBUtils.h; path = YmsCoreBluetooth/YMSCBUtils.h; sourceTree = "<group>"; };
-		C643D7E0F49D90D28DE10505 /* YMSCBPeripheral.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YMSCBPeripheral.h; path = YmsCoreBluetooth/YMSCBPeripheral.h; sourceTree = "<group>"; };
-		C932B5224314072E5BF34591 /* libPods-Cork-YmsCoreBluetooth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cork-YmsCoreBluetooth.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CDE87B8D6B0D4D4031D34E27 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreBluetooth.framework; sourceTree = DEVELOPER_DIR; };
-		DE54C702C79D547A70030101 /* Pods-Cork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cork.release.xcconfig"; sourceTree = "<group>"; };
-		E9CCF6DACA685032BD61B993 /* YMS128.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = YMS128.c; path = YmsCoreBluetooth/YMS128.c; sourceTree = "<group>"; };
-		EEF8B2C559DD05C2DCDDDBF1 /* YMSCBDescriptor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YMSCBDescriptor.m; path = YmsCoreBluetooth/YMSCBDescriptor.m; sourceTree = "<group>"; };
-		F4A2AA215B1C5EB916AB06DB /* YMSCBStoredPeripherals.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YMSCBStoredPeripherals.h; path = YmsCoreBluetooth/YMSCBStoredPeripherals.h; sourceTree = "<group>"; };
-		F6CABD9AE9D06DEE6856D7C1 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		FB0F72D8BEF505BDA09AE599 /* YMSCBService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YMSCBService.h; path = YmsCoreBluetooth/YMSCBService.h; sourceTree = "<group>"; };
-		FBE6C0BA44255DBBFDCD4904 /* YMSCBPeripheral.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YMSCBPeripheral.m; path = YmsCoreBluetooth/YMSCBPeripheral.m; sourceTree = "<group>"; };
+		0A5F483D36F851FFF801AF85 /* MDMFetchedResultsCollectionDataSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDMFetchedResultsCollectionDataSource.h; path = Classes/MDMFetchedResultsCollectionDataSource/MDMFetchedResultsCollectionDataSource.h; sourceTree = "<group>"; };
+		0EAEA55561E232F3C84E5278 /* NSManagedObject+MDMCoreDataAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObject+MDMCoreDataAdditions.m"; path = "Classes/NSManagedObject+MDMCoreDataAdditions/NSManagedObject+MDMCoreDataAdditions.m"; sourceTree = "<group>"; };
+		134141ED877E2E93BA4F31BA /* DDLog+LOGV.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "DDLog+LOGV.h"; path = "Classes/DDLog+LOGV.h"; sourceTree = "<group>"; };
+		136DDA6F62A2247197C9B707 /* Pods-Cork-MDMCoreData-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cork-MDMCoreData-Private.xcconfig"; sourceTree = "<group>"; };
+		222DD7BF10D4309E8DAFDB26 /* DDFileLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDFileLogger.m; path = Classes/DDFileLogger.m; sourceTree = "<group>"; };
+		22AE8FC12234ACD0AB5B87D0 /* DDASLLogCapture.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDASLLogCapture.m; path = Classes/DDASLLogCapture.m; sourceTree = "<group>"; };
+		22D6DCA3DCB051AA0E7E2495 /* Pods-Cork-CocoaLumberjack-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cork-CocoaLumberjack-Private.xcconfig"; sourceTree = "<group>"; };
+		2A346E03B60E220CD2AF2AB4 /* DDDispatchQueueLogFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDDispatchQueueLogFormatter.h; path = Classes/Extensions/DDDispatchQueueLogFormatter.h; sourceTree = "<group>"; };
+		32ECCDFD442E8C5753F3F93B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		37CD943F5AC51B71AD7F25DA /* DDASLLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDASLLogger.h; path = Classes/DDASLLogger.h; sourceTree = "<group>"; };
+		405099E91BC46BC3BC4C8282 /* DDLog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDLog.h; path = Classes/DDLog.h; sourceTree = "<group>"; };
+		42061390A2D15009EC8DE545 /* Pods-Cork-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Cork-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5425B9E6BA28E9C54E283A19 /* MDMPersistenceController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDMPersistenceController.m; path = Classes/MDMPersistenceController/MDMPersistenceController.m; sourceTree = "<group>"; };
+		547C6F83DDB49B7722B23F6C /* MDMPersistenceController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDMPersistenceController.h; path = Classes/MDMPersistenceController/MDMPersistenceController.h; sourceTree = "<group>"; };
+		696FDBD676315086DDEE8D68 /* Pods-Cork-MDMCoreData-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Cork-MDMCoreData-dummy.m"; sourceTree = "<group>"; };
+		71EC6EFD8654FD1D1B0E5A2A /* libPods-Cork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cork.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		804AF3254A80064CB2FB358F /* NSManagedObject+MDMCoreDataAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSManagedObject+MDMCoreDataAdditions.h"; path = "Classes/NSManagedObject+MDMCoreDataAdditions/NSManagedObject+MDMCoreDataAdditions.h"; sourceTree = "<group>"; };
+		883603AF4142DB22FFE79A93 /* DDLegacyMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDLegacyMacros.h; path = Classes/DDLegacyMacros.h; sourceTree = "<group>"; };
+		8951C9D0656A8A25DB92C9BE /* DDMultiFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDMultiFormatter.h; path = Classes/Extensions/DDMultiFormatter.h; sourceTree = "<group>"; };
+		89B3AF340D48CEFC03251843 /* DDASLLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDASLLogger.m; path = Classes/DDASLLogger.m; sourceTree = "<group>"; };
+		8A60E1AEB96245BA10E32296 /* DDDispatchQueueLogFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDDispatchQueueLogFormatter.m; path = Classes/Extensions/DDDispatchQueueLogFormatter.m; sourceTree = "<group>"; };
+		923460E3199F4B024FE1B4A2 /* Pods-Cork-MDMCoreData.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cork-MDMCoreData.xcconfig"; sourceTree = "<group>"; };
+		925F5DE969126A2C475780FC /* Pods-Cork-CocoaLumberjack-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Cork-CocoaLumberjack-dummy.m"; sourceTree = "<group>"; };
+		92B93DEED5ED67D952676084 /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDAbstractDatabaseLogger.h; path = Classes/DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
+		93DA26A398221271CC49398F /* DDAssertMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDAssertMacros.h; path = Classes/DDAssertMacros.h; sourceTree = "<group>"; };
+		969B787000661AF8A8FF78BA /* MDMCoreDataMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDMCoreDataMacros.h; path = Classes/MDMCoreDataCore/MDMCoreDataMacros.h; sourceTree = "<group>"; };
+		99619FDA6D1DD58F40783FB2 /* libPods-Cork-CocoaLumberjack.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cork-CocoaLumberjack.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4B1572A0F0C81418D4E770D /* DDContextFilterLogFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDContextFilterLogFormatter.m; path = Classes/Extensions/DDContextFilterLogFormatter.m; sourceTree = "<group>"; };
+		A7C1898F627E4760FA0B4F56 /* Pods-Cork-CocoaLumberjack-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Cork-CocoaLumberjack-prefix.pch"; sourceTree = "<group>"; };
+		AC7308BAA7041D1B57532F81 /* Pods-Cork-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Cork-dummy.m"; sourceTree = "<group>"; };
+		AE06826EC65EA4D4683F4C51 /* DDFileLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDFileLogger.h; path = Classes/DDFileLogger.h; sourceTree = "<group>"; };
+		B00A23318D5CB41554A66B18 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
+		B0881DE335159DA41CCFEAC8 /* libPods-Cork-MDMCoreData.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cork-MDMCoreData.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B11D1A2B8AF123213960EB15 /* DDMultiFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDMultiFormatter.m; path = Classes/Extensions/DDMultiFormatter.m; sourceTree = "<group>"; };
+		B4C194374D5BB73BB34048A3 /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDAbstractDatabaseLogger.m; path = Classes/DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
+		C4A26C58FF2D6ADDABBAF8B0 /* CocoaLumberjack.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CocoaLumberjack.h; path = Classes/CocoaLumberjack.h; sourceTree = "<group>"; };
+		C6EEFC093916668552824C62 /* MDMFetchedResultsTableDataSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDMFetchedResultsTableDataSource.m; path = Classes/MDMFetchedResultsTableDataSource/MDMFetchedResultsTableDataSource.m; sourceTree = "<group>"; };
+		C8EAD0081A1285A49CBC5AF1 /* MDMFetchedResultsCollectionDataSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDMFetchedResultsCollectionDataSource.m; path = Classes/MDMFetchedResultsCollectionDataSource/MDMFetchedResultsCollectionDataSource.m; sourceTree = "<group>"; };
+		C984F8FCC52FE8DB073910AC /* Pods-Cork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cork.release.xcconfig"; sourceTree = "<group>"; };
+		CE85085C4EEEB6A08A79C2D9 /* MDMFetchedResultsTableDataSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDMFetchedResultsTableDataSource.h; path = Classes/MDMFetchedResultsTableDataSource/MDMFetchedResultsTableDataSource.h; sourceTree = "<group>"; };
+		D1EF859B5D3A8F99F9B6E453 /* DDTTYLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDTTYLogger.m; path = Classes/DDTTYLogger.m; sourceTree = "<group>"; };
+		D2998D1E937BE46455FEA52A /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D470E767BCDC786ACCED0534 /* DDASLLogCapture.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDASLLogCapture.h; path = Classes/DDASLLogCapture.h; sourceTree = "<group>"; };
+		DB57EA67275ABE551A4ADF1F /* Pods-Cork-MDMCoreData-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Cork-MDMCoreData-prefix.pch"; sourceTree = "<group>"; };
+		DBBFA3EB7F6C705AE1CBA85E /* DDTTYLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDTTYLogger.h; path = Classes/DDTTYLogger.h; sourceTree = "<group>"; };
+		DC3B723EC0D97E464DD67108 /* Pods-Cork-CocoaLumberjack.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cork-CocoaLumberjack.xcconfig"; sourceTree = "<group>"; };
+		DF3BA6CBB266FA44C22A2F6E /* DDContextFilterLogFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDContextFilterLogFormatter.h; path = Classes/Extensions/DDContextFilterLogFormatter.h; sourceTree = "<group>"; };
+		DFF052676402F706A7B4F297 /* DDLog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDLog.m; path = Classes/DDLog.m; sourceTree = "<group>"; };
+		E02ED3A72050505690C9EB7F /* Pods-Cork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cork.debug.xcconfig"; sourceTree = "<group>"; };
+		E6048D7D130A44ADF7D78BEC /* Pods-Cork-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Cork-environment.h"; sourceTree = "<group>"; };
+		EA9D9EC9E5E2935858A06F4E /* DDLogMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDLogMacros.h; path = Classes/DDLogMacros.h; sourceTree = "<group>"; };
+		ECDBFEB170E6F978CD189F2E /* Pods-Cork-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Cork-resources.sh"; sourceTree = "<group>"; };
+		F00E65C0FEAC3B69F9FB73B2 /* Pods-Cork-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Cork-acknowledgements.plist"; sourceTree = "<group>"; };
+		FF704698D76D5D8ABF69EF9E /* MDMCoreData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDMCoreData.h; path = Classes/MDMCoreData.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4872C15BCCE99541FE276333 /* Frameworks */ = {
+		9D9863516132072A7C7E0AD8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				698EE0997F109BE0A1008F31 /* Foundation.framework in Frameworks */,
+				388D2C939307C2D6DBBACE77 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C0EE412598C237FEF3BAA563 /* Frameworks */ = {
+		DDEF074D9717A48D5E111D8A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03254DD7DBD7D8ADD0F02A78 /* CoreBluetooth.framework in Frameworks */,
-				ED115032813A098992672597 /* Foundation.framework in Frameworks */,
+				A6427878C808616052300D58 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE6D82A9DDBB772522004690 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22A5BE669F70E4FB81508F27 /* CoreData.framework in Frameworks */,
+				664A83B57F48A92BDF5717AD /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0F5F988987AFE27665954A2C /* Products */ = {
+		11F6F595505893FBC12A7A33 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				35C6E49C9F545DA5A73FA4D0 /* libPods-Cork.a */,
-				C932B5224314072E5BF34591 /* libPods-Cork-YmsCoreBluetooth.a */,
+				7DDDCD696475EAEE5C29A206 /* Pods-Cork */,
 			);
-			name = Products;
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		19B73704B5362C2F6793EE1D /* iOS */ = {
+		3CECB814161C221CEC2C5B67 /* MDMCoreDataCore */ = {
 			isa = PBXGroup;
 			children = (
-				CDE87B8D6B0D4D4031D34E27 /* CoreBluetooth.framework */,
-				2CB39760B59C952F4918D05B /* Foundation.framework */,
+				969B787000661AF8A8FF78BA /* MDMCoreDataMacros.h */,
 			);
-			name = iOS;
+			name = MDMCoreDataCore;
 			sourceTree = "<group>";
 		};
-		4846399424DFA4F508ADB751 /* Pods */ = {
+		3F897A11ED864D977B8E4665 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				73715E6B1F761CFB9B4572A2 /* YmsCoreBluetooth */,
+				DF3BA6CBB266FA44C22A2F6E /* DDContextFilterLogFormatter.h */,
+				A4B1572A0F0C81418D4E770D /* DDContextFilterLogFormatter.m */,
+				2A346E03B60E220CD2AF2AB4 /* DDDispatchQueueLogFormatter.h */,
+				8A60E1AEB96245BA10E32296 /* DDDispatchQueueLogFormatter.m */,
+				8951C9D0656A8A25DB92C9BE /* DDMultiFormatter.h */,
+				B11D1A2B8AF123213960EB15 /* DDMultiFormatter.m */,
 			);
-			name = Pods;
+			name = Extensions;
 			sourceTree = "<group>";
 		};
-		73715E6B1F761CFB9B4572A2 /* YmsCoreBluetooth */ = {
+		47F2C51688AC463F27511DB2 /* CocoaLumberjack */ = {
 			isa = PBXGroup;
 			children = (
-				3CEF65649AEEE2DA91CA813C /* NSMutableArray+fifoQueue.h */,
-				49148AC090F00D33F41F90E3 /* NSMutableArray+fifoQueue.m */,
-				E9CCF6DACA685032BD61B993 /* YMS128.c */,
-				2F992CD7993E149726E4A8EA /* YMS128.h */,
-				14D833A027F63E82046EC4F3 /* YMSCBCentralManager.h */,
-				0596796750C3D2C466C940AF /* YMSCBCentralManager.m */,
-				3F7E44FE18214F47B1B84878 /* YMSCBCharacteristic.h */,
-				59ABD65AFF676BF720C949D3 /* YMSCBCharacteristic.m */,
-				5BC69690E7950BC70268A981 /* YMSCBDescriptor.h */,
-				EEF8B2C559DD05C2DCDDDBF1 /* YMSCBDescriptor.m */,
-				C643D7E0F49D90D28DE10505 /* YMSCBPeripheral.h */,
-				FBE6C0BA44255DBBFDCD4904 /* YMSCBPeripheral.m */,
-				FB0F72D8BEF505BDA09AE599 /* YMSCBService.h */,
-				AB9FF392CAF4C49E8F51B9D8 /* YMSCBService.m */,
-				F4A2AA215B1C5EB916AB06DB /* YMSCBStoredPeripherals.h */,
-				693E0BAC860CC59054FDFA5E /* YMSCBStoredPeripherals.m */,
-				BD78CC02F8AAAD84C324749D /* YMSCBUtils.h */,
-				7CCFD8B97102A8F6B1347D9B /* YMSCBUtils.m */,
-				EDD55EBEFE7CFD2AD1C241B9 /* Support Files */,
+				886200D63821DB649E201347 /* Core */,
+				5C73018C34CE4DE310C3E416 /* Default */,
+				3F897A11ED864D977B8E4665 /* Extensions */,
+				A0DDC124C06997706D536FD4 /* Support Files */,
 			);
-			path = YmsCoreBluetooth;
+			path = CocoaLumberjack;
 			sourceTree = "<group>";
 		};
-		A2839AD9260E0AD01FBE38CE = {
+		525186B975E4ADABC5D6008B /* MDMPersistenceController */ = {
 			isa = PBXGroup;
 			children = (
-				F6CABD9AE9D06DEE6856D7C1 /* Podfile */,
-				CE3B5D4C476DADE9A2930903 /* Frameworks */,
-				4846399424DFA4F508ADB751 /* Pods */,
-				0F5F988987AFE27665954A2C /* Products */,
-				C8B68BB96095A3021105931F /* Targets Support Files */,
+				547C6F83DDB49B7722B23F6C /* MDMPersistenceController.h */,
+				5425B9E6BA28E9C54E283A19 /* MDMPersistenceController.m */,
 			);
+			name = MDMPersistenceController;
 			sourceTree = "<group>";
 		};
-		B53EF7F88CFD789F0947CAE3 /* Pods-Cork */ = {
+		5C73018C34CE4DE310C3E416 /* Default */ = {
 			isa = PBXGroup;
 			children = (
-				8D85CC6F1D971BF89EF90CA9 /* Pods-Cork-acknowledgements.markdown */,
-				4E9A5C75BAC83BA109750B71 /* Pods-Cork-acknowledgements.plist */,
-				514FF9832B4A430E0F1BDB28 /* Pods-Cork-dummy.m */,
-				0262AD6F04A4B9B5DB83F1A7 /* Pods-Cork-environment.h */,
-				516EA2FD18B347B188628FCF /* Pods-Cork-resources.sh */,
-				93167D8DD9612EFD5AAFAD9A /* Pods-Cork.debug.xcconfig */,
-				DE54C702C79D547A70030101 /* Pods-Cork.release.xcconfig */,
+				C4A26C58FF2D6ADDABBAF8B0 /* CocoaLumberjack.h */,
+			);
+			name = Default;
+			sourceTree = "<group>";
+		};
+		6714DFA9DAE3F7FEDF678FD2 /* NSManagedObject+MDMCoreDataAdditions */ = {
+			isa = PBXGroup;
+			children = (
+				804AF3254A80064CB2FB358F /* NSManagedObject+MDMCoreDataAdditions.h */,
+				0EAEA55561E232F3C84E5278 /* NSManagedObject+MDMCoreDataAdditions.m */,
+			);
+			name = "NSManagedObject+MDMCoreDataAdditions";
+			sourceTree = "<group>";
+		};
+		68637E1FE1EC32483331BD9D /* MDMFetchedResultsCollectionDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				0A5F483D36F851FFF801AF85 /* MDMFetchedResultsCollectionDataSource.h */,
+				C8EAD0081A1285A49CBC5AF1 /* MDMFetchedResultsCollectionDataSource.m */,
+			);
+			name = MDMFetchedResultsCollectionDataSource;
+			sourceTree = "<group>";
+		};
+		7DDDCD696475EAEE5C29A206 /* Pods-Cork */ = {
+			isa = PBXGroup;
+			children = (
+				42061390A2D15009EC8DE545 /* Pods-Cork-acknowledgements.markdown */,
+				F00E65C0FEAC3B69F9FB73B2 /* Pods-Cork-acknowledgements.plist */,
+				AC7308BAA7041D1B57532F81 /* Pods-Cork-dummy.m */,
+				E6048D7D130A44ADF7D78BEC /* Pods-Cork-environment.h */,
+				ECDBFEB170E6F978CD189F2E /* Pods-Cork-resources.sh */,
+				E02ED3A72050505690C9EB7F /* Pods-Cork.debug.xcconfig */,
+				C984F8FCC52FE8DB073910AC /* Pods-Cork.release.xcconfig */,
 			);
 			name = "Pods-Cork";
 			path = "Target Support Files/Pods-Cork";
 			sourceTree = "<group>";
 		};
-		C8B68BB96095A3021105931F /* Targets Support Files */ = {
+		886200D63821DB649E201347 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				B53EF7F88CFD789F0947CAE3 /* Pods-Cork */,
+				D470E767BCDC786ACCED0534 /* DDASLLogCapture.h */,
+				22AE8FC12234ACD0AB5B87D0 /* DDASLLogCapture.m */,
+				37CD943F5AC51B71AD7F25DA /* DDASLLogger.h */,
+				89B3AF340D48CEFC03251843 /* DDASLLogger.m */,
+				92B93DEED5ED67D952676084 /* DDAbstractDatabaseLogger.h */,
+				B4C194374D5BB73BB34048A3 /* DDAbstractDatabaseLogger.m */,
+				93DA26A398221271CC49398F /* DDAssertMacros.h */,
+				AE06826EC65EA4D4683F4C51 /* DDFileLogger.h */,
+				222DD7BF10D4309E8DAFDB26 /* DDFileLogger.m */,
+				883603AF4142DB22FFE79A93 /* DDLegacyMacros.h */,
+				405099E91BC46BC3BC4C8282 /* DDLog.h */,
+				DFF052676402F706A7B4F297 /* DDLog.m */,
+				134141ED877E2E93BA4F31BA /* DDLog+LOGV.h */,
+				EA9D9EC9E5E2935858A06F4E /* DDLogMacros.h */,
+				DBBFA3EB7F6C705AE1CBA85E /* DDTTYLogger.h */,
+				D1EF859B5D3A8F99F9B6E453 /* DDTTYLogger.m */,
 			);
-			name = "Targets Support Files";
+			name = Core;
 			sourceTree = "<group>";
 		};
-		CE3B5D4C476DADE9A2930903 /* Frameworks */ = {
+		92BCC6AEBA69738B85987EA1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				19B73704B5362C2F6793EE1D /* iOS */,
+				71EC6EFD8654FD1D1B0E5A2A /* libPods-Cork.a */,
+				99619FDA6D1DD58F40783FB2 /* libPods-Cork-CocoaLumberjack.a */,
+				B0881DE335159DA41CCFEAC8 /* libPods-Cork-MDMCoreData.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A0DDC124C06997706D536FD4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DC3B723EC0D97E464DD67108 /* Pods-Cork-CocoaLumberjack.xcconfig */,
+				22D6DCA3DCB051AA0E7E2495 /* Pods-Cork-CocoaLumberjack-Private.xcconfig */,
+				925F5DE969126A2C475780FC /* Pods-Cork-CocoaLumberjack-dummy.m */,
+				A7C1898F627E4760FA0B4F56 /* Pods-Cork-CocoaLumberjack-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-Cork-CocoaLumberjack";
+			sourceTree = "<group>";
+		};
+		A6A5179D121E797847B88B4E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				B00A23318D5CB41554A66B18 /* CoreData.framework */,
+				32ECCDFD442E8C5753F3F93B /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		B2D8D9297E9FCD3585CF6857 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A6A5179D121E797847B88B4E /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		EDD55EBEFE7CFD2AD1C241B9 /* Support Files */ = {
+		CD01A4C696187E7B5691A7BA = {
 			isa = PBXGroup;
 			children = (
-				8A2F93A693D9E59F07982593 /* Pods-Cork-YmsCoreBluetooth.xcconfig */,
-				6126C8E3FA00E79BAF9E3891 /* Pods-Cork-YmsCoreBluetooth-Private.xcconfig */,
-				7BB935589F7A651447D4A572 /* Pods-Cork-YmsCoreBluetooth-dummy.m */,
-				864D8DD345A9C66DC5ADF926 /* Pods-Cork-YmsCoreBluetooth-prefix.pch */,
+				D2998D1E937BE46455FEA52A /* Podfile */,
+				B2D8D9297E9FCD3585CF6857 /* Frameworks */,
+				F23DCA30959A5A660C7FD6F0 /* Pods */,
+				92BCC6AEBA69738B85987EA1 /* Products */,
+				11F6F595505893FBC12A7A33 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D5BCC0A84AC53B4D0A12DC30 /* MDMFetchedResultsTableDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				CE85085C4EEEB6A08A79C2D9 /* MDMFetchedResultsTableDataSource.h */,
+				C6EEFC093916668552824C62 /* MDMFetchedResultsTableDataSource.m */,
+			);
+			name = MDMFetchedResultsTableDataSource;
+			sourceTree = "<group>";
+		};
+		EC5CF93709AEF2C576ACE020 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				923460E3199F4B024FE1B4A2 /* Pods-Cork-MDMCoreData.xcconfig */,
+				136DDA6F62A2247197C9B707 /* Pods-Cork-MDMCoreData-Private.xcconfig */,
+				696FDBD676315086DDEE8D68 /* Pods-Cork-MDMCoreData-dummy.m */,
+				DB57EA67275ABE551A4ADF1F /* Pods-Cork-MDMCoreData-prefix.pch */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/Pods-Cork-YmsCoreBluetooth";
+			path = "../Target Support Files/Pods-Cork-MDMCoreData";
+			sourceTree = "<group>";
+		};
+		ED003A0ACD0EE8BC697CEDD6 /* MDMCoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FF704698D76D5D8ABF69EF9E /* MDMCoreData.h */,
+				3CECB814161C221CEC2C5B67 /* MDMCoreDataCore */,
+				68637E1FE1EC32483331BD9D /* MDMFetchedResultsCollectionDataSource */,
+				D5BCC0A84AC53B4D0A12DC30 /* MDMFetchedResultsTableDataSource */,
+				525186B975E4ADABC5D6008B /* MDMPersistenceController */,
+				6714DFA9DAE3F7FEDF678FD2 /* NSManagedObject+MDMCoreDataAdditions */,
+				EC5CF93709AEF2C576ACE020 /* Support Files */,
+			);
+			path = MDMCoreData;
+			sourceTree = "<group>";
+		};
+		F23DCA30959A5A660C7FD6F0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				47F2C51688AC463F27511DB2 /* CocoaLumberjack */,
+				ED003A0ACD0EE8BC697CEDD6 /* MDMCoreData */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		04D4E73E594A080E163D7406 /* Headers */ = {
+		C7CC037CF0C1207BA9CD1B89 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C0E30803F9D0D5CC8431628 /* NSMutableArray+fifoQueue.h in Headers */,
-				CAE81DC80FEF49E753196D7D /* YMS128.h in Headers */,
-				512E1E786BA98B8DF2F99742 /* YMSCBCentralManager.h in Headers */,
-				CDF79725D54824531FE1779B /* YMSCBCharacteristic.h in Headers */,
-				26AB73073F56D1632768B2C2 /* YMSCBDescriptor.h in Headers */,
-				BC4A856E6296D9364B3083E3 /* YMSCBPeripheral.h in Headers */,
-				A4C7B82F55D8482978C58B7F /* YMSCBService.h in Headers */,
-				DDC127806F81285696C07D19 /* YMSCBStoredPeripherals.h in Headers */,
-				00236214AC17D6026E668C53 /* YMSCBUtils.h in Headers */,
+				EEC3B350D44F1DF77F8876EB /* CocoaLumberjack.h in Headers */,
+				55EE1519ACBFE2910AEA73B4 /* DDASLLogCapture.h in Headers */,
+				A291575D82CA960664797332 /* DDASLLogger.h in Headers */,
+				51CB5212F121AC5EF7D6F7DD /* DDAbstractDatabaseLogger.h in Headers */,
+				A936A19F88DB7288AA011554 /* DDAssertMacros.h in Headers */,
+				E10CC3A8988645789E4BE4CD /* DDContextFilterLogFormatter.h in Headers */,
+				BCED39B26EEAF45B450D2706 /* DDDispatchQueueLogFormatter.h in Headers */,
+				0C54BE4412F705EDF4C82F8F /* DDFileLogger.h in Headers */,
+				42A0B96F94BDA2F82678D012 /* DDLegacyMacros.h in Headers */,
+				56C02B8013E70BFD7DC6B350 /* DDLog+LOGV.h in Headers */,
+				0CF0CCE66B71113CBB059C45 /* DDLog.h in Headers */,
+				81962EE0AF8DB8D10880B8FE /* DDLogMacros.h in Headers */,
+				8B3B5D80CAA8FC632B171D9C /* DDMultiFormatter.h in Headers */,
+				78BDF36E727072F037BB7F59 /* DDTTYLogger.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D03BB3B4D5BCEE86A1FEEF99 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				565C9F46E24B6A0DE4B0BA3B /* MDMCoreData.h in Headers */,
+				8CF1DA3D8686A4F00D91DBDE /* MDMCoreDataMacros.h in Headers */,
+				D721AF9CDF3F051230710824 /* MDMFetchedResultsCollectionDataSource.h in Headers */,
+				D415FBF202E339F873A758B4 /* MDMFetchedResultsTableDataSource.h in Headers */,
+				B96F91785FCCEDBD4B70EF1A /* MDMPersistenceController.h in Headers */,
+				B43DA6F30248B236707AECCF /* NSManagedObject+MDMCoreDataAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4E37BFB7FCC1CE955259BC15 /* Pods-Cork */ = {
+		05C917176714EEDF525E5EF7 /* Pods-Cork */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C3D27B4925E5E41D05E42B0C /* Build configuration list for PBXNativeTarget "Pods-Cork" */;
+			buildConfigurationList = 8E715F0D7C48A420D05F36EB /* Build configuration list for PBXNativeTarget "Pods-Cork" */;
 			buildPhases = (
-				3B7BF66E24B2629DCEC4E6EA /* Sources */,
-				4872C15BCCE99541FE276333 /* Frameworks */,
+				81B5D14C55A37E504B8D94BC /* Sources */,
+				DDEF074D9717A48D5E111D8A /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				2CE0548AAAF070C61A8941BA /* PBXTargetDependency */,
+				02DF815F7324A2E728532729 /* PBXTargetDependency */,
+				037ED238ABEAABC34103B755 /* PBXTargetDependency */,
 			);
 			name = "Pods-Cork";
 			productName = "Pods-Cork";
-			productReference = 35C6E49C9F545DA5A73FA4D0 /* libPods-Cork.a */;
+			productReference = 71EC6EFD8654FD1D1B0E5A2A /* libPods-Cork.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		7DD3DFC2FDE6473BA08C2C56 /* Pods-Cork-YmsCoreBluetooth */ = {
+		8ED015D1E83F0C65F9C880CF /* Pods-Cork-MDMCoreData */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 035E9DEA40D023D4B303FCF9 /* Build configuration list for PBXNativeTarget "Pods-Cork-YmsCoreBluetooth" */;
+			buildConfigurationList = F046F26491499AB716B6BB6B /* Build configuration list for PBXNativeTarget "Pods-Cork-MDMCoreData" */;
 			buildPhases = (
-				DD8625F5CBC312185C083A55 /* Sources */,
-				C0EE412598C237FEF3BAA563 /* Frameworks */,
-				04D4E73E594A080E163D7406 /* Headers */,
+				036BDF60C6A76448670CCD43 /* Sources */,
+				FE6D82A9DDBB772522004690 /* Frameworks */,
+				D03BB3B4D5BCEE86A1FEEF99 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Pods-Cork-YmsCoreBluetooth";
-			productName = "Pods-Cork-YmsCoreBluetooth";
-			productReference = C932B5224314072E5BF34591 /* libPods-Cork-YmsCoreBluetooth.a */;
+			name = "Pods-Cork-MDMCoreData";
+			productName = "Pods-Cork-MDMCoreData";
+			productReference = B0881DE335159DA41CCFEAC8 /* libPods-Cork-MDMCoreData.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		D7C196B6E867208E40170441 /* Pods-Cork-CocoaLumberjack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69BBB866E7730FC059A4238C /* Build configuration list for PBXNativeTarget "Pods-Cork-CocoaLumberjack" */;
+			buildPhases = (
+				3D12BB745B6EC3A8AD86CC02 /* Sources */,
+				9D9863516132072A7C7E0AD8 /* Frameworks */,
+				C7CC037CF0C1207BA9CD1B89 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Cork-CocoaLumberjack";
+			productName = "Pods-Cork-CocoaLumberjack";
+			productReference = 99619FDA6D1DD58F40783FB2 /* libPods-Cork-CocoaLumberjack.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		B6363A31D62034994D1908FF /* Project object */ = {
+		A556DBB683B5376713DD2C67 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
 			};
-			buildConfigurationList = 1F885D82F225451447C0D512 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 46AF4BF85C3A060E98802D0E /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = A2839AD9260E0AD01FBE38CE;
-			productRefGroup = 0F5F988987AFE27665954A2C /* Products */;
+			mainGroup = CD01A4C696187E7B5691A7BA;
+			productRefGroup = 92BCC6AEBA69738B85987EA1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4E37BFB7FCC1CE955259BC15 /* Pods-Cork */,
-				7DD3DFC2FDE6473BA08C2C56 /* Pods-Cork-YmsCoreBluetooth */,
+				05C917176714EEDF525E5EF7 /* Pods-Cork */,
+				D7C196B6E867208E40170441 /* Pods-Cork-CocoaLumberjack */,
+				8ED015D1E83F0C65F9C880CF /* Pods-Cork-MDMCoreData */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3B7BF66E24B2629DCEC4E6EA /* Sources */ = {
+		036BDF60C6A76448670CCD43 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E3DA52ED78C2C8D44266582 /* Pods-Cork-dummy.m in Sources */,
+				43952E764219D4BA9971F5D4 /* MDMFetchedResultsCollectionDataSource.m in Sources */,
+				D4D217C16C36EC86E63D1EEC /* MDMFetchedResultsTableDataSource.m in Sources */,
+				E38D6A3E158B034E8CCE779A /* MDMPersistenceController.m in Sources */,
+				DBEAC86EF2A07C7D875DC5C1 /* NSManagedObject+MDMCoreDataAdditions.m in Sources */,
+				DB194CC108B4828827FF1F80 /* Pods-Cork-MDMCoreData-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DD8625F5CBC312185C083A55 /* Sources */ = {
+		3D12BB745B6EC3A8AD86CC02 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C84B2C7E3907EC2EF99059B /* NSMutableArray+fifoQueue.m in Sources */,
-				912E2308214E6858AD4FFEDD /* Pods-Cork-YmsCoreBluetooth-dummy.m in Sources */,
-				0D47B054ABD09640CCD26E7A /* YMS128.c in Sources */,
-				3790BB3E739A8198AA9B3D09 /* YMSCBCentralManager.m in Sources */,
-				F47A8CCAF66DAB3E2A7C7277 /* YMSCBCharacteristic.m in Sources */,
-				34D88D0C23CB78D74B21B783 /* YMSCBDescriptor.m in Sources */,
-				3564D1298F2B511430383509 /* YMSCBPeripheral.m in Sources */,
-				E219A6DDDA13091A2CBDC9D7 /* YMSCBService.m in Sources */,
-				C6C15A07D7AB700CCC837F25 /* YMSCBStoredPeripherals.m in Sources */,
-				85A761BD52EB72343EC9E10D /* YMSCBUtils.m in Sources */,
+				469A1A365B80E5666FDCE099 /* DDASLLogCapture.m in Sources */,
+				93F5291E0CBAAE1CE3B5A1AD /* DDASLLogger.m in Sources */,
+				13DDA67F4294D0338946C6A2 /* DDAbstractDatabaseLogger.m in Sources */,
+				8AB3995D3E2893C383E35C39 /* DDContextFilterLogFormatter.m in Sources */,
+				FCCCD6C0C3E913D04F493A93 /* DDDispatchQueueLogFormatter.m in Sources */,
+				31293E7C2D2F30F9B8E35571 /* DDFileLogger.m in Sources */,
+				121A7F13FBDE574BB7A96F35 /* DDLog.m in Sources */,
+				69479C9606CDEE1B07DF2EEC /* DDMultiFormatter.m in Sources */,
+				584925F7C779018B6CFBE1D5 /* DDTTYLogger.m in Sources */,
+				59CC27C0FF657EFB3CC5B3EE /* Pods-Cork-CocoaLumberjack-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81B5D14C55A37E504B8D94BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				995928BA78AC9B98392A36AA /* Pods-Cork-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2CE0548AAAF070C61A8941BA /* PBXTargetDependency */ = {
+		02DF815F7324A2E728532729 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "Pods-Cork-YmsCoreBluetooth";
-			target = 7DD3DFC2FDE6473BA08C2C56 /* Pods-Cork-YmsCoreBluetooth */;
-			targetProxy = E8AB1F0EB246F868EA6F0589 /* PBXContainerItemProxy */;
+			name = "Pods-Cork-CocoaLumberjack";
+			target = D7C196B6E867208E40170441 /* Pods-Cork-CocoaLumberjack */;
+			targetProxy = 2BF803564A287E36185B3970 /* PBXContainerItemProxy */;
+		};
+		037ED238ABEAABC34103B755 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Cork-MDMCoreData";
+			target = 8ED015D1E83F0C65F9C880CF /* Pods-Cork-MDMCoreData */;
+			targetProxy = 173993F4499AF2DC4F7C62B1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2A68914657739F1062BED00E /* Release */ = {
+		080CCD9EB6A1A67050C327AE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E02ED3A72050505690C9EB7F /* Pods-Cork.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 			};
-			name = Release;
+			name = Debug;
 		};
-		6D8DA90A25388798FE33BA04 /* Debug */ = {
+		28E131658B26D8417514E49A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -399,41 +589,43 @@
 			};
 			name = Debug;
 		};
-		74FA1F00585D5F81A3BDED02 /* Debug */ = {
+		299E4A4A8ABEE7B3637D50C0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93167D8DD9612EFD5AAFAD9A /* Pods-Cork.debug.xcconfig */;
 			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
 			};
-			name = Debug;
+			name = Release;
 		};
-		7F562CACC1657431044FFE3E /* Debug */ = {
+		7499264E5F7D2856F754113C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6126C8E3FA00E79BAF9E3891 /* Pods-Cork-YmsCoreBluetooth-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Cork-YmsCoreBluetooth/Pods-Cork-YmsCoreBluetooth-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		8C5833769D4739A7B802E876 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DE54C702C79D547A70030101 /* Pods-Cork.release.xcconfig */;
+			baseConfigurationReference = C984F8FCC52FE8DB073910AC /* Pods-Cork.release.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
@@ -447,12 +639,60 @@
 			};
 			name = Release;
 		};
-		FBE7C105C65FB53EF94CCF4D /* Release */ = {
+		AA05B0832019FCFCD1A34A7F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6126C8E3FA00E79BAF9E3891 /* Pods-Cork-YmsCoreBluetooth-Private.xcconfig */;
+			baseConfigurationReference = 136DDA6F62A2247197C9B707 /* Pods-Cork-MDMCoreData-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Cork-YmsCoreBluetooth/Pods-Cork-YmsCoreBluetooth-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Cork-MDMCoreData/Pods-Cork-MDMCoreData-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		BA0C27DF8295E2867D026F38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 136DDA6F62A2247197C9B707 /* Pods-Cork-MDMCoreData-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Cork-MDMCoreData/Pods-Cork-MDMCoreData-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		D75799DDA6C7BBE4C49E3FDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22D6DCA3DCB051AA0E7E2495 /* Pods-Cork-CocoaLumberjack-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Cork-CocoaLumberjack/Pods-Cork-CocoaLumberjack-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		F599DEC3052297DE35E62467 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22D6DCA3DCB051AA0E7E2495 /* Pods-Cork-CocoaLumberjack-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Cork-CocoaLumberjack/Pods-Cork-CocoaLumberjack-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
@@ -466,34 +706,43 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		035E9DEA40D023D4B303FCF9 /* Build configuration list for PBXNativeTarget "Pods-Cork-YmsCoreBluetooth" */ = {
+		46AF4BF85C3A060E98802D0E /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7F562CACC1657431044FFE3E /* Debug */,
-				FBE7C105C65FB53EF94CCF4D /* Release */,
+				28E131658B26D8417514E49A /* Debug */,
+				299E4A4A8ABEE7B3637D50C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1F885D82F225451447C0D512 /* Build configuration list for PBXProject "Pods" */ = {
+		69BBB866E7730FC059A4238C /* Build configuration list for PBXNativeTarget "Pods-Cork-CocoaLumberjack" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6D8DA90A25388798FE33BA04 /* Debug */,
-				2A68914657739F1062BED00E /* Release */,
+				D75799DDA6C7BBE4C49E3FDA /* Debug */,
+				F599DEC3052297DE35E62467 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C3D27B4925E5E41D05E42B0C /* Build configuration list for PBXNativeTarget "Pods-Cork" */ = {
+		8E715F0D7C48A420D05F36EB /* Build configuration list for PBXNativeTarget "Pods-Cork" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				74FA1F00585D5F81A3BDED02 /* Debug */,
-				8C5833769D4739A7B802E876 /* Release */,
+				080CCD9EB6A1A67050C327AE /* Debug */,
+				7499264E5F7D2856F754113C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F046F26491499AB716B6BB6B /* Build configuration list for PBXNativeTarget "Pods-Cork-MDMCoreData" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA05B0832019FCFCD1A34A7F /* Debug */,
+				BA0C27DF8295E2867D026F38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = B6363A31D62034994D1908FF /* Project object */;
+	rootObject = A556DBB683B5376713DD2C67 /* Project object */;
 }
