@@ -15,7 +15,15 @@
         </attribute>
         <attribute name="sentDate" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
+    <entity name="User" representedClassName="CRKUser" syncable="YES">
+        <attribute name="userID" optional="YES" attributeType="Transformable" syncable="YES">
+            <userInfo>
+                <entry key="attributeValueClassName" value="NSUUID"/>
+            </userInfo>
+        </attribute>
+    </entity>
     <elements>
         <element name="Message" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="User" positionX="-63" positionY="18" width="128" height="60"/>
     </elements>
 </model>
