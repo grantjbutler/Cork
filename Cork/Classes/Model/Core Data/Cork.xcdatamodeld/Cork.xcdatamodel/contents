@@ -3,9 +3,19 @@
     <entity name="Message" representedClassName="CRKMessage" syncable="YES">
         <attribute name="messageID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="messageText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recipientID" optional="YES" attributeType="Transformable" syncable="YES">
+            <userInfo>
+                <entry key="attributeValueClassName" value="NSUUID"/>
+            </userInfo>
+        </attribute>
+        <attribute name="senderID" optional="YES" attributeType="Transformable" syncable="YES">
+            <userInfo>
+                <entry key="attributeValueClassName" value="NSUUID"/>
+            </userInfo>
+        </attribute>
         <attribute name="sentDate" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Message" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="Message" positionX="-63" positionY="-18" width="128" height="120"/>
     </elements>
 </model>

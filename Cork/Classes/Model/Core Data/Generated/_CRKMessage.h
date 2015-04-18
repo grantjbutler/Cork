@@ -14,6 +14,8 @@
 
 @property (nonatomic, copy) NSString* messageID;
 @property (nonatomic, copy) NSString* messageText;
+@property (nonatomic, copy) NSUUID* recipientID;
+@property (nonatomic, copy) NSUUID* senderID;
 @property (nonatomic, copy) NSDate* sentDate;
 
 @end
