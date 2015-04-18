@@ -2,6 +2,7 @@
 # platform :ios, '6.0'
 
 target 'Cork' do
+	pod 'SAMCategories'
 end
 
 target 'CorkTests' do

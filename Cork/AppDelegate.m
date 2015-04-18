@@ -9,12 +9,12 @@
 #import "AppDelegate.h"
 
 #import "CRKPeripheralController.h"
-#import "CRKBluetoothCentral.h"
+#import "CRKBluetoothCentralController.h"
 
 @interface AppDelegate ()
 
 @property (nonatomic) CRKPeripheralController *controller;
-@property (nonatomic) CRKBluetoothCentral *central;
+@property (nonatomic) CRKBluetoothCentralController *central;
 
 @end
 
@@ -23,7 +23,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	self.controller = [[CRKPeripheralController alloc] init];
-	self.central = [[CRKBluetoothCentral alloc] init];
+	self.central = [[CRKBluetoothCentralController alloc] init];
 	
 	return YES;
 }

@@ -1,1 +1,10 @@
+PODS:
+  - SAMCategories (0.5.2)
+
+DEPENDENCIES:
+  - SAMCategories
+
+SPEC CHECKSUMS:
+  SAMCategories: bf8287f7961a0b343168d1fee16338dc1626ea39
+
 COCOAPODS: 0.36.4

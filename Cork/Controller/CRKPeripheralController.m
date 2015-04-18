@@ -10,12 +10,16 @@
 
 static NSString * const CRKPeripheralControllerMessagesServiceUUIDString = @"E95B2A3C-7978-4BA4-A6EB-6C8A194AFAAD";
 
+static NSString * const CRKPeripheralControllerMessagesCharacteristicUUIDString = @"CF885323-2B65-45A9-AADA-409EF7EFCD73";
+
 @interface CRKPeripheralController () <CBPeripheralManagerDelegate>
 
 @property (nonatomic) CBPeripheralManager *peripheralManager;
 @property (nonatomic) dispatch_queue_t delegateQueue;
 
 @property (nonatomic) CBMutableService *messagesService;
+
+@property (nonatomic) CBMutableCharacteristic *messagesCharacteristic;
 
 @end
 
@@ -42,8 +46,15 @@ static NSString * const CRKPeripheralControllerMessagesServiceUUIDString = @"E95
 - (void)setUpMessagesService {
 	CBUUID *messagesServiceUUID = [CBUUID UUIDWithString:CRKPeripheralControllerMessagesServiceUUIDString];
 	self.messagesService = [[CBMutableService alloc] initWithType:messagesServiceUUID primary:YES];
-	// TODO: Add any characteristics
+	self.messagesService.characteristics = @[
+		self.messagesCharacteristic
+	];
 	[self.peripheralManager addService:self.messagesService];
+}
+
+- (void)setUpMessagesServiceCharacteristics {
+	CBUUID *messagesCharacteristicUUID = [CBUUID UUIDWithString:CRKPeripheralControllerMessagesCharacteristicUUIDString];
+	self.messagesCharacteristic = [[CBMutableCharacteristic alloc] initWithType:messagesCharacteristicUUID properties:CBCharacteristicPropertyWrite value:nil permissions:CBAttributePermissionsWriteable];
 }
 
 - (void)startAdvertising {
@@ -74,6 +85,29 @@ static NSString * const CRKPeripheralControllerMessagesServiceUUIDString = @"E95
 
 - (void)peripheralManagerDidStartAdvertising:(CBPeripheralManager *)peripheral error:(NSError *)error {
 	NSLog(@"Started advertising: %@", error);
+}
+
+- (void)peripheralManager:(CBPeripheralManager *)peripheral didReceiveWriteRequests:(NSArray *)requests {
+	for (CBATTRequest *request in requests) {
+		if (![request.characteristic isEqual:self.messagesCharacteristic.UUID]) {
+			[peripheral respondToRequest:requests.firstObject withResult:CBATTErrorRequestNotSupported];
+			
+			return;
+		}
+	}
+	
+	NSArray *sortedRequests = [requests sortedArrayUsingDescriptors:@[
+		[NSSortDescriptor sortDescriptorWithKey:@"offset" ascending:YES]
+	]];
+	
+	NSMutableData *message = [NSMutableData data];
+	for (CBATTRequest *request in sortedRequests) {
+		[message appendData:request.value];
+	}
+	
+	// TODO: Deserialize the data.
+	
+	[self.delegate controller:self didReceiveMessage:nil];
 }
 
 @end
