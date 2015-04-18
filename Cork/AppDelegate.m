@@ -8,15 +8,32 @@
 
 #import "AppDelegate.h"
 
+#import "CRKPeripheralController.h"
+#import "CRKBluetoothCentral.h"
+#import <CocoaLumberjack/CocoaLumberjack.h>
+#import "CRKCoreDataHelper.h"
+
 @interface AppDelegate ()
+
+@property (nonatomic) CRKPeripheralController *controller;
+@property (nonatomic) CRKBluetoothCentral *central;
 
 @end
 
 @implementation AppDelegate
 
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	// Override point for customization after application launch.
+	self.controller = [[CRKPeripheralController alloc] init];
+	self.central = [[CRKBluetoothCentral alloc] init];
+    
+    [DDLog addLogger:[DDASLLogger sharedInstance]];
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+	
+    CRKCoreDataHelper *helper = [CRKCoreDataHelper sharedHelper];
+    NSManagedObjectContext * context = helper.managedObjectContext;
+    
 	return YES;
 }
 
@@ -41,5 +58,4 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
 	// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
 @end

@@ -1,0 +1,13 @@
+//
+//  <$managedObjectClassName$>.h
+//  Scavenger
+//
+//  Created by <$TemplateVar.userName$> on <$date %m/%d/%y$>.
+//  Copyright (c) <$date %Y$> Grant Butler. All rights reserved.
+//
+
+#import "_<$managedObjectClassName$>.h"
+
+@interface <$managedObjectClassName$> : _<$managedObjectClassName$>
+
+@end

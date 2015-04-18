@@ -1,0 +1,35 @@
+//
+// _<$managedObjectClassName$>.m
+// Scavenger
+//
+// Copyright (c) <$date %Y$> Grant Butler. All rights reserved.
+//
+
+// DO NOT EDIT. This file is machine-generated and constantly overwritten.
+// Make changes to <$managedObjectClassName$>.m instead.
+
+#import "_<$managedObjectClassName$>.h"
+
+@implementation _<$managedObjectClassName$>
+<$foreach Attribute noninheritedAttributes do$><$if Attribute.hasDefinedAttributeType$>
+@dynamic <$Attribute.name$>;<$endif$><$endforeach do$>
+<$foreach Relationship noninheritedRelationships do$>
+@dynamic <$Relationship.name$>;<$endforeach do$>
+<$foreach Relationship noninheritedRelationships do$><$if Relationship.isToMany$><$if Relationship.jr_isOrdered$>
+- (void)add<$Relationship.name.initialCapitalString$>:(<$Relationship.immutableCollectionClassName$> *)objects {
+    [[self mutableOrderedSetValueForKey:@"<$Relationship.name$>"] unionOrderedSet:objects];
+}
+
+- (void)remove<$Relationship.name.initialCapitalString$>:(<$Relationship.immutableCollectionClassName$> *)objects {
+    [[self mutableOrderedSetValueForKey:@"<$Relationship.name$>"] minusOrderedSet:objects];
+}
+
+- (void)add<$Relationship.name.initialCapitalString$>Object:(<$Relationship.destinationEntity.managedObjectClassName$> *)object {
+    [[self mutableOrderedSetValueForKey:@"<$Relationship.name$>"] addObject:object];
+}
+
+- (void)remove<$Relationship.name.initialCapitalString$>Object:(<$Relationship.destinationEntity.managedObjectClassName$> *)object {
+    [[self mutableOrderedSetValueForKey:@"<$Relationship.name$>"] removeObject:object];
+}<$endif$><$endif$><$endforeach do$>
+
+@end
