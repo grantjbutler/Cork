@@ -68,6 +68,7 @@
 		C3D12D4F1AE2F4010061C385 /* NSArray+CRKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+CRKAdditions.m"; sourceTree = "<group>"; };
 		C3D12D5F1AE30A430061C385 /* CRKMessageProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKMessageProtocol.h; sourceTree = "<group>"; };
 		C3FD168C1AE30DC0003D22DD /* CRKMessageSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKMessageSerializer.h; sourceTree = "<group>"; };
+		C3FD168D1AE30DFC003D22DD /* CRKMessageDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKMessageDeserializer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +227,7 @@
 				4C7B68011AE3016800DA4AE5 /* CRKCoreDataHelper.h */,
 				4C7B68021AE3016800DA4AE5 /* CRKCoreDataHelper.m */,
 				C3FD168C1AE30DC0003D22DD /* CRKMessageSerializer.h */,
+				C3FD168D1AE30DFC003D22DD /* CRKMessageDeserializer.h */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
