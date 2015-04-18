@@ -39,10 +39,10 @@
 		0583C7E99BC856D27BFB4D3C /* Pods-Cork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cork.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cork/Pods-Cork.debug.xcconfig"; sourceTree = "<group>"; };
 		4C5B1E7E1AE2EF5A00567980 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		4C5B1E851AE2F09600567980 /* Cork.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cork.xcdatamodel; sourceTree = "<group>"; };
-		4C5B1E881AE2F5BE00567980 /* CRKMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRKMessage.h; path = Model/CRKMessage.h; sourceTree = "<group>"; };
-		4C5B1E891AE2F5BE00567980 /* CRKMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CRKMessage.m; path = Model/CRKMessage.m; sourceTree = "<group>"; };
-		4C5B1E8B1AE2F5BE00567980 /* _CRKMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _CRKMessage.h; path = Model/Generated/_CRKMessage.h; sourceTree = "<group>"; };
-		4C5B1E8C1AE2F5BE00567980 /* _CRKMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _CRKMessage.m; path = Model/Generated/_CRKMessage.m; sourceTree = "<group>"; };
+		4C5B1E881AE2F5BE00567980 /* CRKMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKMessage.h; sourceTree = "<group>"; };
+		4C5B1E891AE2F5BE00567980 /* CRKMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKMessage.m; sourceTree = "<group>"; };
+		4C5B1E8B1AE2F5BE00567980 /* _CRKMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _CRKMessage.h; sourceTree = "<group>"; };
+		4C5B1E8C1AE2F5BE00567980 /* _CRKMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _CRKMessage.m; sourceTree = "<group>"; };
 		4C7B68011AE3016800DA4AE5 /* CRKCoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKCoreDataHelper.h; sourceTree = "<group>"; };
 		4C7B68021AE3016800DA4AE5 /* CRKCoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKCoreDataHelper.m; sourceTree = "<group>"; };
 		560A0B895822B23F235EBCEC /* libPods-Cork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cork.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,8 +60,8 @@
 		C3D12D051AE2CF020061C385 /* CorkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CorkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3D12D0A1AE2CF020061C385 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3D12D0B1AE2CF020061C385 /* CorkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CorkTests.m; sourceTree = "<group>"; };
-		C3D12D151AE2D3880061C385 /* CRKPeripheralController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRKPeripheralController.h; path = Controller/CRKPeripheralController.h; sourceTree = "<group>"; };
-		C3D12D161AE2D3880061C385 /* CRKPeripheralController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CRKPeripheralController.m; path = Controller/CRKPeripheralController.m; sourceTree = "<group>"; };
+		C3D12D151AE2D3880061C385 /* CRKPeripheralController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKPeripheralController.h; sourceTree = "<group>"; };
+		C3D12D161AE2D3880061C385 /* CRKPeripheralController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKPeripheralController.m; sourceTree = "<group>"; };
 		C3D12D4A1AE2E0680061C385 /* CRKBluetoothCentralController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKBluetoothCentralController.h; sourceTree = "<group>"; };
 		C3D12D4B1AE2E0680061C385 /* CRKBluetoothCentralController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKBluetoothCentralController.m; sourceTree = "<group>"; };
 		C3D12D4E1AE2F4010061C385 /* NSArray+CRKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+CRKAdditions.h"; sourceTree = "<group>"; };
@@ -144,7 +144,7 @@
 				C3D12CF01AE2CF020061C385 /* Info.plist */,
 				C3D12CF11AE2CF020061C385 /* main.m */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		C3D12D081AE2CF020061C385 /* CorkTests */ = {
@@ -161,7 +161,7 @@
 			children = (
 				C3D12D0A1AE2CF020061C385 /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		C3D12D531AE309970061C385 /* Classes */ = {
@@ -173,7 +173,7 @@
 				C3D12D561AE309A30061C385 /* View */,
 				C3D12D591AE309C90061C385 /* Utilities */,
 			);
-			name = Classes;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		C3D12D541AE3099B0061C385 /* Controller */ = {
@@ -183,7 +183,7 @@
 				C3D12D5D1AE30A0A0061C385 /* View Controllers */,
 				C3D12D5C1AE30A060061C385 /* Application */,
 			);
-			name = Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		C3D12D551AE309A00061C385 /* Model */ = {
@@ -191,14 +191,14 @@
 			children = (
 				C3D12D5B1AE309E40061C385 /* Core Data */,
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		C3D12D561AE309A30061C385 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		C3D12D571AE309BC0061C385 /* Categories */ = {
@@ -206,7 +206,7 @@
 			children = (
 				C3D12D581AE309BF0061C385 /* Foundation */,
 			);
-			name = Categories;
+			path = Categories;
 			sourceTree = "<group>";
 		};
 		C3D12D581AE309BF0061C385 /* Foundation */ = {
@@ -215,7 +215,7 @@
 				C3D12D4E1AE2F4010061C385 /* NSArray+CRKAdditions.h */,
 				C3D12D4F1AE2F4010061C385 /* NSArray+CRKAdditions.m */,
 			);
-			name = Foundation;
+			path = Foundation;
 			sourceTree = "<group>";
 		};
 		C3D12D591AE309C90061C385 /* Utilities */ = {
@@ -225,7 +225,7 @@
 				4C7B68021AE3016800DA4AE5 /* CRKCoreDataHelper.m */,
 				C3D12D5F1AE30A430061C385 /* CRKMessageProtocol.h */,
 			);
-			name = Utilities;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		C3D12D5A1AE309DC0061C385 /* Generated */ = {
@@ -234,7 +234,7 @@
 				4C5B1E8B1AE2F5BE00567980 /* _CRKMessage.h */,
 				4C5B1E8C1AE2F5BE00567980 /* _CRKMessage.m */,
 			);
-			name = Generated;
+			path = Generated;
 			sourceTree = "<group>";
 		};
 		C3D12D5B1AE309E40061C385 /* Core Data */ = {
@@ -245,7 +245,7 @@
 				4C5B1E891AE2F5BE00567980 /* CRKMessage.m */,
 				C3D12D5A1AE309DC0061C385 /* Generated */,
 			);
-			name = "Core Data";
+			path = "Core Data";
 			sourceTree = "<group>";
 		};
 		C3D12D5C1AE30A060061C385 /* Application */ = {
@@ -254,7 +254,7 @@
 				C3D12CF31AE2CF020061C385 /* CRKAppDelegate.h */,
 				C3D12CF41AE2CF020061C385 /* CRKAppDelegate.m */,
 			);
-			name = Application;
+			path = Application;
 			sourceTree = "<group>";
 		};
 		C3D12D5D1AE30A0A0061C385 /* View Controllers */ = {
@@ -263,7 +263,7 @@
 				C3D12CF61AE2CF020061C385 /* CRKRootViewController.h */,
 				C3D12CF71AE2CF020061C385 /* CRKRootViewController.m */,
 			);
-			name = "View Controllers";
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		C3D12D5E1AE30A1C0061C385 /* Networking */ = {
@@ -274,7 +274,7 @@
 				C3D12D4A1AE2E0680061C385 /* CRKBluetoothCentralController.h */,
 				C3D12D4B1AE2E0680061C385 /* CRKBluetoothCentralController.m */,
 			);
-			name = Networking;
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		C3FD168B1AE30B0B003D22DD /* Resources */ = {
@@ -284,7 +284,7 @@
 				C3D12CFC1AE2CF020061C385 /* Images.xcassets */,
 				C3D12CFE1AE2CF020061C385 /* LaunchScreen.xib */,
 			);
-			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -404,7 +404,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/bash\n\n# paths are to the root of the repo unless otherwise specified\ncd \"$(git rev-parse --show-toplevel)\"\n\nMODEL_PATH=\"Cork/Cork.xcdatamodeld/Cork.xcdatamodel\"\nMACHINE_GENERATED_DESTINATION_PATH=\"Cork/Model/Generated\"\nHUMAN_EDITABLE_GENERATED_DESTINATION_PATH=\"Cork/Model\"\nTEMPLATES_PATH=\"Cork/MogenerateTemplates\"\nUSER_NAME=\"$(osascript -e 'long user name of (system info)')\"\n\n/usr/local/bin/mogenerator \\\n--v2 \\\n--model \"$MODEL_PATH\" \\\n--machine-dir \"$MACHINE_GENERATED_DESTINATION_PATH\" \\\n--human-dir \"$HUMAN_EDITABLE_GENERATED_DESTINATION_PATH\" \\\n--template-path \"$TEMPLATES_PATH\" \\\n--template-var \"userName=$USER_NAME\"\n";
+			shellScript = "#!/bin/bash\n\n# paths are to the root of the repo unless otherwise specified\ncd \"$(git rev-parse --show-toplevel)\"\n\nMODEL_PATH=\"Cork/Classes/Model/Core Data/Cork.xcdatamodeld\"\nMACHINE_GENERATED_DESTINATION_PATH=\"Cork/Classes/Model/Core Data/Generated\"\nHUMAN_EDITABLE_GENERATED_DESTINATION_PATH=\"Cork/Classes/Model/Core Data\"\nTEMPLATES_PATH=\"Cork/Classes/Model/Core Data/Templates\"\nUSER_NAME=\"$(osascript -e 'long user name of (system info)')\"\n\n/usr/local/bin/mogenerator \\\n--v2 \\\n--model \"$MODEL_PATH\" \\\n--machine-dir \"$MACHINE_GENERATED_DESTINATION_PATH\" \\\n--human-dir \"$HUMAN_EDITABLE_GENERATED_DESTINATION_PATH\" \\\n--template-path \"$TEMPLATES_PATH\" \\\n--template-var \"userName=$USER_NAME\"\n";
 		};
 		7142C8A3A39C85EB743D39DA /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -481,6 +481,7 @@
 				C3D12CFA1AE2CF020061C385 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		C3D12CFE1AE2CF020061C385 /* LaunchScreen.xib */ = {
@@ -489,6 +490,7 @@
 				C3D12CFF1AE2CF020061C385 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -579,7 +581,7 @@
 			baseConfigurationReference = 0583C7E99BC856D27BFB4D3C /* Pods-Cork.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Cork/Info.plist;
+				INFOPLIST_FILE = "Cork/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -590,7 +592,7 @@
 			baseConfigurationReference = 8B652B19C4D89FEF4445EFEF /* Pods-Cork.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Cork/Info.plist;
+				INFOPLIST_FILE = "Cork/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -608,7 +610,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = CorkTests/Info.plist;
+				INFOPLIST_FILE = "CorkTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cork.app/Cork";
@@ -623,7 +625,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = CorkTests/Info.plist;
+				INFOPLIST_FILE = "CorkTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cork.app/Cork";
