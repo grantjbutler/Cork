@@ -14,4 +14,7 @@
 
 @dynamic userID;
 
+@dynamic recievedMessages;
+@dynamic sentMessages;
+
 @end

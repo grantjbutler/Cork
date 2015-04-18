@@ -10,12 +10,28 @@
 
 #import <CoreData/CoreData.h>
 
+@class CRKMessage;
+@class CRKMessage;
+
 @interface _CRKUser : NSManagedObject
 
 @property (nonatomic, copy) NSUUID* userID;
 
+@property (nonatomic, copy) NSSet *recievedMessages;
+@property (nonatomic, copy) NSSet *sentMessages;
+
 @end
 
 @interface _CRKUser (_CRKUserCoreDataGeneratedAccessors)
+
+- (void)addRecievedMessages:(NSSet *)objects;
+- (void)removeRecievedMessages:(NSSet *)objects;
+- (void)addRecievedMessagesObject:(CRKMessage *)object;
+- (void)removeRecievedMessagesObject:(CRKMessage *)object;
+
+- (void)addSentMessages:(NSSet *)objects;
+- (void)removeSentMessages:(NSSet *)objects;
+- (void)addSentMessagesObject:(CRKMessage *)object;
+- (void)removeSentMessagesObject:(CRKMessage *)object;
 
 @end

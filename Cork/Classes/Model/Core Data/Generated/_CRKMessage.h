@@ -10,13 +10,17 @@
 
 #import <CoreData/CoreData.h>
 
+@class CRKUser;
+@class CRKUser;
+
 @interface _CRKMessage : NSManagedObject
 
 @property (nonatomic, copy) NSString* messageID;
 @property (nonatomic, copy) NSString* messageText;
-@property (nonatomic, copy) NSUUID* recipientID;
-@property (nonatomic, copy) NSUUID* senderID;
 @property (nonatomic, copy) NSDate* sentDate;
+
+@property (nonatomic, strong) CRKUser *reciever;
+@property (nonatomic, strong) CRKUser *sender;
 
 @end
 
