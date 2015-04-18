@@ -8,6 +8,11 @@
 
 #import "CRKBinaryMessageDeserializer.h"
 
+#import "CRKUser.h"
+#import "CRKMessage.h"
+
+#import "NSManagedObject+CRKAdditions.h"
+
 #import <CCHBinaryData/CCHBinaryData.h>
 
 #include "crc32.h"
@@ -34,7 +39,7 @@ static NSInteger CRKBinaryMessageDeserializerUUIDLength = 16;
 	CCHBinaryDataReader *dataReader = [[CCHBinaryDataReader alloc] initWithData:data options:CCHBinaryDataReaderBigEndian];
     
     uint32_t crcHash, sentTimestamp, messageLength;
-    NSString *sender, *recipient, *messageText;
+    NSString *senderID, *recipientID, *messageText;
     
     if (![dataReader canReadNumberOfBytes:sizeof(uint32_t)]) {
         return nil;
@@ -51,13 +56,13 @@ static NSInteger CRKBinaryMessageDeserializerUUIDLength = 16;
         return nil;
     }
     
-    sender = [dataReader readStringWithNumberOfBytes:CRKBinaryMessageDeserializerUUIDLength encoding:NSUTF8StringEncoding];
+    senderID = [dataReader readStringWithNumberOfBytes:CRKBinaryMessageDeserializerUUIDLength encoding:NSUTF8StringEncoding];
     
     if (![dataReader canReadNumberOfBytes:CRKBinaryMessageDeserializerUUIDLength]) {
         return nil;
     }
     
-    recipient = [dataReader readStringWithNumberOfBytes:CRKBinaryMessageDeserializerUUIDLength encoding:NSUTF8StringEncoding];
+    recipientID = [dataReader readStringWithNumberOfBytes:CRKBinaryMessageDeserializerUUIDLength encoding:NSUTF8StringEncoding];
     
     if (![dataReader canReadNumberOfBytes:sizeof(uint32_t)]) {
         return nil;
@@ -76,7 +81,9 @@ static NSInteger CRKBinaryMessageDeserializerUUIDLength = 16;
     }
     
     messageText = [dataReader readStringWithNumberOfBytes:messageLength encoding:NSUTF8StringEncoding];
-    
+	
+	CRKUser *sender = [CRKUser unique]
+	
     // TODO: Turn all these variables into a CRKMessage instance.
     
     return nil;

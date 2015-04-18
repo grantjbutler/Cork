@@ -224,10 +224,7 @@
 		C3D12D571AE309BC0061C385 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				C3FD16981AE31E2D003D22DD /* Core Data */,
-=======
->>>>>>> 39c0864314bbef566308c86e5b93c897b8e3f3a1
 				C3D12D581AE309BF0061C385 /* Foundation */,
 			);
 			path = Categories;
@@ -245,16 +242,11 @@
 		C3D12D591AE309C90061C385 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				C3FD168E1AE30E31003D22DD /* Serialization */,
 				4C7B68011AE3016800DA4AE5 /* CRKCoreDataHelper.h */,
 				4C7B68021AE3016800DA4AE5 /* CRKCoreDataHelper.m */,
 				C3FD16921AE3105C003D22DD /* crc32.c */,
 				C3FD16931AE3105C003D22DD /* crc32.h */,
-=======
-				4C7B68011AE3016800DA4AE5 /* CRKCoreDataHelper.h */,
-				4C7B68021AE3016800DA4AE5 /* CRKCoreDataHelper.m */,
->>>>>>> 39c0864314bbef566308c86e5b93c897b8e3f3a1
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -264,11 +256,8 @@
 			children = (
 				4C5B1E8B1AE2F5BE00567980 /* _CRKMessage.h */,
 				4C5B1E8C1AE2F5BE00567980 /* _CRKMessage.m */,
-<<<<<<< HEAD
-=======
 				4C28CE901AE318F8005A79FB /* _CRKUser.h */,
 				4C28CE911AE318F8005A79FB /* _CRKUser.m */,
->>>>>>> 39c0864314bbef566308c86e5b93c897b8e3f3a1
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -279,11 +268,8 @@
 				4C5B1E841AE2F09600567980 /* Cork.xcdatamodeld */,
 				4C5B1E881AE2F5BE00567980 /* CRKMessage.h */,
 				4C5B1E891AE2F5BE00567980 /* CRKMessage.m */,
-<<<<<<< HEAD
-=======
 				4C28CE8D1AE318EE005A79FB /* CRKUser.h */,
 				4C28CE8E1AE318EE005A79FB /* CRKUser.m */,
->>>>>>> 39c0864314bbef566308c86e5b93c897b8e3f3a1
 				C3D12D5A1AE309DC0061C385 /* Generated */,
 			);
 			path = "Core Data";
@@ -328,7 +314,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
 		C3FD168E1AE30E31003D22DD /* Serialization */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,8 +336,6 @@
 			name = "Core Data";
 			sourceTree = "<group>";
 		};
-=======
->>>>>>> 39c0864314bbef566308c86e5b93c897b8e3f3a1
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -512,29 +495,19 @@
 				C3D12CF81AE2CF020061C385 /* CRKRootViewController.m in Sources */,
 				C3D12D501AE2F4010061C385 /* NSArray+CRKAdditions.m in Sources */,
 				C3FD168A1AE30AF2003D22DD /* CRKPeripheralController.m in Sources */,
-<<<<<<< HEAD
-				4C5B1E8D1AE2F5BE00567980 /* CRKMessage.m in Sources */,
+				4C28CE921AE318F8005A79FB /* _CRKUser.m in Sources */,
 				C3FD16971AE31859003D22DD /* CRKBinaryMessageDeserializer.m in Sources */,
-				4C7B68031AE3016800DA4AE5 /* CRKCoreDataHelper.m in Sources */,
+				4C5B1E8D1AE2F5BE00567980 /* CRKMessage.m in Sources */,
 				C3FD16911AE30E67003D22DD /* CRKBinaryMessageSerializer.m in Sources */,
+				4C7B68031AE3016800DA4AE5 /* CRKCoreDataHelper.m in Sources */,
 				4C5B1E8E1AE2F5BE00567980 /* _CRKMessage.m in Sources */,
 				4C5B1E861AE2F09600567980 /* Cork.xcdatamodeld in Sources */,
-				C3FD16891AE30AEF003D22DD /* CRKBluetoothCentralController.m in Sources */,
 				C3FD169B1AE31E58003D22DD /* NSManagedObject+CRKAdditions.m in Sources */,
+				C3FD16891AE30AEF003D22DD /* CRKBluetoothCentralController.m in Sources */,
 				C3FD16941AE3105C003D22DD /* crc32.c in Sources */,
 				C3D12CF51AE2CF020061C385 /* CRKAppDelegate.m in Sources */,
 				C3D12CF21AE2CF020061C385 /* main.m in Sources */,
-=======
-				4C28CE921AE318F8005A79FB /* _CRKUser.m in Sources */,
-				4C5B1E8D1AE2F5BE00567980 /* CRKMessage.m in Sources */,
-				4C7B68031AE3016800DA4AE5 /* CRKCoreDataHelper.m in Sources */,
-				4C5B1E8E1AE2F5BE00567980 /* _CRKMessage.m in Sources */,
-				4C5B1E861AE2F09600567980 /* Cork.xcdatamodeld in Sources */,
-				C3FD16891AE30AEF003D22DD /* CRKBluetoothCentralController.m in Sources */,
-				C3D12CF51AE2CF020061C385 /* CRKAppDelegate.m in Sources */,
-				C3D12CF21AE2CF020061C385 /* main.m in Sources */,
 				4C28CE8F1AE318EE005A79FB /* CRKUser.m in Sources */,
->>>>>>> 39c0864314bbef566308c86e5b93c897b8e3f3a1
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
