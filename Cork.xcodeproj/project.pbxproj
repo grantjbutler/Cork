@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C358FF67BFAFFFFF8160501 /* libPods-Cork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 560A0B895822B23F235EBCEC /* libPods-Cork.a */; };
 		C3D12CF21AE2CF020061C385 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12CF11AE2CF020061C385 /* main.m */; };
 		C3D12CF51AE2CF020061C385 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12CF41AE2CF020061C385 /* AppDelegate.m */; };
 		C3D12CF81AE2CF020061C385 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12CF71AE2CF020061C385 /* ViewController.m */; };
@@ -14,6 +15,8 @@
 		C3D12CFD1AE2CF020061C385 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3D12CFC1AE2CF020061C385 /* Images.xcassets */; };
 		C3D12D001AE2CF020061C385 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3D12CFE1AE2CF020061C385 /* LaunchScreen.xib */; };
 		C3D12D0C1AE2CF020061C385 /* CorkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12D0B1AE2CF020061C385 /* CorkTests.m */; };
+		C3D12D171AE2D3880061C385 /* CRKPeripheralController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12D161AE2D3880061C385 /* CRKPeripheralController.m */; };
+		C3D12D4C1AE2E0680061C385 /* CRKBluetoothCentral.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12D4B1AE2E0680061C385 /* CRKBluetoothCentral.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0583C7E99BC856D27BFB4D3C /* Pods-Cork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cork.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cork/Pods-Cork.debug.xcconfig"; sourceTree = "<group>"; };
+		560A0B895822B23F235EBCEC /* libPods-Cork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cork.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B652B19C4D89FEF4445EFEF /* Pods-Cork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cork.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cork/Pods-Cork.release.xcconfig"; sourceTree = "<group>"; };
 		C3D12CEC1AE2CF020061C385 /* Cork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3D12CF01AE2CF020061C385 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3D12CF11AE2CF020061C385 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,6 +46,10 @@
 		C3D12D051AE2CF020061C385 /* CorkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CorkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3D12D0A1AE2CF020061C385 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3D12D0B1AE2CF020061C385 /* CorkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CorkTests.m; sourceTree = "<group>"; };
+		C3D12D151AE2D3880061C385 /* CRKPeripheralController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRKPeripheralController.h; path = Controller/CRKPeripheralController.h; sourceTree = "<group>"; };
+		C3D12D161AE2D3880061C385 /* CRKPeripheralController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CRKPeripheralController.m; path = Controller/CRKPeripheralController.m; sourceTree = "<group>"; };
+		C3D12D4A1AE2E0680061C385 /* CRKBluetoothCentral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKBluetoothCentral.h; sourceTree = "<group>"; };
+		C3D12D4B1AE2E0680061C385 /* CRKBluetoothCentral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKBluetoothCentral.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C358FF67BFAFFFFF8160501 /* libPods-Cork.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +71,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E01F517831C73ED5F5BF0B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				560A0B895822B23F235EBCEC /* libPods-Cork.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		31D78458FA2693B94F77E4E7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0583C7E99BC856D27BFB4D3C /* Pods-Cork.debug.xcconfig */,
+				8B652B19C4D89FEF4445EFEF /* Pods-Cork.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C3D12CE31AE2CF020061C385 = {
 			isa = PBXGroup;
 			children = (
 				C3D12CEE1AE2CF020061C385 /* Cork */,
 				C3D12D081AE2CF020061C385 /* CorkTests */,
 				C3D12CED1AE2CF020061C385 /* Products */,
+				31D78458FA2693B94F77E4E7 /* Pods */,
+				2E01F517831C73ED5F5BF0B3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +115,10 @@
 				C3D12CF41AE2CF020061C385 /* AppDelegate.m */,
 				C3D12CF61AE2CF020061C385 /* ViewController.h */,
 				C3D12CF71AE2CF020061C385 /* ViewController.m */,
+				C3D12D151AE2D3880061C385 /* CRKPeripheralController.h */,
+				C3D12D161AE2D3880061C385 /* CRKPeripheralController.m */,
+				C3D12D4A1AE2E0680061C385 /* CRKBluetoothCentral.h */,
+				C3D12D4B1AE2E0680061C385 /* CRKBluetoothCentral.m */,
 				C3D12CF91AE2CF020061C385 /* Main.storyboard */,
 				C3D12CFC1AE2CF020061C385 /* Images.xcassets */,
 				C3D12CFE1AE2CF020061C385 /* LaunchScreen.xib */,
@@ -126,9 +160,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C3D12D0F1AE2CF020061C385 /* Build configuration list for PBXNativeTarget "Cork" */;
 			buildPhases = (
+				9FB0FC40CD632BEC37EDC704 /* Check Pods Manifest.lock */,
 				C3D12CE81AE2CF020061C385 /* Sources */,
 				C3D12CE91AE2CF020061C385 /* Frameworks */,
 				C3D12CEA1AE2CF020061C385 /* Resources */,
+				7142C8A3A39C85EB743D39DA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -163,11 +199,17 @@
 		C3D12CE41AE2CF020061C385 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = CRK;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Grant Butler";
 				TargetAttributes = {
 					C3D12CEB1AE2CF020061C385 = {
 						CreatedOnToolsVersion = 6.3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					C3D12D041AE2CF020061C385 = {
 						CreatedOnToolsVersion = 6.3;
@@ -214,11 +256,46 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7142C8A3A39C85EB743D39DA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cork/Pods-Cork-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9FB0FC40CD632BEC37EDC704 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C3D12CE81AE2CF020061C385 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3D12D171AE2D3880061C385 /* CRKPeripheralController.m in Sources */,
+				C3D12D4C1AE2E0680061C385 /* CRKBluetoothCentral.m in Sources */,
 				C3D12CF81AE2CF020061C385 /* ViewController.m in Sources */,
 				C3D12CF51AE2CF020061C385 /* AppDelegate.m in Sources */,
 				C3D12CF21AE2CF020061C385 /* main.m in Sources */,
@@ -345,6 +422,7 @@
 		};
 		C3D12D101AE2CF020061C385 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0583C7E99BC856D27BFB4D3C /* Pods-Cork.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Cork/Info.plist;
@@ -355,6 +433,7 @@
 		};
 		C3D12D111AE2CF020061C385 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B652B19C4D89FEF4445EFEF /* Pods-Cork.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Cork/Info.plist;
@@ -416,6 +495,7 @@
 				C3D12D111AE2CF020061C385 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C3D12D121AE2CF020061C385 /* Build configuration list for PBXNativeTarget "CorkTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +504,7 @@
 				C3D12D141AE2CF020061C385 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,7 +8,13 @@
 
 #import "AppDelegate.h"
 
+#import "CRKPeripheralController.h"
+#import "CRKBluetoothCentral.h"
+
 @interface AppDelegate ()
+
+@property (nonatomic) CRKPeripheralController *controller;
+@property (nonatomic) CRKBluetoothCentral *central;
 
 @end
 
@@ -16,7 +22,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	// Override point for customization after application launch.
+	self.controller = [[CRKPeripheralController alloc] init];
+	self.central = [[CRKBluetoothCentral alloc] init];
+	
 	return YES;
 }
 
