@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CRKUser : NSObject
+@interface CRKUserUUID : NSObject
 
 + (NSUUID *)userID;
 

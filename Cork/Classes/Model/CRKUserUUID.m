@@ -6,11 +6,11 @@
 //  Copyright (c) 2015 Grant Butler. All rights reserved.
 //
 
-#import "CRKUser.h"
+#import "CRKUserUUID.h"
 
 static NSString * const CRKUserIDKey = @"CRKUserIDKey";
 
-@implementation CRKUser
+@implementation CRKUserUUID
 
 + (NSUUID *)userID{
     NSUUID *userID = [[NSUserDefaults standardUserDefaults] objectForKey:CRKUserIDKey];
