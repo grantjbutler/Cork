@@ -1,10 +1,37 @@
 PODS:
+  - CocoaLumberjack (2.0.0):
+    - CocoaLumberjack/Default (= 2.0.0)
+    - CocoaLumberjack/Extensions (= 2.0.0)
+  - CocoaLumberjack/Core (2.0.0)
+  - CocoaLumberjack/Default (2.0.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.0.0):
+    - CocoaLumberjack/Default
+  - MDMCoreData (1.5.0):
+    - MDMCoreData/MDMCoreDataCore (= 1.5.0)
+    - MDMCoreData/MDMFetchedResultsCollectionDataSource (= 1.5.0)
+    - MDMCoreData/MDMFetchedResultsTableDataSource (= 1.5.0)
+    - MDMCoreData/MDMPersistenceController (= 1.5.0)
+    - MDMCoreData/NSManagedObject+MDMCoreDataAdditions (= 1.5.0)
+  - MDMCoreData/MDMCoreDataCore (1.5.0)
+  - MDMCoreData/MDMFetchedResultsCollectionDataSource (1.5.0):
+    - MDMCoreData/MDMCoreDataCore
+  - MDMCoreData/MDMFetchedResultsTableDataSource (1.5.0):
+    - MDMCoreData/MDMCoreDataCore
+  - MDMCoreData/MDMPersistenceController (1.5.0):
+    - MDMCoreData/MDMCoreDataCore
+  - MDMCoreData/NSManagedObject+MDMCoreDataAdditions (1.5.0):
+    - MDMCoreData/MDMCoreDataCore
   - SAMCategories (0.5.2)
 
 DEPENDENCIES:
+  - CocoaLumberjack
+  - MDMCoreData
   - SAMCategories
 
 SPEC CHECKSUMS:
+  CocoaLumberjack: a6f77d987d65dc7ba86b0f84db7d0b9084f77bcb
+  MDMCoreData: 402f754cda90865026a209243f1667824e775649
   SAMCategories: bf8287f7961a0b343168d1fee16338dc1626ea39
 
 COCOAPODS: 0.36.4

@@ -10,6 +10,8 @@
 
 #import "CRKPeripheralController.h"
 #import "CRKBluetoothCentralController.h"
+#import <CocoaLumberjack/CocoaLumberjack.h>
+#import "CRKCoreDataHelper.h"
 
 #import "CRKMessage.h"
 
@@ -25,13 +27,20 @@
 @implementation AppDelegate
 
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	self.controller = [[CRKPeripheralController alloc] init];
 	self.controller.delegate = self;
 	
 	self.central = [[CRKBluetoothCentralController alloc] init];
 	self.central.delegate = self;
+    
+    [DDLog addLogger:[DDASLLogger sharedInstance]];
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
 	
+    CRKCoreDataHelper *helper = [CRKCoreDataHelper sharedHelper];
+    NSManagedObjectContext * context = helper.managedObjectContext;
+    
 	return YES;
 }
 

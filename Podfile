@@ -3,6 +3,8 @@
 
 target 'Cork' do
 	pod 'SAMCategories'
+    pod 'MDMCoreData'
+    pod 'CocoaLumberjack'
 end
 
 target 'CorkTests' do
