@@ -9,9 +9,21 @@
 @import Foundation;
 @import CoreBluetooth;
 
+#import "CRKMessage.h"
+
+@protocol CRKPeripheralControllerDelegate;
+
 @interface CRKPeripheralController : NSObject
+
+@property (nonatomic, weak) id <CRKPeripheralControllerDelegate> delegate;
 
 - (void)startAdvertising;
 - (void)stopAdvertising;
+
+@end
+
+@protocol CRKPeripheralControllerDelegate <NSObject>
+
+- (void)controller:(CRKPeripheralController *)controller didReceiveMessage:(id <CRKMessage>)message;
 
 @end

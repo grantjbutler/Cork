@@ -66,3 +66,9 @@
 #define COCOAPODS_VERSION_MINOR_MDMCoreData_NSManagedObject_MDMCoreDataAdditions 5
 #define COCOAPODS_VERSION_PATCH_MDMCoreData_NSManagedObject_MDMCoreDataAdditions 0
 
+// SAMCategories
+#define COCOAPODS_POD_AVAILABLE_SAMCategories
+#define COCOAPODS_VERSION_MAJOR_SAMCategories 0
+#define COCOAPODS_VERSION_MINOR_SAMCategories 5
+#define COCOAPODS_VERSION_PATCH_SAMCategories 2
+
