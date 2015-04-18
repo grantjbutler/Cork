@@ -13,8 +13,8 @@
                 <entry key="attributeValueClassName" value="NSUUID"/>
             </userInfo>
         </attribute>
-        <relationship name="recievedMessages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Message" inverseName="reciever" inverseEntity="Message" syncable="YES"/>
-        <relationship name="sentMessages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Message" inverseName="sender" inverseEntity="Message" syncable="YES"/>
+        <relationship name="recievedMessages" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Message" inverseName="reciever" inverseEntity="Message" syncable="YES"/>
+        <relationship name="sentMessages" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Message" inverseName="sender" inverseEntity="Message" syncable="YES"/>
     </entity>
     <elements>
         <element name="Message" positionX="-45" positionY="-18" width="128" height="118"/>
