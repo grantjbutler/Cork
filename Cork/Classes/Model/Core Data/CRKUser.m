@@ -12,7 +12,7 @@ static NSString * const CRKUserIDKey = @"CRKUserIDKey";
 
 @implementation CRKUser
 
-+ (NSUUID *)devicesUserID{
++ (NSUUID *)currentUserID{
     NSUUID *userID = [[NSUserDefaults standardUserDefaults] objectForKey:CRKUserIDKey];
     if (!userID){
         userID = [NSUUID UUID];

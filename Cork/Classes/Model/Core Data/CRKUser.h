@@ -10,6 +10,6 @@
 
 @interface CRKUser : _CRKUser
 
-+ (NSUUID *)devicesUserID;
++ (NSUUID *)currentUserID;
 
 @end
