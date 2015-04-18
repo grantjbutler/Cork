@@ -11,10 +11,14 @@
 #import "CRKPeripheralController.h"
 #import "CRKBluetoothCentralController.h"
 
-@interface AppDelegate ()
+#import "CRKMessage.h"
+
+@interface AppDelegate () <CRKBluetoothCentralControllerDelegate, CRKPeripheralControllerDelegate>
 
 @property (nonatomic) CRKPeripheralController *controller;
 @property (nonatomic) CRKBluetoothCentralController *central;
+
+@property (nonatomic) BOOL flag;
 
 @end
 
@@ -23,7 +27,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	self.controller = [[CRKPeripheralController alloc] init];
+	self.controller.delegate = self;
+	
 	self.central = [[CRKBluetoothCentralController alloc] init];
+	self.central.delegate = self;
 	
 	return YES;
 }
@@ -48,6 +55,20 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
 	// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)controller:(CRKPeripheralController *)controller didReceiveMessage:(id<CRKMessage>)message {
+	NSLog(@"Did receive: %@", message);
+}
+
+- (id<CRKMessage>)controller:(CRKBluetoothCentralController *)controller messageToTransmitToPeripheral:(CBPeripheral *)peripheral {
+	if (self.flag) {
+		return nil;
+	}
+	
+	self.flag = !self.flag;
+	
+	return [[CRKMessage alloc] init];
 }
 
 @end

@@ -16,3 +16,7 @@
 @property (nonatomic) NSDate *dateSent;
 
 @end
+
+@interface CRKMessage : NSObject <CRKMessage>
+
+@end

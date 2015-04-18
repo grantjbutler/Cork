@@ -29,7 +29,6 @@ static NSString * const CRKPeripheralControllerMessagesCharacteristicUUIDString 
 	self = [super init];
 	if (self) {
 		[self setUpPeripheralManager];
-		[self setUpServices];
 	}
 	return self;
 }
@@ -46,6 +45,9 @@ static NSString * const CRKPeripheralControllerMessagesCharacteristicUUIDString 
 - (void)setUpMessagesService {
 	CBUUID *messagesServiceUUID = [CBUUID UUIDWithString:CRKPeripheralControllerMessagesServiceUUIDString];
 	self.messagesService = [[CBMutableService alloc] initWithType:messagesServiceUUID primary:YES];
+	
+	[self setUpMessagesServiceCharacteristics];
+	
 	self.messagesService.characteristics = @[
 		self.messagesCharacteristic
 	];
@@ -72,9 +74,9 @@ static NSString * const CRKPeripheralControllerMessagesCharacteristicUUIDString 
 #pragma mark - CBPeripheralManagerDelegate
 
 - (void)peripheralManagerDidUpdateState:(CBPeripheralManager *)peripheral {
-	NSLog(@"%@", peripheral);
 	switch (peripheral.state) {
 		case CBPeripheralManagerStatePoweredOn:
+			[self setUpServices];
 			[self startAdvertising];
 			break;
 			
@@ -87,9 +89,13 @@ static NSString * const CRKPeripheralControllerMessagesCharacteristicUUIDString 
 	NSLog(@"Started advertising: %@", error);
 }
 
+- (void)peripheralManager:(CBPeripheralManager *)peripheral didAddService:(CBService *)service error:(NSError *)error {
+	NSLog(@"Did add service '%@' with error '%@'", service, error);
+}
+
 - (void)peripheralManager:(CBPeripheralManager *)peripheral didReceiveWriteRequests:(NSArray *)requests {
 	for (CBATTRequest *request in requests) {
-		if (![request.characteristic isEqual:self.messagesCharacteristic.UUID]) {
+		if (![request.characteristic.UUID isEqual:self.messagesCharacteristic.UUID]) {
 			[peripheral respondToRequest:requests.firstObject withResult:CBATTErrorRequestNotSupported];
 			
 			return;

@@ -18,6 +18,7 @@
 		C3D12D171AE2D3880061C385 /* CRKPeripheralController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12D161AE2D3880061C385 /* CRKPeripheralController.m */; };
 		C3D12D4C1AE2E0680061C385 /* CRKBluetoothCentralController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12D4B1AE2E0680061C385 /* CRKBluetoothCentralController.m */; };
 		C3D12D501AE2F4010061C385 /* NSArray+CRKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12D4F1AE2F4010061C385 /* NSArray+CRKAdditions.m */; };
+		C3D12D521AE2FD230061C385 /* CRKMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12D511AE2FD230061C385 /* CRKMessage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		C3D12D4D1AE2F0FB0061C385 /* CRKMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKMessage.h; sourceTree = "<group>"; };
 		C3D12D4E1AE2F4010061C385 /* NSArray+CRKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+CRKAdditions.h"; sourceTree = "<group>"; };
 		C3D12D4F1AE2F4010061C385 /* NSArray+CRKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+CRKAdditions.m"; sourceTree = "<group>"; };
+		C3D12D511AE2FD230061C385 /* CRKMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKMessage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				C3D12CF61AE2CF020061C385 /* ViewController.h */,
 				C3D12CF71AE2CF020061C385 /* ViewController.m */,
 				C3D12D4D1AE2F0FB0061C385 /* CRKMessage.h */,
+				C3D12D511AE2FD230061C385 /* CRKMessage.m */,
 				C3D12D151AE2D3880061C385 /* CRKPeripheralController.h */,
 				C3D12D161AE2D3880061C385 /* CRKPeripheralController.m */,
 				C3D12D4A1AE2E0680061C385 /* CRKBluetoothCentralController.h */,
@@ -302,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3D12D171AE2D3880061C385 /* CRKPeripheralController.m in Sources */,
+				C3D12D521AE2FD230061C385 /* CRKMessage.m in Sources */,
 				C3D12D4C1AE2E0680061C385 /* CRKBluetoothCentralController.m in Sources */,
 				C3D12CF81AE2CF020061C385 /* ViewController.m in Sources */,
 				C3D12D501AE2F4010061C385 /* NSArray+CRKAdditions.m in Sources */,
