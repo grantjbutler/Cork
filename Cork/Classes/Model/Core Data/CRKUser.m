@@ -8,6 +8,8 @@
 
 #import "CRKUser.h"
 
+static NSString * const CRKUserIDKey = @"CRKUserIDKey";
+
 @implementation CRKUser
 
 + (NSUUID *)devicesUserID{
