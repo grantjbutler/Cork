@@ -14,7 +14,21 @@
 
 static NSInteger CRKBinaryMessageDeserializerUUIDLength = 16;
 
+@interface CRKBinaryMessageDeserializer ()
+
+@property (nonatomic) NSManagedObjectContext *context;
+
+@end
+
 @implementation CRKBinaryMessageDeserializer
+
+- (instancetype)initWithContext:(NSManagedObjectContext *)context {
+    self = [super init];
+    if (self) {
+        _context = context;
+    }
+    return self;
+}
 
 - (id<CRKMessage>)messageFromSerializedData:(NSData *)data {
 	CCHBinaryDataReader *dataReader = [[CCHBinaryDataReader alloc] initWithData:data options:CCHBinaryDataReaderBigEndian];
