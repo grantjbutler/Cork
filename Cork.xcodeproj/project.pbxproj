@@ -12,6 +12,7 @@
 		4C5B1E861AE2F09600567980 /* Cork.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C5B1E841AE2F09600567980 /* Cork.xcdatamodeld */; };
 		4C5B1E8D1AE2F5BE00567980 /* CRKMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5B1E891AE2F5BE00567980 /* CRKMessage.m */; };
 		4C5B1E8E1AE2F5BE00567980 /* _CRKMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5B1E8C1AE2F5BE00567980 /* _CRKMessage.m */; };
+		4C7B68031AE3016800DA4AE5 /* CRKCoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B68021AE3016800DA4AE5 /* CRKCoreDataHelper.m */; };
 		C3D12CF21AE2CF020061C385 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12CF11AE2CF020061C385 /* main.m */; };
 		C3D12CF51AE2CF020061C385 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12CF41AE2CF020061C385 /* AppDelegate.m */; };
 		C3D12CF81AE2CF020061C385 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12CF71AE2CF020061C385 /* ViewController.m */; };
@@ -41,6 +42,8 @@
 		4C5B1E891AE2F5BE00567980 /* CRKMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKMessage.m; sourceTree = "<group>"; };
 		4C5B1E8B1AE2F5BE00567980 /* _CRKMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _CRKMessage.h; sourceTree = "<group>"; };
 		4C5B1E8C1AE2F5BE00567980 /* _CRKMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _CRKMessage.m; sourceTree = "<group>"; };
+		4C7B68011AE3016800DA4AE5 /* CRKCoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKCoreDataHelper.h; sourceTree = "<group>"; };
+		4C7B68021AE3016800DA4AE5 /* CRKCoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKCoreDataHelper.m; sourceTree = "<group>"; };
 		560A0B895822B23F235EBCEC /* libPods-Cork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cork.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B652B19C4D89FEF4445EFEF /* Pods-Cork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cork.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cork/Pods-Cork.release.xcconfig"; sourceTree = "<group>"; };
 		C3D12CEC1AE2CF020061C385 /* Cork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cork.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +153,8 @@
 		C3D12CEE1AE2CF020061C385 /* Cork */ = {
 			isa = PBXGroup;
 			children = (
+				4C7B68011AE3016800DA4AE5 /* CRKCoreDataHelper.h */,
+				4C7B68021AE3016800DA4AE5 /* CRKCoreDataHelper.m */,
 				4C5B1E871AE2F5BE00567980 /* Model */,
 				4C5B1E831AE2EFD400567980 /* CoreData */,
 				C3D12CF31AE2CF020061C385 /* AppDelegate.h */,
@@ -354,6 +359,7 @@
 				4C5B1E8D1AE2F5BE00567980 /* CRKMessage.m in Sources */,
 				C3D12D4C1AE2E0680061C385 /* CRKBluetoothCentral.m in Sources */,
 				C3D12CF81AE2CF020061C385 /* ViewController.m in Sources */,
+				4C7B68031AE3016800DA4AE5 /* CRKCoreDataHelper.m in Sources */,
 				4C5B1E8E1AE2F5BE00567980 /* _CRKMessage.m in Sources */,
 				4C5B1E861AE2F09600567980 /* Cork.xcdatamodeld in Sources */,
 				C3D12CF51AE2CF020061C385 /* AppDelegate.m in Sources */,

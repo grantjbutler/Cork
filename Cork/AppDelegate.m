@@ -11,20 +11,17 @@
 #import "CRKPeripheralController.h"
 #import "CRKBluetoothCentral.h"
 #import <CocoaLumberjack/CocoaLumberjack.h>
+#import "CRKCoreDataHelper.h"
 
 @interface AppDelegate ()
 
 @property (nonatomic) CRKPeripheralController *controller;
 @property (nonatomic) CRKBluetoothCentral *central;
-@property (nonatomic) MDMPersistenceController *persistenceController;
 
 @end
 
 @implementation AppDelegate
 
-@synthesize managedObjectContext = _managedObjectContext;
-@synthesize managedObjectModel = _managedObjectModel;
-@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -33,9 +30,10 @@
     
     [DDLog addLogger:[DDASLLogger sharedInstance]];
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
-    
-    self.managedObjectContext;
 	
+    CRKCoreDataHelper *helper = [CRKCoreDataHelper sharedHelper];
+    NSManagedObjectContext * context = helper.managedObjectContext;
+    
 	return YES;
 }
 
@@ -60,57 +58,4 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
 	// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
-- (void)saveContext{
-    NSError *error = nil;
-    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
-    if (managedObjectContext != nil) {
-        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
-        }
-    }
-}
-
-- (NSManagedObjectContext *)managedObjectContext{
-    if (_managedObjectContext != nil) {
-        return _managedObjectContext;
-    }
-    
-    _managedObjectContext = self.persistentStoreCoordinator.managedObjectContext;
-    return _managedObjectContext;
-}
-
-- (NSManagedObjectModel *)managedObjectModel{
-    if (_managedObjectModel != nil) {
-        return _managedObjectModel;
-    }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Cork" withExtension:@"momd"];
-    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
-    return _managedObjectModel;
-}
-
-
-- (MDMPersistenceController *)persistenceController {
-    if (_persistenceController){
-        return _persistenceController;
-    }
-    
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Cork.sqlite"];
-    _persistenceController = [[MDMPersistenceController alloc] initWithStoreURL:storeURL model:[self managedObjectModel]];
-    if (!_persistenceController){
-        DDLogError(@"MDMPersistenceController failed");
-        abort();
-    }
-    
-    return _persistenceController;
-}
-
-#pragma mark - Application's Documents directory
-
-// Returns the URL to the application's Documents directory.
-- (NSURL *)applicationDocumentsDirectory{
-    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-}
-
 @end
