@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# paths are to the root of the repo unless otherwise specified
+cd "$(git rev-parse --show-toplevel)"
+
+MODEL_PATH="Scavenger/Scavenger.xcdatamodeld/Scavenger.xcdatamodel"
+MACHINE_GENERATED_DESTINATION_PATH="Scavenger/Classes/Model/Generated"
+HUMAN_EDITABLE_GENERATED_DESTINATION_PATH="Scavenger/Classes/Model"
+TEMPLATES_PATH="Scavenger/Classes/Model/Templates"
+USER_NAME="$(osascript -e 'long user name of (system info)')"
+
+mogenerator-1.28 \
+	--v2 \
+	--model "$MODEL_PATH" \
+	--machine-dir "$MACHINE_GENERATED_DESTINATION_PATH" \
+	--human-dir "$HUMAN_EDITABLE_GENERATED_DESTINATION_PATH" \
+	--template-path "$TEMPLATES_PATH" \
+	--template-var "userName=$USER_NAME"

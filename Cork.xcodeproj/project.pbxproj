@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1C358FF67BFAFFFFF8160501 /* libPods-Cork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 560A0B895822B23F235EBCEC /* libPods-Cork.a */; };
+		4C5B1E7F1AE2EF5A00567980 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C5B1E7E1AE2EF5A00567980 /* CoreData.framework */; };
+		4C5B1E861AE2F09600567980 /* Cork.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C5B1E841AE2F09600567980 /* Cork.xcdatamodeld */; };
+		4C5B1E8D1AE2F5BE00567980 /* CRKMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5B1E891AE2F5BE00567980 /* CRKMessage.m */; };
+		4C5B1E8E1AE2F5BE00567980 /* _CRKMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5B1E8C1AE2F5BE00567980 /* _CRKMessage.m */; };
 		C3D12CF21AE2CF020061C385 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12CF11AE2CF020061C385 /* main.m */; };
 		C3D12CF51AE2CF020061C385 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12CF41AE2CF020061C385 /* AppDelegate.m */; };
 		C3D12CF81AE2CF020061C385 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12CF71AE2CF020061C385 /* ViewController.m */; };
@@ -31,6 +35,12 @@
 
 /* Begin PBXFileReference section */
 		0583C7E99BC856D27BFB4D3C /* Pods-Cork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cork.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cork/Pods-Cork.debug.xcconfig"; sourceTree = "<group>"; };
+		4C5B1E7E1AE2EF5A00567980 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4C5B1E851AE2F09600567980 /* Cork.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cork.xcdatamodel; sourceTree = "<group>"; };
+		4C5B1E881AE2F5BE00567980 /* CRKMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKMessage.h; sourceTree = "<group>"; };
+		4C5B1E891AE2F5BE00567980 /* CRKMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKMessage.m; sourceTree = "<group>"; };
+		4C5B1E8B1AE2F5BE00567980 /* _CRKMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _CRKMessage.h; sourceTree = "<group>"; };
+		4C5B1E8C1AE2F5BE00567980 /* _CRKMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _CRKMessage.m; sourceTree = "<group>"; };
 		560A0B895822B23F235EBCEC /* libPods-Cork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cork.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B652B19C4D89FEF4445EFEF /* Pods-Cork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cork.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cork/Pods-Cork.release.xcconfig"; sourceTree = "<group>"; };
 		C3D12CEC1AE2CF020061C385 /* Cork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cork.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C5B1E7F1AE2EF5A00567980 /* CoreData.framework in Frameworks */,
 				1C358FF67BFAFFFFF8160501 /* libPods-Cork.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,6 +85,7 @@
 		2E01F517831C73ED5F5BF0B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4C5B1E7E1AE2EF5A00567980 /* CoreData.framework */,
 				560A0B895822B23F235EBCEC /* libPods-Cork.a */,
 			);
 			name = Frameworks;
@@ -86,6 +98,33 @@
 				8B652B19C4D89FEF4445EFEF /* Pods-Cork.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		4C5B1E831AE2EFD400567980 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				4C5B1E841AE2F09600567980 /* Cork.xcdatamodeld */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		4C5B1E871AE2F5BE00567980 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4C5B1E881AE2F5BE00567980 /* CRKMessage.h */,
+				4C5B1E891AE2F5BE00567980 /* CRKMessage.m */,
+				4C5B1E8A1AE2F5BE00567980 /* Generated */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4C5B1E8A1AE2F5BE00567980 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				4C5B1E8B1AE2F5BE00567980 /* _CRKMessage.h */,
+				4C5B1E8C1AE2F5BE00567980 /* _CRKMessage.m */,
+			);
+			path = Generated;
 			sourceTree = "<group>";
 		};
 		C3D12CE31AE2CF020061C385 = {
@@ -111,6 +150,8 @@
 		C3D12CEE1AE2CF020061C385 /* Cork */ = {
 			isa = PBXGroup;
 			children = (
+				4C5B1E871AE2F5BE00567980 /* Model */,
+				4C5B1E831AE2EFD400567980 /* CoreData */,
 				C3D12CF31AE2CF020061C385 /* AppDelegate.h */,
 				C3D12CF41AE2CF020061C385 /* AppDelegate.m */,
 				C3D12CF61AE2CF020061C385 /* ViewController.h */,
@@ -161,6 +202,7 @@
 			buildConfigurationList = C3D12D0F1AE2CF020061C385 /* Build configuration list for PBXNativeTarget "Cork" */;
 			buildPhases = (
 				9FB0FC40CD632BEC37EDC704 /* Check Pods Manifest.lock */,
+				4C5B1E7D1AE2EEE800567980 /* Mogenerator */,
 				C3D12CE81AE2CF020061C385 /* Sources */,
 				C3D12CE91AE2CF020061C385 /* Frameworks */,
 				C3D12CEA1AE2CF020061C385 /* Resources */,
@@ -257,6 +299,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4C5B1E7D1AE2EEE800567980 /* Mogenerator */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Mogenerator;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\n\n# paths are to the root of the repo unless otherwise specified\ncd \"$(git rev-parse --show-toplevel)\"\n\nMODEL_PATH=\"Cork/Cork.xcdatamodeld/Cork.xcdatamodel\"\nMACHINE_GENERATED_DESTINATION_PATH=\"Cork/Model/Generated\"\nHUMAN_EDITABLE_GENERATED_DESTINATION_PATH=\"Cork/Model\"\nTEMPLATES_PATH=\"Cork/MogenerateTemplates\"\nUSER_NAME=\"$(osascript -e 'long user name of (system info)')\"\n\n/usr/local/bin/mogenerator \\\n--v2 \\\n--model \"$MODEL_PATH\" \\\n--machine-dir \"$MACHINE_GENERATED_DESTINATION_PATH\" \\\n--human-dir \"$HUMAN_EDITABLE_GENERATED_DESTINATION_PATH\" \\\n--template-path \"$TEMPLATES_PATH\" \\\n--template-var \"userName=$USER_NAME\"\n";
+		};
 		7142C8A3A39C85EB743D39DA /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -295,8 +351,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3D12D171AE2D3880061C385 /* CRKPeripheralController.m in Sources */,
+				4C5B1E8D1AE2F5BE00567980 /* CRKMessage.m in Sources */,
 				C3D12D4C1AE2E0680061C385 /* CRKBluetoothCentral.m in Sources */,
 				C3D12CF81AE2CF020061C385 /* ViewController.m in Sources */,
+				4C5B1E8E1AE2F5BE00567980 /* _CRKMessage.m in Sources */,
+				4C5B1E861AE2F09600567980 /* Cork.xcdatamodeld in Sources */,
 				C3D12CF51AE2CF020061C385 /* AppDelegate.m in Sources */,
 				C3D12CF21AE2CF020061C385 /* main.m in Sources */,
 			);
@@ -507,6 +566,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4C5B1E841AE2F09600567980 /* Cork.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4C5B1E851AE2F09600567980 /* Cork.xcdatamodel */,
+			);
+			currentVersion = 4C5B1E851AE2F09600567980 /* Cork.xcdatamodel */;
+			path = Cork.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C3D12CE41AE2CF020061C385 /* Project object */;
 }

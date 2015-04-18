@@ -1,0 +1,42 @@
+//
+// _<$managedObjectClassName$>.h
+// Scavenger
+//
+// Copyright (c) <$date %Y$> Grant Butler. All rights reserved.
+//
+
+// DO NOT EDIT. This file is machine-generated and constantly overwritten.
+// Make changes to <$managedObjectClassName$>.h instead.
+
+#import <CoreData/CoreData.h>
+<$if hasAdditionalHeaderFile$>#import <$additionalHeaderFileName$><$endif$>
+<$if hasCustomSuperentity$>#import "<$customSuperentity$>.h"<$endif$>
+
+<$foreach Relationship noninheritedRelationships do$>@class <$Relationship.destinationEntity.managedObjectClassName$>;
+<$endforeach do$>
+@interface _<$managedObjectClassName$> : <$customSuperentity$>
+<$foreach Attribute noninheritedAttributes do$><$if Attribute.hasDefinedAttributeType$><$if Attribute.name == "remoteID"$>
+@property (nonatomic) <$Attribute.objectAttributeType$> <$Attribute.name$>;<$else$><$if Attribute.hasScalarAttributeType$>
+@property (nonatomic, assign) <$Attribute.scalarAttributeType$> <$Attribute.name$>;<$else$>
+@property (nonatomic, copy) <$Attribute.objectAttributeType$> <$Attribute.name$>;<$endif$><$endif$><$endif$><$endforeach do$>
+<$foreach Relationship noninheritedRelationships do$><$if Relationship.isToMany$><$if Relationship.jr_isOrdered$>
+@property (nonatomic, copy) NSOrderedSet *<$Relationship.name$>;<$else$>
+@property (nonatomic, copy) NSSet *<$Relationship.name$>;<$endif$><$else$>
+@property (nonatomic, strong) <$Relationship.destinationEntity.managedObjectClassName$> *<$Relationship.name$>;<$endif$><$endforeach do$>
+
+@end
+
+@interface _<$managedObjectClassName$> (_<$managedObjectClassName$>CoreDataGeneratedAccessors)
+<$foreach Relationship noninheritedRelationships do$><$if Relationship.isToMany$><$if Relationship.jr_isOrdered$>
+- (void)insertObject:(<$Relationship.destinationEntity.managedObjectClassName$> *)object in<$Relationship.name.initialCapitalString$>AtIndex:(NSUInteger)idx;
+- (void)removeObjectFrom<$Relationship.name.initialCapitalString$>AtIndex:(NSUInteger)idx;
+- (void)insert<$Relationship.name.initialCapitalString$>:(NSArray *)objects atIndexes:(NSIndexSet *)indexes;
+- (void)remove<$Relationship.name.initialCapitalString$>AtIndexes:(NSIndexSet *)indexes;
+- (void)replaceObjectIn<$Relationship.name.initialCapitalString$>AtIndex:(NSUInteger)idx withObject:(<$Relationship.destinationEntity.managedObjectClassName$> *)object;
+- (void)replace<$Relationship.name.initialCapitalString$>AtIndexes:(NSIndexSet *)indexes with<$Relationship.name.initialCapitalString$>:(NSArray *)objects;<$endif$>
+- (void)add<$Relationship.name.initialCapitalString$>:(<$Relationship.immutableCollectionClassName$> *)objects;
+- (void)remove<$Relationship.name.initialCapitalString$>:(<$Relationship.immutableCollectionClassName$> *)objects;
+- (void)add<$Relationship.name.initialCapitalString$>Object:(<$Relationship.destinationEntity.managedObjectClassName$> *)object;
+- (void)remove<$Relationship.name.initialCapitalString$>Object:(<$Relationship.destinationEntity.managedObjectClassName$> *)object;
+<$endif$><$endforeach$>
+@end
