@@ -10,7 +10,7 @@
 #import <MDMCoreData/MDMCoreData.h>
 @import CoreData;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface CRKAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

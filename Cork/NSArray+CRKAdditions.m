@@ -11,13 +11,13 @@
 @implementation NSArray (CRKAdditions)
 
 - (id)firstObjectPassingTest:(BOOL (^)(id object))f {
-	for (id object in self) {
-		if (f(object)) {
-			return object;
-		}
-	}
-	
-	return nil;
+    for (id object in self) {
+        if (f(object)) {
+            return object;
+        }
+    }
+    
+    return nil;
 }
 
 @end

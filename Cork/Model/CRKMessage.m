@@ -10,4 +10,9 @@
 
 @implementation CRKMessage
 
+@synthesize sender;
+@synthesize recipient;
+@synthesize dateSent;
+@synthesize message;
+
 @end

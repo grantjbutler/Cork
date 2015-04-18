@@ -26,94 +26,94 @@ static NSString * const CRKPeripheralControllerMessagesCharacteristicUUIDString 
 @implementation CRKPeripheralController
 
 - (instancetype)init {
-	self = [super init];
-	if (self) {
-		[self setUpPeripheralManager];
-	}
-	return self;
+    self = [super init];
+    if (self) {
+        [self setUpPeripheralManager];
+    }
+    return self;
 }
 
 - (void)setUpPeripheralManager {
-	self.delegateQueue = dispatch_queue_create("com.grantjbutler.Cork.CRKPeripheralController.delegate-queue", NULL);
-	self.peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self queue:self.delegateQueue options:nil];
+    self.delegateQueue = dispatch_queue_create("com.grantjbutler.Cork.CRKPeripheralController.delegate-queue", NULL);
+    self.peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self queue:self.delegateQueue options:nil];
 }
 
 - (void)setUpServices {
-	[self setUpMessagesService];
+    [self setUpMessagesService];
 }
 
 - (void)setUpMessagesService {
-	CBUUID *messagesServiceUUID = [CBUUID UUIDWithString:CRKPeripheralControllerMessagesServiceUUIDString];
-	self.messagesService = [[CBMutableService alloc] initWithType:messagesServiceUUID primary:YES];
-	
-	[self setUpMessagesServiceCharacteristics];
-	
-	self.messagesService.characteristics = @[
-		self.messagesCharacteristic
-	];
-	[self.peripheralManager addService:self.messagesService];
+    CBUUID *messagesServiceUUID = [CBUUID UUIDWithString:CRKPeripheralControllerMessagesServiceUUIDString];
+    self.messagesService = [[CBMutableService alloc] initWithType:messagesServiceUUID primary:YES];
+    
+    [self setUpMessagesServiceCharacteristics];
+    
+    self.messagesService.characteristics = @[
+        self.messagesCharacteristic
+    ];
+    [self.peripheralManager addService:self.messagesService];
 }
 
 - (void)setUpMessagesServiceCharacteristics {
-	CBUUID *messagesCharacteristicUUID = [CBUUID UUIDWithString:CRKPeripheralControllerMessagesCharacteristicUUIDString];
-	self.messagesCharacteristic = [[CBMutableCharacteristic alloc] initWithType:messagesCharacteristicUUID properties:CBCharacteristicPropertyWrite value:nil permissions:CBAttributePermissionsWriteable];
+    CBUUID *messagesCharacteristicUUID = [CBUUID UUIDWithString:CRKPeripheralControllerMessagesCharacteristicUUIDString];
+    self.messagesCharacteristic = [[CBMutableCharacteristic alloc] initWithType:messagesCharacteristicUUID properties:CBCharacteristicPropertyWrite value:nil permissions:CBAttributePermissionsWriteable];
 }
 
 - (void)startAdvertising {
-	[self.peripheralManager startAdvertising:@{
-		CBAdvertisementDataServiceUUIDsKey: @[
-			self.messagesService.UUID
-		]
-	}];
+    [self.peripheralManager startAdvertising:@{
+        CBAdvertisementDataServiceUUIDsKey: @[
+            self.messagesService.UUID
+        ]
+    }];
 }
 
 - (void)stopAdvertising {
-	[self.peripheralManager stopAdvertising];
+    [self.peripheralManager stopAdvertising];
 }
 
 #pragma mark - CBPeripheralManagerDelegate
 
 - (void)peripheralManagerDidUpdateState:(CBPeripheralManager *)peripheral {
-	switch (peripheral.state) {
-		case CBPeripheralManagerStatePoweredOn:
-			[self setUpServices];
-			[self startAdvertising];
-			break;
-			
-		default:
-			break;
-	}
+    switch (peripheral.state) {
+        case CBPeripheralManagerStatePoweredOn:
+            [self setUpServices];
+            [self startAdvertising];
+            break;
+            
+        default:
+            break;
+    }
 }
 
 - (void)peripheralManagerDidStartAdvertising:(CBPeripheralManager *)peripheral error:(NSError *)error {
-	NSLog(@"Started advertising: %@", error);
+    NSLog(@"Started advertising: %@", error);
 }
 
 - (void)peripheralManager:(CBPeripheralManager *)peripheral didAddService:(CBService *)service error:(NSError *)error {
-	NSLog(@"Did add service '%@' with error '%@'", service, error);
+    NSLog(@"Did add service '%@' with error '%@'", service, error);
 }
 
 - (void)peripheralManager:(CBPeripheralManager *)peripheral didReceiveWriteRequests:(NSArray *)requests {
-	for (CBATTRequest *request in requests) {
-		if (![request.characteristic.UUID isEqual:self.messagesCharacteristic.UUID]) {
-			[peripheral respondToRequest:requests.firstObject withResult:CBATTErrorRequestNotSupported];
-			
-			return;
-		}
-	}
-	
-	NSArray *sortedRequests = [requests sortedArrayUsingDescriptors:@[
-		[NSSortDescriptor sortDescriptorWithKey:@"offset" ascending:YES]
-	]];
-	
-	NSMutableData *message = [NSMutableData data];
-	for (CBATTRequest *request in sortedRequests) {
-		[message appendData:request.value];
-	}
-	
-	// TODO: Deserialize the data.
-	
-	[self.delegate controller:self didReceiveMessage:nil];
+    for (CBATTRequest *request in requests) {
+        if (![request.characteristic.UUID isEqual:self.messagesCharacteristic.UUID]) {
+            [peripheral respondToRequest:requests.firstObject withResult:CBATTErrorRequestNotSupported];
+            
+            return;
+        }
+    }
+    
+    NSArray *sortedRequests = [requests sortedArrayUsingDescriptors:@[
+        [NSSortDescriptor sortDescriptorWithKey:@"offset" ascending:YES]
+    ]];
+    
+    NSMutableData *message = [NSMutableData data];
+    for (CBATTRequest *request in sortedRequests) {
+        [message appendData:request.value];
+    }
+    
+    // TODO: Deserialize the data.
+    
+    [self.delegate controller:self didReceiveMessage:nil];
 }
 
 @end

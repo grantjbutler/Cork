@@ -9,7 +9,7 @@
 @import Foundation;
 @import CoreBluetooth;
 
-#import "CRKMessage.h"
+#import "CRKMessageProtocol.h"
 
 @protocol CRKBluetoothCentralControllerDelegate;
 

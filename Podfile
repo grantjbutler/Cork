@@ -2,7 +2,7 @@
 # platform :ios, '6.0'
 
 target 'Cork' do
-	pod 'SAMCategories'
+    pod 'SAMCategories'
     pod 'MDMCoreData'
     pod 'CocoaLumberjack'
 end

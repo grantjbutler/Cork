@@ -7,7 +7,8 @@
 //
 
 #import "_CRKMessage.h"
+#import "CRKMessageProtocol.h"
 
-@interface CRKMessage : _CRKMessage
+@interface CRKMessage : _CRKMessage <CRKMessage>
 
 @end
