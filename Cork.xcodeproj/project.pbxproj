@@ -163,8 +163,9 @@
 		C3D12CE41AE2CF020061C385 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = CRK;
 				LastUpgradeCheck = 0630;
-				ORGANIZATIONNAME = "Grant Butler";
+				ORGANIZATIONNAME = HackRU;
 				TargetAttributes = {
 					C3D12CEB1AE2CF020061C385 = {
 						CreatedOnToolsVersion = 6.3;
@@ -416,6 +417,7 @@
 				C3D12D111AE2CF020061C385 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C3D12D121AE2CF020061C385 /* Build configuration list for PBXNativeTarget "CorkTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +426,7 @@
 				C3D12D141AE2CF020061C385 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
