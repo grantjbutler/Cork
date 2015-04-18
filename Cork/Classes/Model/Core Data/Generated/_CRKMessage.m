@@ -16,4 +16,7 @@
 @dynamic messageText;
 @dynamic sentDate;
 
+@dynamic reciever;
+@dynamic sender;
+
 @end
