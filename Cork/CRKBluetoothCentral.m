@@ -8,6 +8,8 @@
 
 #import "CRKBluetoothCentral.h"
 
+static NSString * const CRKBluetoothCentralMessagesServiceUUIDString = @"E95B2A3C-7978-4BA4-A6EB-6C8A194AFAAD";
+
 @interface CRKBluetoothCentral () <CBCentralManagerDelegate>
 
 @property (nonatomic) dispatch_queue_t delegateQueue;
@@ -32,7 +34,7 @@
 
 - (void)startScanning {
 	[self.centralManager scanForPeripheralsWithServices:@[
-		[CBUUID UUIDWithString:@"E95B2A3C-7978-4BA4-A6EB-6C8A194AFAAD"]
+		[CBUUID UUIDWithString:CRKBluetoothCentralMessagesServiceUUIDString]
 	] options:@{}];
 }
 
