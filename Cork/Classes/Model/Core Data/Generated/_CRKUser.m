@@ -12,7 +12,9 @@
 
 @implementation _CRKUser
 
+@dynamic displayName;
 @dynamic id;
+@dynamic isContact;
 
 @dynamic recievedMessages;
 @dynamic sentMessages;

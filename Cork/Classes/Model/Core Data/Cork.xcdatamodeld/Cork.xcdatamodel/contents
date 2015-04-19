@@ -31,6 +31,8 @@
         </userInfo>
     </entity>
     <entity name="CRKUser" representedClassName="CRKUser" syncable="YES">
+        <attribute name="displayName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isContact" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Transformable" syncable="YES">
             <userInfo>
                 <entry key="attributeValueClassName" value="NSUUID"/>

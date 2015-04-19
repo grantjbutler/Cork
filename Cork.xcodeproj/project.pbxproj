@@ -15,6 +15,8 @@
 		4C5B1E8D1AE2F5BE00567980 /* CRKMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5B1E891AE2F5BE00567980 /* CRKMessage.m */; };
 		4C5B1E8E1AE2F5BE00567980 /* _CRKMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5B1E8C1AE2F5BE00567980 /* _CRKMessage.m */; };
 		4C7B68031AE3016800DA4AE5 /* CRKCoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B68021AE3016800DA4AE5 /* CRKCoreDataHelper.m */; };
+		4C8E18421AE330C900301951 /* CRKConversationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8E18411AE330C900301951 /* CRKConversationsTableViewController.m */; };
+		4C8E18451AE349E200301951 /* CRKConversationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8E18441AE349E200301951 /* CRKConversationTableViewCell.m */; };
 		C3D12CF21AE2CF020061C385 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12CF11AE2CF020061C385 /* main.m */; };
 		C3D12CF51AE2CF020061C385 /* CRKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12CF41AE2CF020061C385 /* CRKAppDelegate.m */; };
 		C3D12CF81AE2CF020061C385 /* CRKRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12CF71AE2CF020061C385 /* CRKRootViewController.m */; };
@@ -57,6 +59,10 @@
 		4C5B1E8C1AE2F5BE00567980 /* _CRKMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _CRKMessage.m; sourceTree = "<group>"; };
 		4C7B68011AE3016800DA4AE5 /* CRKCoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKCoreDataHelper.h; sourceTree = "<group>"; };
 		4C7B68021AE3016800DA4AE5 /* CRKCoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKCoreDataHelper.m; sourceTree = "<group>"; };
+		4C8E18401AE330C900301951 /* CRKConversationsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKConversationsTableViewController.h; sourceTree = "<group>"; };
+		4C8E18411AE330C900301951 /* CRKConversationsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKConversationsTableViewController.m; sourceTree = "<group>"; };
+		4C8E18431AE349E200301951 /* CRKConversationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKConversationTableViewCell.h; sourceTree = "<group>"; };
+		4C8E18441AE349E200301951 /* CRKConversationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKConversationTableViewCell.m; sourceTree = "<group>"; };
 		560A0B895822B23F235EBCEC /* libPods-Cork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cork.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B652B19C4D89FEF4445EFEF /* Pods-Cork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cork.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cork/Pods-Cork.release.xcconfig"; sourceTree = "<group>"; };
 		C3D12CEC1AE2CF020061C385 /* Cork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cork.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -298,6 +304,8 @@
 		C3D12D5D1AE30A0A0061C385 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4C8E18401AE330C900301951 /* CRKConversationsTableViewController.h */,
+				4C8E18411AE330C900301951 /* CRKConversationsTableViewController.m */,
 				C3D12CF61AE2CF020061C385 /* CRKRootViewController.h */,
 				C3D12CF71AE2CF020061C385 /* CRKRootViewController.m */,
 			);
@@ -319,6 +327,8 @@
 			isa = PBXGroup;
 			children = (
 				C3D12CF91AE2CF020061C385 /* Main.storyboard */,
+				4C8E18431AE349E200301951 /* CRKConversationTableViewCell.h */,
+				4C8E18441AE349E200301951 /* CRKConversationTableViewCell.m */,
 				C3D12CFC1AE2CF020061C385 /* Images.xcassets */,
 				C3D12CFE1AE2CF020061C385 /* LaunchScreen.xib */,
 			);
@@ -506,9 +516,11 @@
 				C3D12CF81AE2CF020061C385 /* CRKRootViewController.m in Sources */,
 				C3D12D501AE2F4010061C385 /* NSArray+CRKAdditions.m in Sources */,
 				C3FD168A1AE30AF2003D22DD /* CRKPeripheralController.m in Sources */,
+				4C8E18421AE330C900301951 /* CRKConversationsTableViewController.m in Sources */,
 				4C28CE921AE318F8005A79FB /* _CRKUser.m in Sources */,
 				C3FD16971AE31859003D22DD /* CRKBinaryMessageDeserializer.m in Sources */,
 				4C5B1E8D1AE2F5BE00567980 /* CRKMessage.m in Sources */,
+				4C8E18451AE349E200301951 /* CRKConversationTableViewCell.m in Sources */,
 				C3FD16911AE30E67003D22DD /* CRKBinaryMessageSerializer.m in Sources */,
 				4C7B68031AE3016800DA4AE5 /* CRKCoreDataHelper.m in Sources */,
 				4C5B1E8E1AE2F5BE00567980 /* _CRKMessage.m in Sources */,
