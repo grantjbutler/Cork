@@ -66,6 +66,14 @@
         CRKConversation *conversation = [CRKConversation conversationWithUser:coreDataMessage.sender inContext:context];
         [conversation addMessagesObject:coreDataMessage];
         conversation.lastUpdatedDate = coreDataMessage.dateSent;
+        UILocalNotification *localNote = [[UILocalNotification alloc] init];
+        localNote.fireDate = [NSDate date];
+        localNote.timeZone = [NSTimeZone defaultTimeZone];
+        localNote.alertTitle = [NSString stringWithFormat:@"New message from %@", coreDataMessage.sender.displayName];
+        localNote.alertBody = coreDataMessage.text;
+        
+        
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNote];
     }
     
     [context performBlock:^{
@@ -87,14 +95,7 @@
         [self.window.rootViewController presentViewController:alertController animated:YES completion:nil];
     });
     
-    UILocalNotification *localNote = [[UILocalNotification alloc] init];
-    localNote.fireDate = [NSDate dateWithTimeIntervalSinceNow:10];
-    localNote.timeZone = [NSTimeZone defaultTimeZone];
-    localNote.alertTitle = [NSString stringWithFormat:@"New message from %@", coreDataMessage.sender.displayName];
-    localNote.alertBody = coreDataMessage.text;
     
-    
-    [[UIApplication sharedApplication] scheduleLocalNotification:localNote];
 
 }
 
