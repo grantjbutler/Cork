@@ -209,8 +209,8 @@
 		C3D12D551AE309A00061C385 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C3FD169C1AE328C9003D22DD /* CRKMessageProtocol.h */,
 				C3D12D5B1AE309E40061C385 /* Core Data */,
+				C3FD169C1AE328C9003D22DD /* CRKMessageProtocol.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";

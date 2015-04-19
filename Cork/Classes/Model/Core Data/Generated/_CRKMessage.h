@@ -15,9 +15,11 @@
 
 @interface _CRKMessage : NSManagedObject
 
-@property (nonatomic, copy) NSString* messageID;
-@property (nonatomic, copy) NSString* messageText;
-@property (nonatomic, copy) NSDate* sentDate;
+@property (nonatomic, copy) NSDate* dateReceived;
+@property (nonatomic, copy) NSDate* dateSent;
+@property (nonatomic, copy) NSString* id;
+@property (nonatomic, copy) NSString* text;
+@property (nonatomic, assign) int16_t timeToLive;
 
 @property (nonatomic, strong) CRKUser *reciever;
 @property (nonatomic, strong) CRKUser *sender;

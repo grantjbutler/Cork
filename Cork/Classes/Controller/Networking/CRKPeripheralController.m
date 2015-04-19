@@ -120,6 +120,9 @@ static NSString * const CRKPeripheralControllerMessagesCharacteristicUUIDString 
         return;
     }
     
+    // Decrement Time To Live.
+    message.timeToLive--;
+    
     [self.delegate controller:self didReceiveMessage:message];
 }
 

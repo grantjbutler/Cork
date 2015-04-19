@@ -12,7 +12,7 @@
 
 @implementation _CRKUser
 
-@dynamic userID;
+@dynamic id;
 
 @dynamic recievedMessages;
 @dynamic sentMessages;

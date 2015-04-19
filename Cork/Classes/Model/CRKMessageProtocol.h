@@ -12,8 +12,8 @@
 
 @property (nonatomic) NSUUID *senderUUID;
 @property (nonatomic) NSUUID *recipientUUID;
-@property (nonatomic) NSString *message;
+@property (nonatomic) NSString *text;
 @property (nonatomic) NSDate *dateSent;
-@property (nonatomic) uint8_t timeToLive;
+@property (nonatomic) uint16_t timeToLive;
 
 @end
