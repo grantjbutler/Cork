@@ -13,6 +13,7 @@
 #import "CRKConversation.h"
 
 #import "CRKCoreDataHelper.h"
+#import "CRKSigningKeyStore.h"
 
 #import "NSManagedObject+CRKAdditions.h"
 
@@ -91,8 +92,9 @@
     message.sender = sender;
     message.reciever = reciever;
     message.text = text;
+    message.encryptedText = [[CRKSigningKeyStore sharedStore] encryptStringWithPublicKey:text];
     message.dateSent = date;
-    message.id = [CRKMessage messageIdentifierForSenderUUID:self.sender.id recipientUUID:self.conversation.user.id sentDate:date text:text];
+    message.id = [CRKMessage messageIdentifierForSenderUUID:self.sender.id recipientUUID:self.conversation.user.id sentDate:date body:message.encryptedText];
     message.conversation = conversation;
     
     [writeContext performBlockAndWait:^{

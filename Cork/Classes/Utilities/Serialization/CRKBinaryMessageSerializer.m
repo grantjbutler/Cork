@@ -23,17 +23,15 @@
     NSString *senderString = message.senderUUID.UUIDString;
     NSString *recipientString = message.recipientUUID.UUIDString;
     uint64_t sentTimestamp = CFSwapInt64HostToBig(floor([message.dateSent timeIntervalSince1970]));
-    NSString *messageText = message.text;
     
     [serializedData appendBytes:&ttl length:sizeof(ttl)];
     [serializedData appendData:[senderString dataUsingEncoding:NSUTF8StringEncoding]];
     [serializedData appendData:[recipientString dataUsingEncoding:NSUTF8StringEncoding]];
     [serializedData appendBytes:&sentTimestamp length:sizeof(sentTimestamp)];
     
-    NSData *messageData = [messageText dataUsingEncoding:NSUTF8StringEncoding];
-    uint32_t messageLength = CFSwapInt32HostToBig((uint32_t)messageData.length);
+    uint32_t messageLength = CFSwapInt32HostToBig((uint32_t)message.encryptedText.length);
     [serializedData appendBytes:&messageLength length:sizeof(messageLength)];
-    [serializedData appendData:messageData];
+    [serializedData appendData:message.encryptedText];
     
     uint32_t crcHash = CFSwapInt32HostToBig(crc32(0, serializedData.bytes, serializedData.length));
     [serializedData replaceBytesInRange:NSMakeRange(0, 0) withBytes:&crcHash length:sizeof(crcHash)];

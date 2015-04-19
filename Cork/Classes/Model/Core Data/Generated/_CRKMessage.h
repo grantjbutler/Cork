@@ -19,6 +19,7 @@
 
 @property (nonatomic, copy) NSDate* dateReceived;
 @property (nonatomic, copy) NSDate* dateSent;
+@property (nonatomic, copy) NSData* encryptedText;
 @property (nonatomic, copy) NSString* id;
 @property (nonatomic, copy) NSString* text;
 @property (nonatomic, assign) int16_t timeToLive;

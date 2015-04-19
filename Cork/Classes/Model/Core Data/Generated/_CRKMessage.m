@@ -14,6 +14,7 @@
 
 @dynamic dateReceived;
 @dynamic dateSent;
+@dynamic encryptedText;
 @dynamic id;
 @dynamic text;
 @dynamic timeToLive;

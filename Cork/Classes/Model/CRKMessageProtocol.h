@@ -13,6 +13,7 @@
 @property (nonatomic) NSUUID *senderUUID;
 @property (nonatomic) NSUUID *recipientUUID;
 @property (nonatomic) NSString *text;
+@property (nonatomic) NSData *encryptedText;
 @property (nonatomic) NSDate *dateSent;
 @property (nonatomic) uint16_t timeToLive;
 

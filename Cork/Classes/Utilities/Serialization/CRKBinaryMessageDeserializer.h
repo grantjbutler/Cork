@@ -8,10 +8,12 @@
 
 @import CoreData;
 
+@class CRKUser;
+
 #import "CRKMessageDeserializer.h"
 
 @interface CRKBinaryMessageDeserializer : NSObject <CRKMessageDeserializer>
 
-- (instancetype)initWithContext:(NSManagedObjectContext *)context NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithContext:(NSManagedObjectContext *)context currentUser:(CRKUser *)currentUser NS_DESIGNATED_INITIALIZER;
 
 @end

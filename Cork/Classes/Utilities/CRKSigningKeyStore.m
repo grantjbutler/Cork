@@ -8,6 +8,8 @@
 
 #import "CRKSigningKeyStore.h"
 
+#import "CRKUser.h"
+
 @implementation CRKSigningKeyStore
 
 + (instancetype)sharedStore {
@@ -97,6 +99,78 @@ static const UInt8 privateKeyIdentifier[] = "com.grantjbutler.Cork.privatekey\0"
     return queryPublicKey;
 }
 
+- (NSDictionary *)publicKeyQueryForUser:(CRKUser *)user {
+    NSData * userTag = [user.id.UUIDString dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSMutableDictionary *queryPublicKey =
+                            [[NSMutableDictionary alloc] init]; // 5
+ 
+    [queryPublicKey setObject:(__bridge id)kSecClassKey forKey:(__bridge id)kSecClass];
+    [queryPublicKey setObject:userTag forKey:(__bridge id)kSecAttrApplicationTag];
+    [queryPublicKey setObject:(__bridge id)kSecAttrKeyTypeRSA forKey:(__bridge id)kSecAttrKeyType];
+    [queryPublicKey setObject:[NSNumber numberWithBool:YES] forKey:(__bridge id)kSecReturnRef];
+    
+    return queryPublicKey;
+}
+
+- (NSData *)encryptString:(NSString *)string withPublicKeyOfUser:(CRKUser *)user {
+    OSStatus status = noErr;
+ 
+    size_t cipherBufferSize;
+    uint8_t *cipherBuffer;                     // 1
+ 
+    SecKeyRef publicKey = NULL;                                 // 3
+     // 4
+ 
+    status = SecItemCopyMatching
+    ((__bridge CFDictionaryRef)[self publicKeyQueryForUser:user], (CFTypeRef *)&publicKey); // 7
+ 
+//  Allocate a buffer
+ 
+    cipherBufferSize = SecKeyGetBlockSize(publicKey);
+    cipherBuffer = malloc(cipherBufferSize * sizeof(uint8_t));
+    memset((void *)cipherBuffer, 0*0, cipherBufferSize);
+    
+    NSData *plainTextBytes = [string dataUsingEncoding:NSUTF8StringEncoding];
+    size_t blockSize = cipherBufferSize - 11;
+    size_t blockCount = (size_t)ceil([plainTextBytes length] / (double)blockSize);
+    NSMutableData *encryptedData = [NSMutableData dataWithCapacity:0];
+ 
+    for (int i=0; i<blockCount; i++) {
+        
+        int bufferSize = (int)MIN(blockSize,[plainTextBytes length] - i * blockSize);
+        NSData *buffer = [plainTextBytes subdataWithRange:NSMakeRange(i * blockSize, bufferSize)];
+        
+        OSStatus status = SecKeyEncrypt(publicKey,
+                                        kSecPaddingPKCS1,
+                                        (const uint8_t *)[buffer bytes],
+                                        [buffer length],
+                                        cipherBuffer,
+                                        &cipherBufferSize);
+        
+        if (status == noErr){
+            NSData *encryptedBytes = [NSData dataWithBytes:(const void *)cipherBuffer length:cipherBufferSize];
+            [encryptedData appendData:encryptedBytes];
+            
+        }else{
+            
+            if (cipherBuffer) {
+                free(cipherBuffer);
+            }
+            
+            if (publicKey) {
+                CFRelease(publicKey);
+            }
+            
+            return nil;
+        }
+    }
+    if (cipherBuffer) free(cipherBuffer);
+    if (publicKey) CFRelease(publicKey);
+
+    return encryptedData;
+}
+
 - (NSData *)encryptStringWithPublicKey:(NSString *)string {
     OSStatus status = noErr;
  
@@ -155,8 +229,7 @@ static const UInt8 privateKeyIdentifier[] = "com.grantjbutler.Cork.privatekey\0"
     return encryptedData;
 }
 
-- (NSString *)decryptWithPrivateKey: (NSData *)dataToDecrypt
-{
+- (NSString *)decryptWithPrivateKey:(NSData *)dataToDecrypt {
     OSStatus status = noErr;
  
     size_t cipherBufferSize = [dataToDecrypt length];

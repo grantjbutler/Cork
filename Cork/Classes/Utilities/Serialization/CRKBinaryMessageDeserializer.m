@@ -11,6 +11,8 @@
 #import "CRKUser.h"
 #import "CRKMessage.h"
 
+#import "CRKSigningKeyStore.h"
+
 #import "NSManagedObject+CRKAdditions.h"
 
 #import <CCHBinaryData/CCHBinaryData.h>
@@ -22,15 +24,17 @@ static NSInteger CRKBinaryMessageDeserializerUUIDLength = 36;
 @interface CRKBinaryMessageDeserializer ()
 
 @property (nonatomic) NSManagedObjectContext *context;
+@property (nonatomic) CRKUser *currentUser;
 
 @end
 
 @implementation CRKBinaryMessageDeserializer
 
-- (instancetype)initWithContext:(NSManagedObjectContext *)context {
+- (instancetype)initWithContext:(NSManagedObjectContext *)context currentUser:(CRKUser *)currentUser {
     self = [super init];
     if (self) {
         _context = context;
+        _currentUser = currentUser;
     }
     return self;
 }
@@ -89,9 +93,9 @@ static NSInteger CRKBinaryMessageDeserializerUUIDLength = 36;
         return nil;
     }
     
-    messageText = [dataReader readStringWithNumberOfBytes:messageLength encoding:NSUTF8StringEncoding];
+    NSData *messageBody = [NSData dataWithBytes:dataReader.currentPosition length:messageLength];
     
-    NSString *messageID = [CRKMessage messageIdentifierForSenderUUID:senderUUID recipientUUID:recipientUUID sentDate:sentDate text:messageText];
+    NSString *messageID = [CRKMessage messageIdentifierForSenderUUID:senderUUID recipientUUID:recipientUUID sentDate:sentDate body:messageBody];
     CRKMessage *message = [CRKMessage existingObjectWithIdentifier:messageID inContext:self.context];
     if (message) {
         return nil;
@@ -102,7 +106,14 @@ static NSInteger CRKBinaryMessageDeserializerUUIDLength = 36;
     
     message = [[CRKMessage alloc] initWithEntity:[CRKMessage entityDescriptionInContext:self.context] insertIntoManagedObjectContext:self.context];
     message.id = messageID;
-    message.text = messageText;
+    
+    if ([recipient isEqual:self.currentUser]) {
+        message.text = [[CRKSigningKeyStore sharedStore] decryptWithPrivateKey:messageBody];
+    }
+    else {
+        message.encryptedText = messageBody;
+    }
+    
     message.dateSent = sentDate;
     message.sender = sender;
     message.reciever = recipient;

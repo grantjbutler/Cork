@@ -9,8 +9,15 @@
 @import Foundation;
 @import Security;
 
+@class CRKUser;
+
 @interface CRKSigningKeyStore : NSObject
 
 + (instancetype)sharedStore;
+
+- (NSData *)encryptStringWithPublicKey:(NSString *)string;
+- (NSData *)encryptString:(NSString *)string withPublicKeyOfUser:(CRKUser *)user;
+
+- (NSString *)decryptWithPrivateKey:(NSData *)dataToDecrypt;
 
 @end

@@ -13,6 +13,6 @@
 
 @interface CRKMessage : _CRKMessage <CRKMessage, JSQMessageData>
 
-+ (NSString *)messageIdentifierForSenderUUID:(NSUUID *)senderUUID recipientUUID:(NSUUID *)recipientUUID sentDate:(NSDate *)sentDate text:(NSString *)text;
++ (NSString *)messageIdentifierForSenderUUID:(NSUUID *)senderUUID recipientUUID:(NSUUID *)recipientUUID sentDate:(NSDate *)sentDate body:(NSData *)body;
 
 @end
