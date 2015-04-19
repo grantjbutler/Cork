@@ -8,8 +8,11 @@
 
 #import "CRKConversationsTableViewController.h"
 #import "CRKCoreDataHelper.h"
+
 #import "NSManagedObject+CRKAdditions.h"
+
 #import "CRKUser.h"
+#import "CRKConversation.h"
 #import "CRKConversationTableViewCell.h"
 #import <SVProgressHUD/SVProgressHUD.h>
 
@@ -29,9 +32,8 @@
     
     self.coreDataHelper = [CRKCoreDataHelper sharedHelper];
     self.managedObjectContext = self.coreDataHelper.persistenceController.managedObjectContext;
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"CRKUser"];
-    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"isContact == YES"];
-    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"displayName" ascending:YES]];
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:[CRKConversation entityName]];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"lastUpdatedDate" ascending:NO]];
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
     self.resultsDataSource = [[MDMFetchedResultsTableDataSource alloc] initWithTableView:self.tableView fetchedResultsController:self.fetchedResultsController];
     self.resultsDataSource.delegate = self;
@@ -59,26 +61,20 @@
     [SVProgressHUD showInfoWithStatus:@"UserID copied to pasteboard"];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - MDMFetchedResultsTableDataSourceDelegate
 
 - (void)dataSource:(MDMFetchedResultsTableDataSource *)dataSource configureCell:(id)cell withObject:(id)object{
-    CRKUser *user = (CRKUser *)object;
+    CRKConversation *conversation = (CRKConversation *)object;
     
     CRKConversationTableViewCell *uCell = (CRKConversationTableViewCell *)cell;
     
-    uCell.contactNameLabel.text = user.displayName;
-    
+    uCell.contactNameLabel.text = conversation.user.displayName;
 }
 
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    CRKUser *user = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    CRKConversation *conversation = [self.fetchedResultsController objectAtIndexPath:indexPath];
 }
 
 
