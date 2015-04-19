@@ -76,7 +76,7 @@
         <!--New Message-->
         <scene sceneID="ioY-NM-6eY">
             <objects>
-                <viewController title="New Message" id="Jdd-Cr-fDn" sceneMemberID="viewController">
+                <viewController title="New Message" id="Jdd-Cr-fDn" customClass="CRKComposeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jNL-uA-OxP"/>
                         <viewControllerLayoutGuide type="bottom" id="daI-YG-Xok"/>

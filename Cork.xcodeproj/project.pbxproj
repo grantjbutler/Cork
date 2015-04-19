@@ -17,6 +17,7 @@
 		4C7B68031AE3016800DA4AE5 /* CRKCoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B68021AE3016800DA4AE5 /* CRKCoreDataHelper.m */; };
 		4C8E18421AE330C900301951 /* CRKConversationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8E18411AE330C900301951 /* CRKConversationsTableViewController.m */; };
 		4C8E18481AE355A200301951 /* CRKConversationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8E18471AE355A200301951 /* CRKConversationTableViewCell.m */; };
+		4C8E184E1AE360D700301951 /* CRKComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8E184D1AE360D700301951 /* CRKComposeViewController.m */; };
 		C3D12CF21AE2CF020061C385 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12CF11AE2CF020061C385 /* main.m */; };
 		C3D12CF51AE2CF020061C385 /* CRKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12CF41AE2CF020061C385 /* CRKAppDelegate.m */; };
 		C3D12CF81AE2CF020061C385 /* CRKRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12CF71AE2CF020061C385 /* CRKRootViewController.m */; };
@@ -64,6 +65,8 @@
 		4C8E18411AE330C900301951 /* CRKConversationsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKConversationsTableViewController.m; sourceTree = "<group>"; };
 		4C8E18461AE355A200301951 /* CRKConversationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRKConversationTableViewCell.h; path = Cork/CRKConversationTableViewCell.h; sourceTree = SOURCE_ROOT; };
 		4C8E18471AE355A200301951 /* CRKConversationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CRKConversationTableViewCell.m; path = Cork/CRKConversationTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		4C8E184C1AE360D700301951 /* CRKComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKComposeViewController.h; sourceTree = "<group>"; };
+		4C8E184D1AE360D700301951 /* CRKComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKComposeViewController.m; sourceTree = "<group>"; };
 		560A0B895822B23F235EBCEC /* libPods-Cork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cork.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B652B19C4D89FEF4445EFEF /* Pods-Cork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cork.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cork/Pods-Cork.release.xcconfig"; sourceTree = "<group>"; };
 		C3D12CEC1AE2CF020061C385 /* Cork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cork.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -311,6 +314,8 @@
 		C3D12D5D1AE30A0A0061C385 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4C8E184C1AE360D700301951 /* CRKComposeViewController.h */,
+				4C8E184D1AE360D700301951 /* CRKComposeViewController.m */,
 				4C8E18401AE330C900301951 /* CRKConversationsTableViewController.h */,
 				4C8E18411AE330C900301951 /* CRKConversationsTableViewController.m */,
 				C3D12CF61AE2CF020061C385 /* CRKRootViewController.h */,
@@ -525,7 +530,6 @@
 				4C28CE921AE318F8005A79FB /* _CRKUser.m in Sources */,
 				C3FD16971AE31859003D22DD /* CRKBinaryMessageDeserializer.m in Sources */,
 				4C5B1E8D1AE2F5BE00567980 /* CRKMessage.m in Sources */,
-				4C8E18451AE349E200301951 /* CRKConversationTableViewCell.m in Sources */,
 				C3FD16AB1AE354D8003D22DD /* CRKBluetoothPeripheral.m in Sources */,
 				C3FD16911AE30E67003D22DD /* CRKBinaryMessageSerializer.m in Sources */,
 				4C7B68031AE3016800DA4AE5 /* CRKCoreDataHelper.m in Sources */,
@@ -535,6 +539,7 @@
 				4C5B1E861AE2F09600567980 /* Cork.xcdatamodeld in Sources */,
 				C3FD169B1AE31E58003D22DD /* NSManagedObject+CRKAdditions.m in Sources */,
 				C3FD16891AE30AEF003D22DD /* CRKBluetoothCentralController.m in Sources */,
+				4C8E184E1AE360D700301951 /* CRKComposeViewController.m in Sources */,
 				C3FD16941AE3105C003D22DD /* crc32.c in Sources */,
 				C3FD16A21AE33181003D22DD /* _CRKPeripheral.m in Sources */,
 				C3D12CF51AE2CF020061C385 /* CRKAppDelegate.m in Sources */,
