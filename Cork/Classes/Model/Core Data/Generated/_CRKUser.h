@@ -20,18 +20,13 @@
 @property (nonatomic, copy) NSUUID* id;
 @property (nonatomic, assign) BOOL isContact;
 
-@property (nonatomic, copy) NSSet *conversations;
+@property (nonatomic, strong) CRKConversation *conversation;
 @property (nonatomic, copy) NSSet *recievedMessages;
 @property (nonatomic, copy) NSSet *sentMessages;
 
 @end
 
 @interface _CRKUser (_CRKUserCoreDataGeneratedAccessors)
-
-- (void)addConversations:(NSSet *)objects;
-- (void)removeConversations:(NSSet *)objects;
-- (void)addConversationsObject:(CRKConversation *)object;
-- (void)removeConversationsObject:(CRKConversation *)object;
 
 - (void)addRecievedMessages:(NSSet *)objects;
 - (void)removeRecievedMessages:(NSSet *)objects;

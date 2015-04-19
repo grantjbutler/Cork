@@ -16,7 +16,7 @@
 @interface _CRKConversation : NSManagedObject
 
 @property (nonatomic, copy) NSSet *messages;
-@property (nonatomic, copy) NSSet *participants;
+@property (nonatomic, strong) CRKUser *user;
 
 @end
 
@@ -26,10 +26,5 @@
 - (void)removeMessages:(NSSet *)objects;
 - (void)addMessagesObject:(CRKMessage *)object;
 - (void)removeMessagesObject:(CRKMessage *)object;
-
-- (void)addParticipants:(NSSet *)objects;
-- (void)removeParticipants:(NSSet *)objects;
-- (void)addParticipantsObject:(CRKUser *)object;
-- (void)removeParticipantsObject:(CRKUser *)object;
 
 @end

@@ -2,7 +2,7 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14C109" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="CRKConversation" representedClassName="CRKConversation" syncable="YES">
         <relationship name="messages" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CRKMessage" inverseName="conversation" inverseEntity="CRKMessage" syncable="YES"/>
-        <relationship name="participants" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CRKUser" inverseName="conversations" inverseEntity="CRKUser" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CRKUser" inverseName="conversation" inverseEntity="CRKUser" syncable="YES"/>
     </entity>
     <entity name="CRKMessage" representedClassName="CRKMessage" syncable="YES">
         <attribute name="dateReceived" optional="YES" attributeType="Date" syncable="YES"/>
@@ -43,7 +43,7 @@
             </userInfo>
         </attribute>
         <attribute name="isContact" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
-        <relationship name="conversations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CRKConversation" inverseName="participants" inverseEntity="CRKConversation" syncable="YES"/>
+        <relationship name="conversation" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="CRKConversation" inverseName="user" inverseEntity="CRKConversation" syncable="YES"/>
         <relationship name="recievedMessages" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CRKMessage" inverseName="reciever" inverseEntity="CRKMessage" syncable="YES"/>
         <relationship name="sentMessages" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CRKMessage" inverseName="sender" inverseEntity="CRKMessage" syncable="YES"/>
         <compoundIndexes>

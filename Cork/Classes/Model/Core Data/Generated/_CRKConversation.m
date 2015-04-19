@@ -13,6 +13,6 @@
 @implementation _CRKConversation
 
 @dynamic messages;
-@dynamic participants;
+@dynamic user;
 
 @end

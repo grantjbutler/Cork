@@ -68,14 +68,6 @@
         
         [[CRKCoreDataHelper sharedHelper].persistenceController saveContextAndWait:NO completion:nil];
     }];
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Got Message" message:message.text preferredStyle:UIAlertControllerStyleAlert];
-        [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            [self.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
-        }]];
-        [self.window.rootViewController presentViewController:alertController animated:YES completion:nil];
-    });
 }
 
 - (id<CRKMessage>)controller:(CRKBluetoothCentralController *)controller messageToTransmitToPeripheral:(CBPeripheral *)peripheral {
