@@ -31,8 +31,6 @@
 		C3FD169B1AE31E58003D22DD /* NSManagedObject+CRKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FD169A1AE31E58003D22DD /* NSManagedObject+CRKAdditions.m */; };
 		C3FD169F1AE3316B003D22DD /* CRKPeripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FD169E1AE3316B003D22DD /* CRKPeripheral.m */; };
 		C3FD16A21AE33181003D22DD /* _CRKPeripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FD16A11AE33181003D22DD /* _CRKPeripheral.m */; };
-		C3FD16A51AE3481B003D22DD /* CRKPeripheralMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FD16A41AE3481B003D22DD /* CRKPeripheralMessage.m */; };
-		C3FD16A81AE34825003D22DD /* _CRKPeripheralMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FD16A71AE34825003D22DD /* _CRKPeripheralMessage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,10 +93,6 @@
 		C3FD169E1AE3316B003D22DD /* CRKPeripheral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKPeripheral.m; sourceTree = "<group>"; };
 		C3FD16A01AE33181003D22DD /* _CRKPeripheral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _CRKPeripheral.h; sourceTree = "<group>"; };
 		C3FD16A11AE33181003D22DD /* _CRKPeripheral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _CRKPeripheral.m; sourceTree = "<group>"; };
-		C3FD16A31AE3481B003D22DD /* CRKPeripheralMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKPeripheralMessage.h; sourceTree = "<group>"; };
-		C3FD16A41AE3481B003D22DD /* CRKPeripheralMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKPeripheralMessage.m; sourceTree = "<group>"; };
-		C3FD16A61AE34825003D22DD /* _CRKPeripheralMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _CRKPeripheralMessage.h; sourceTree = "<group>"; };
-		C3FD16A71AE34825003D22DD /* _CRKPeripheralMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _CRKPeripheralMessage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,8 +265,6 @@
 				4C5B1E8C1AE2F5BE00567980 /* _CRKMessage.m */,
 				C3FD16A01AE33181003D22DD /* _CRKPeripheral.h */,
 				C3FD16A11AE33181003D22DD /* _CRKPeripheral.m */,
-				C3FD16A61AE34825003D22DD /* _CRKPeripheralMessage.h */,
-				C3FD16A71AE34825003D22DD /* _CRKPeripheralMessage.m */,
 				4C28CE901AE318F8005A79FB /* _CRKUser.h */,
 				4C28CE911AE318F8005A79FB /* _CRKUser.m */,
 			);
@@ -287,8 +279,6 @@
 				4C5B1E891AE2F5BE00567980 /* CRKMessage.m */,
 				C3FD169D1AE3316B003D22DD /* CRKPeripheral.h */,
 				C3FD169E1AE3316B003D22DD /* CRKPeripheral.m */,
-				C3FD16A31AE3481B003D22DD /* CRKPeripheralMessage.h */,
-				C3FD16A41AE3481B003D22DD /* CRKPeripheralMessage.m */,
 				4C28CE8D1AE318EE005A79FB /* CRKUser.h */,
 				4C28CE8E1AE318EE005A79FB /* CRKUser.m */,
 				C3D12D5A1AE309DC0061C385 /* Generated */,
@@ -514,12 +504,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3D12CF81AE2CF020061C385 /* CRKRootViewController.m in Sources */,
-				C3FD16A51AE3481B003D22DD /* CRKPeripheralMessage.m in Sources */,
 				C3D12D501AE2F4010061C385 /* NSArray+CRKAdditions.m in Sources */,
 				C3FD168A1AE30AF2003D22DD /* CRKPeripheralController.m in Sources */,
 				4C28CE921AE318F8005A79FB /* _CRKUser.m in Sources */,
 				C3FD16971AE31859003D22DD /* CRKBinaryMessageDeserializer.m in Sources */,
-				C3FD16A81AE34825003D22DD /* _CRKPeripheralMessage.m in Sources */,
 				4C5B1E8D1AE2F5BE00567980 /* CRKMessage.m in Sources */,
 				C3FD16911AE30E67003D22DD /* CRKBinaryMessageSerializer.m in Sources */,
 				4C7B68031AE3016800DA4AE5 /* CRKCoreDataHelper.m in Sources */,
