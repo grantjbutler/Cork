@@ -31,9 +31,12 @@
             
             scanningVC.resultBlock = ^(NSString *result){
                 //TODO: handle getting a successful qr read
+                
+                [this dismissViewControllerAnimated:YES completion:nil];
             };
             scanningVC.errorBlock = ^(NSError *error){
                 NSLog(@"%@",error);
+                [this dismissViewControllerAnimated:YES completion:nil];
             };
             scanningVC.cancelBlock = ^(){
                 [this dismissViewControllerAnimated:YES completion:nil];
