@@ -16,6 +16,7 @@
 @dynamic id;
 @dynamic isContact;
 
+@dynamic conversation;
 @dynamic recievedMessages;
 @dynamic sentMessages;
 
