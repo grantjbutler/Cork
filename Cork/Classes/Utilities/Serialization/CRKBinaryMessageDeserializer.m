@@ -38,6 +38,7 @@ static NSInteger CRKBinaryMessageDeserializerUUIDLength = 16;
 - (id<CRKMessage>)messageFromSerializedData:(NSData *)data {
 	CCHBinaryDataReader *dataReader = [[CCHBinaryDataReader alloc] initWithData:data options:CCHBinaryDataReaderBigEndian];
     
+    uint8_t ttl;
     uint32_t crcHash, sentTimestamp, messageLength;
     NSString *senderID, *recipientID, *messageText;
     
@@ -51,6 +52,12 @@ static NSInteger CRKBinaryMessageDeserializerUUIDLength = 16;
     if (crc32(0, messageData.bytes, messageData.length) != crcHash) {
         return nil;
     }
+    
+    if (![dataReader canReadNumberOfBytes:sizeof(uint8_t)]) {
+        return nil;
+    }
+    
+    ttl = [dataReader readUnsignedChar];
     
     if (![dataReader canReadNumberOfBytes:CRKBinaryMessageDeserializerUUIDLength]) {
         return nil;
