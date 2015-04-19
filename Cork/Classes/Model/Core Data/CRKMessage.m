@@ -33,7 +33,7 @@
 - (void)awakeFromInsert {
     [super awakeFromInsert];
     
-    
+    self.dateReceived = [NSDate date];
 }
 
 @end
