@@ -26,6 +26,7 @@
 		C3D12D001AE2CF020061C385 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3D12CFE1AE2CF020061C385 /* LaunchScreen.xib */; };
 		C3D12D0C1AE2CF020061C385 /* CorkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12D0B1AE2CF020061C385 /* CorkTests.m */; };
 		C3D12D501AE2F4010061C385 /* NSArray+CRKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12D4F1AE2F4010061C385 /* NSArray+CRKAdditions.m */; };
+		C3E5B7441AE3E66B003D2C3E /* CRKSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E5B7431AE3E66B003D2C3E /* CRKSettingsViewController.m */; };
 		C3FD16891AE30AEF003D22DD /* CRKBluetoothCentralController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12D4B1AE2E0680061C385 /* CRKBluetoothCentralController.m */; };
 		C3FD168A1AE30AF2003D22DD /* CRKPeripheralController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12D161AE2D3880061C385 /* CRKPeripheralController.m */; };
 		C3FD16911AE30E67003D22DD /* CRKBinaryMessageSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FD16901AE30E67003D22DD /* CRKBinaryMessageSerializer.m */; };
@@ -93,6 +94,8 @@
 		C3D12D4B1AE2E0680061C385 /* CRKBluetoothCentralController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKBluetoothCentralController.m; sourceTree = "<group>"; };
 		C3D12D4E1AE2F4010061C385 /* NSArray+CRKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+CRKAdditions.h"; sourceTree = "<group>"; };
 		C3D12D4F1AE2F4010061C385 /* NSArray+CRKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+CRKAdditions.m"; sourceTree = "<group>"; };
+		C3E5B7421AE3E66B003D2C3E /* CRKSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKSettingsViewController.h; sourceTree = "<group>"; };
+		C3E5B7431AE3E66B003D2C3E /* CRKSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKSettingsViewController.m; sourceTree = "<group>"; };
 		C3FD168C1AE30DC0003D22DD /* CRKMessageSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKMessageSerializer.h; sourceTree = "<group>"; };
 		C3FD168D1AE30DFC003D22DD /* CRKMessageDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKMessageDeserializer.h; sourceTree = "<group>"; };
 		C3FD168F1AE30E67003D22DD /* CRKBinaryMessageSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKBinaryMessageSerializer.h; sourceTree = "<group>"; };
@@ -344,6 +347,8 @@
 				C3D12CF71AE2CF020061C385 /* CRKRootViewController.m */,
 				C3FD16B21AE3A564003D22DD /* CRKConversationViewController.h */,
 				C3FD16B31AE3A564003D22DD /* CRKConversationViewController.m */,
+				C3E5B7421AE3E66B003D2C3E /* CRKSettingsViewController.h */,
+				C3E5B7431AE3E66B003D2C3E /* CRKSettingsViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -579,6 +584,7 @@
 				4C8E184E1AE360D700301951 /* CRKComposeViewController.m in Sources */,
 				C3FD16941AE3105C003D22DD /* crc32.c in Sources */,
 				C3FD16A21AE33181003D22DD /* _CRKPeripheral.m in Sources */,
+				C3E5B7441AE3E66B003D2C3E /* CRKSettingsViewController.m in Sources */,
 				C3D12CF51AE2CF020061C385 /* CRKAppDelegate.m in Sources */,
 				C3FD16B71AE3CC28003D22DD /* CRKSigningKeyStore.m in Sources */,
 				C3D12CF21AE2CF020061C385 /* main.m in Sources */,
@@ -712,6 +718,8 @@
 			baseConfigurationReference = 0583C7E99BC856D27BFB4D3C /* Pods-Cork.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Cork/Supporting Files/Info.plist";
@@ -727,6 +735,8 @@
 			baseConfigurationReference = 8B652B19C4D89FEF4445EFEF /* Pods-Cork.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Cork/Supporting Files/Info.plist";
