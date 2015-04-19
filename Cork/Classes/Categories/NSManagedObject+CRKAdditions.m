@@ -16,12 +16,16 @@ static NSString * CRKNSManagedObjectIdentifierKeyPathKey = @"identifierKeyPath";
     return NSStringFromClass(self);
 }
 
++ (NSEntityDescription *)entityDescriptionInContext:(NSManagedObjectContext *)context {
+    return [NSEntityDescription entityForName:[self entityName] inManagedObjectContext:context];
+}
+
 + (NSString *)identifierKeyPathInContext:(NSManagedObjectContext *)context {
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:[self entityName] inManagedObjectContext:context];
+    NSEntityDescription *entityDescription = [self entityDescriptionInContext:context];
     return entityDescription.userInfo[CRKNSManagedObjectIdentifierKeyPathKey];
 }
 
-+ (instancetype)uniqueObjectWithIdentifier:(id)identifier inContext:(NSManagedObjectContext *)context {
++ (instancetype)existingObjectWithIdentifier:(id)identifier inContext:(NSManagedObjectContext *)context {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:[self entityName]];
     fetchRequest.predicate = [NSPredicate predicateWithFormat:@"%K == %@", [self identifierKeyPathInContext:context], identifier];
     fetchRequest.fetchLimit = 1;
@@ -35,6 +39,15 @@ static NSString * CRKNSManagedObjectIdentifierKeyPathKey = @"identifierKeyPath";
     }
     
     return results.firstObject;
+}
+
++ (instancetype)uniqueObjectWithIdentifier:(id)identifier inContext:(NSManagedObjectContext *)context {
+    NSManagedObject *object = [self existingObjectWithIdentifier:identifier inContext:context];
+    if (!object) {
+        object = [[self alloc] initWithEntity:[self entityDescriptionInContext:context] insertIntoManagedObjectContext:context];
+    }
+    
+    return object;
 }
 
 @end
