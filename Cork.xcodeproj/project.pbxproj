@@ -37,6 +37,7 @@
 		C3FD16AB1AE354D8003D22DD /* CRKBluetoothPeripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FD16AA1AE354D8003D22DD /* CRKBluetoothPeripheral.m */; };
 		C3FD16AE1AE39474003D22DD /* CRKConversation.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FD16AD1AE39474003D22DD /* CRKConversation.m */; };
 		C3FD16B11AE3947A003D22DD /* _CRKConversation.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FD16B01AE3947A003D22DD /* _CRKConversation.m */; };
+		C3FD16B41AE3A564003D22DD /* CRKConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FD16B31AE3A564003D22DD /* CRKConversationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,8 @@
 		C3FD16AD1AE39474003D22DD /* CRKConversation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKConversation.m; sourceTree = "<group>"; };
 		C3FD16AF1AE3947A003D22DD /* _CRKConversation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _CRKConversation.h; sourceTree = "<group>"; };
 		C3FD16B01AE3947A003D22DD /* _CRKConversation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _CRKConversation.m; sourceTree = "<group>"; };
+		C3FD16B21AE3A564003D22DD /* CRKConversationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKConversationViewController.h; sourceTree = "<group>"; };
+		C3FD16B31AE3A564003D22DD /* CRKConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKConversationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +333,8 @@
 				4C8E18411AE330C900301951 /* CRKConversationsTableViewController.m */,
 				C3D12CF61AE2CF020061C385 /* CRKRootViewController.h */,
 				C3D12CF71AE2CF020061C385 /* CRKRootViewController.m */,
+				C3FD16B21AE3A564003D22DD /* CRKConversationViewController.h */,
+				C3FD16B31AE3A564003D22DD /* CRKConversationViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -558,6 +563,7 @@
 				C3D12CF51AE2CF020061C385 /* CRKAppDelegate.m in Sources */,
 				C3D12CF21AE2CF020061C385 /* main.m in Sources */,
 				4C28CE8F1AE318EE005A79FB /* CRKUser.m in Sources */,
+				C3FD16B41AE3A564003D22DD /* CRKConversationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

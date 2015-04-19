@@ -9,6 +9,7 @@ target 'Cork' do
     pod 'NSHash'
     pod 'SVProgressHud'
     pod 'JVFloatLabeledTextField'
+    pod 'JSQMessagesViewController'
 end
 
 target 'CorkTests' do
