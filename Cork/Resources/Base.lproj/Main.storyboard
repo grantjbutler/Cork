@@ -84,7 +84,27 @@
                     <view key="view" contentMode="scaleToFill" id="aeL-ha-Pqn">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UserID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E71-s9-gAf" customClass="JVFloatLabeledTextField">
+                                <rect key="frame" x="16" y="98" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="94Z-Q6-e4D">
+                                <rect key="frame" x="16" y="136" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="E71-s9-gAf" firstAttribute="top" secondItem="jNL-uA-OxP" secondAttribute="bottom" constant="34" id="EQR-bW-vAe"/>
+                            <constraint firstItem="E71-s9-gAf" firstAttribute="leading" secondItem="aeL-ha-Pqn" secondAttribute="leadingMargin" id="IrY-os-6Mr"/>
+                            <constraint firstItem="E71-s9-gAf" firstAttribute="trailing" secondItem="aeL-ha-Pqn" secondAttribute="trailingMargin" id="Pop-s3-JeR"/>
+                            <constraint firstItem="94Z-Q6-e4D" firstAttribute="trailing" secondItem="E71-s9-gAf" secondAttribute="trailing" id="TeN-br-YU9"/>
+                            <constraint firstItem="94Z-Q6-e4D" firstAttribute="top" secondItem="E71-s9-gAf" secondAttribute="bottom" constant="8" id="eag-Q5-52Z"/>
+                            <constraint firstItem="94Z-Q6-e4D" firstAttribute="leading" secondItem="E71-s9-gAf" secondAttribute="leading" id="mkF-SH-QWN"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SUk-5j-9Gh" userLabel="First Responder" sceneMemberID="firstResponder"/>
