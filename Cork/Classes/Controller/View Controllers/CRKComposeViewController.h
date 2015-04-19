@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MDMCoreData/MDMFetchedResultsTableDataSource.h>
 
-@interface CRKComposeViewController : UIViewController
+@interface CRKComposeViewController : UIViewController <MDMFetchedResultsTableDataSourceDelegate, UITableViewDelegate>
 
 @end

@@ -67,43 +67,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UserID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E71-s9-gAf" customClass="JVFloatLabeledTextField">
-                                <rect key="frame" x="16" y="98" width="568" height="30"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Joo-hZ-80q">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="510"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="Yfr-9m-M44" style="IBUITableViewCellStyleDefault" id="3p6-6v-8kT">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3p6-6v-8kT" id="OZ5-Hs-PVv">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yfr-9m-M44">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Message" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WqI-Gw-HDI" customClass="JVFloatLabeledTextField">
+                                <rect key="frame" x="16" y="518" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="94Z-Q6-e4D" customClass="JVFloatLabeledTextField">
-                                <rect key="frame" x="16" y="136" width="568" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AeL-u4-SdF">
-                                <rect key="frame" x="277" y="182" width="46" height="30"/>
-                                <state key="normal" title="Send">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="send:" destination="Jdd-Cr-fDn" eventType="touchUpInside" id="x0Y-wn-bir"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="94Z-Q6-e4D" firstAttribute="centerX" secondItem="AeL-u4-SdF" secondAttribute="centerX" id="D6j-cz-da6"/>
-                            <constraint firstItem="E71-s9-gAf" firstAttribute="top" secondItem="jNL-uA-OxP" secondAttribute="bottom" constant="34" id="EQR-bW-vAe"/>
-                            <constraint firstItem="E71-s9-gAf" firstAttribute="leading" secondItem="aeL-ha-Pqn" secondAttribute="leadingMargin" id="IrY-os-6Mr"/>
-                            <constraint firstItem="AeL-u4-SdF" firstAttribute="top" secondItem="94Z-Q6-e4D" secondAttribute="bottom" constant="16" id="MyN-0Q-Lwk"/>
-                            <constraint firstItem="E71-s9-gAf" firstAttribute="trailing" secondItem="aeL-ha-Pqn" secondAttribute="trailingMargin" id="Pop-s3-JeR"/>
-                            <constraint firstItem="94Z-Q6-e4D" firstAttribute="trailing" secondItem="E71-s9-gAf" secondAttribute="trailing" id="TeN-br-YU9"/>
-                            <constraint firstItem="94Z-Q6-e4D" firstAttribute="top" secondItem="E71-s9-gAf" secondAttribute="bottom" constant="8" id="eag-Q5-52Z"/>
-                            <constraint firstItem="94Z-Q6-e4D" firstAttribute="leading" secondItem="E71-s9-gAf" secondAttribute="leading" id="mkF-SH-QWN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Joo-hZ-80q" secondAttribute="trailing" constant="-16" id="860-UB-GJX"/>
+                            <constraint firstItem="daI-YG-Xok" firstAttribute="top" secondItem="WqI-Gw-HDI" secondAttribute="bottom" constant="8" id="AI8-di-OAO"/>
+                            <constraint firstItem="Joo-hZ-80q" firstAttribute="leading" secondItem="aeL-ha-Pqn" secondAttribute="leadingMargin" constant="-16" id="KIK-rU-Rbc"/>
+                            <constraint firstItem="Joo-hZ-80q" firstAttribute="top" secondItem="jNL-uA-OxP" secondAttribute="bottom" constant="-64" id="NLw-nM-hrA"/>
+                            <constraint firstItem="Joo-hZ-80q" firstAttribute="top" secondItem="jNL-uA-OxP" secondAttribute="bottom" constant="-64" id="Riv-de-BYg"/>
+                            <constraint firstAttribute="centerX" secondItem="WqI-Gw-HDI" secondAttribute="centerX" id="WqP-1d-4k2"/>
+                            <constraint firstItem="WqI-Gw-HDI" firstAttribute="leading" secondItem="aeL-ha-Pqn" secondAttribute="leadingMargin" id="lPI-HK-l3O"/>
+                            <constraint firstItem="WqI-Gw-HDI" firstAttribute="top" secondItem="Joo-hZ-80q" secondAttribute="bottom" constant="8" id="mfb-0D-cPK"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Riv-de-BYg"/>
+                            </mask>
+                        </variation>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="messageTextField" destination="94Z-Q6-e4D" id="Vf3-Hj-Cog"/>
-                        <outlet property="userIDTextField" destination="E71-s9-gAf" id="EBM-XL-LdV"/>
+                        <outlet property="bottomConstraint" destination="AI8-di-OAO" id="4cU-6L-sac"/>
+                        <outlet property="contactsTableView" destination="Joo-hZ-80q" id="vJk-Hk-D5j"/>
+                        <outlet property="messageTextField" destination="WqI-Gw-HDI" id="kiX-HF-ZZo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SUk-5j-9Gh" userLabel="First Responder" sceneMemberID="firstResponder"/>
