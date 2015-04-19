@@ -10,9 +10,10 @@
 
 @protocol CRKMessage <NSObject>
 
-@property (nonatomic) NSUUID *sender;
-@property (nonatomic) NSUUID *recipient;
-@property (nonatomic) NSString *message;
+@property (nonatomic) NSUUID *senderUUID;
+@property (nonatomic) NSUUID *recipientUUID;
+@property (nonatomic) NSString *text;
 @property (nonatomic) NSDate *dateSent;
+@property (nonatomic) uint16_t timeToLive;
 
 @end

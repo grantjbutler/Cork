@@ -1,25 +1,57 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D131" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Message" representedClassName="CRKMessage" syncable="YES">
-        <attribute name="messageID" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="messageText" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="sentDate" optional="YES" attributeType="Date" syncable="YES"/>
-        <relationship name="reciever" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="recievedMessages" inverseEntity="User" syncable="YES"/>
-        <relationship name="sender" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="sentMessages" inverseEntity="User" syncable="YES"/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14C109" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="CRKMessage" representedClassName="CRKMessage" syncable="YES">
+        <attribute name="dateReceived" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateSent" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timeToLive" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="peripherals" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CRKPeripheral" inverseName="messages" inverseEntity="CRKPeripheral" syncable="YES"/>
+        <relationship name="reciever" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CRKUser" inverseName="recievedMessages" inverseEntity="CRKUser" syncable="YES"/>
+        <relationship name="sender" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CRKUser" inverseName="sentMessages" inverseEntity="CRKUser" syncable="YES"/>
+        <compoundIndexes>
+            <compoundIndex>
+                <index value="id"/>
+            </compoundIndex>
+        </compoundIndexes>
+        <userInfo>
+            <entry key="identifierKeyPath" value="id"/>
+        </userInfo>
     </entity>
-    <entity name="User" representedClassName="CRKUser" syncable="YES">
+    <entity name="CRKPeripheral" representedClassName="CRKPeripheral" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="messages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CRKMessage" inverseName="peripherals" inverseEntity="CRKMessage" syncable="YES"/>
+        <compoundIndexes>
+            <compoundIndex>
+                <index value="id"/>
+            </compoundIndex>
+        </compoundIndexes>
+        <userInfo>
+            <entry key="identifierKeyPath" value="id"/>
+        </userInfo>
+    </entity>
+    <entity name="CRKUser" representedClassName="CRKUser" syncable="YES">
         <attribute name="displayName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="isContact" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
-        <attribute name="userID" optional="YES" attributeType="Transformable" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Transformable" syncable="YES">
             <userInfo>
                 <entry key="attributeValueClassName" value="NSUUID"/>
             </userInfo>
         </attribute>
-        <relationship name="recievedMessages" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Message" inverseName="reciever" inverseEntity="Message" syncable="YES"/>
-        <relationship name="sentMessages" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Message" inverseName="sender" inverseEntity="Message" syncable="YES"/>
+        <relationship name="recievedMessages" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CRKMessage" inverseName="reciever" inverseEntity="CRKMessage" syncable="YES"/>
+        <relationship name="sentMessages" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CRKMessage" inverseName="sender" inverseEntity="CRKMessage" syncable="YES"/>
+        <compoundIndexes>
+            <compoundIndex>
+                <index value="id"/>
+            </compoundIndex>
+        </compoundIndexes>
+        <userInfo>
+            <entry key="identifierKeyPath" value="id"/>
+        </userInfo>
     </entity>
     <elements>
-        <element name="Message" positionX="-45" positionY="-18" width="128" height="118"/>
-        <element name="User" positionX="196" positionY="21" width="128" height="118"/>
+        <element name="CRKMessage" positionX="-45" positionY="-18" width="128" height="165"/>
+        <element name="CRKUser" positionX="196" positionY="21" width="128" height="90"/>
+        <element name="CRKPeripheral" positionX="72" positionY="45" width="128" height="75"/>
     </elements>
 </model>

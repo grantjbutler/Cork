@@ -8,11 +8,35 @@
 
 #import "CRKMessage.h"
 
+#import "CRKUser.h"
+
+#import "NSManagedObject+CRKAdditions.h"
+
+static const uint16_t CRKMessageDefaultTimeToLive = 5;
+
 @implementation CRKMessage
 
-@synthesize sender;
-@synthesize recipient;
-@synthesize dateSent;
-@synthesize message;
+- (void)setSenderUUID:(NSUUID *)senderUUID {
+    self.sender = [CRKUser uniqueObjectWithIdentifier:senderUUID inContext:self.managedObjectContext];
+}
+
+- (NSUUID *)senderUUID {
+    return self.sender.id;
+}
+
+- (void)setRecipientUUID:(NSUUID *)recipientUUID {
+    self.reciever = [CRKUser uniqueObjectWithIdentifier:recipientUUID inContext:self.managedObjectContext];
+}
+
+- (NSUUID *)recipientUUID {
+    return self.reciever.id;
+}
+
+- (void)awakeFromInsert {
+    [super awakeFromInsert];
+    
+    self.dateReceived = [NSDate date];
+    self.timeToLive = CRKMessageDefaultTimeToLive;
+}
 
 @end

@@ -13,17 +13,19 @@
 @implementation CRKBinaryMessageSerializer
 
 // Format:
-// [ crc32 ][  sender  ][ recipient ][ date-sent ][ message-length ][ message ]
-//  4 bytes   16 bytes     16 bytes     4 bytes        4 bytes        variable
+// [ crc32 ][ ttl ][  sender  ][ recipient ][ date-sent ][ message-length ][ message ]
+//  4 bytes  2 byte  16 bytes     16 bytes     4 bytes        4 bytes        variable
 
 - (NSData *)serializedDataForMessage:(id<CRKMessage>)message {
     NSMutableData *serializedData = [NSMutableData data];
     
-    NSString *senderString = message.sender.UUIDString;
-    NSString *recipientString = message.recipient.UUIDString;
+    uint16_t ttl = CFSwapInt16HostToBig(message.timeToLive);
+    NSString *senderString = message.senderUUID.UUIDString;
+    NSString *recipientString = message.recipientUUID.UUIDString;
     uint32_t sentTimestamp = CFSwapInt32HostToBig(floor([message.dateSent timeIntervalSince1970]));
-    NSString *messageText = message.message;
+    NSString *messageText = message.text;
     
+    [serializedData appendBytes:&ttl length:sizeof(ttl)];
     [serializedData appendData:[senderString dataUsingEncoding:NSUTF8StringEncoding]];
     [serializedData appendData:[recipientString dataUsingEncoding:NSUTF8StringEncoding]];
     [serializedData appendBytes:&sentTimestamp length:sizeof(sentTimestamp)];

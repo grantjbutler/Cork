@@ -10,20 +10,29 @@
 
 #import <CoreData/CoreData.h>
 
+@class CRKPeripheral;
 @class CRKUser;
 @class CRKUser;
 
 @interface _CRKMessage : NSManagedObject
 
-@property (nonatomic, copy) NSString* messageID;
-@property (nonatomic, copy) NSString* messageText;
-@property (nonatomic, copy) NSDate* sentDate;
+@property (nonatomic, copy) NSDate* dateReceived;
+@property (nonatomic, copy) NSDate* dateSent;
+@property (nonatomic, copy) NSString* id;
+@property (nonatomic, copy) NSString* text;
+@property (nonatomic, assign) int16_t timeToLive;
 
+@property (nonatomic, copy) NSSet *peripherals;
 @property (nonatomic, strong) CRKUser *reciever;
 @property (nonatomic, strong) CRKUser *sender;
 
 @end
 
 @interface _CRKMessage (_CRKMessageCoreDataGeneratedAccessors)
+
+- (void)addPeripherals:(NSSet *)objects;
+- (void)removePeripherals:(NSSet *)objects;
+- (void)addPeripheralsObject:(CRKPeripheral *)object;
+- (void)removePeripheralsObject:(CRKPeripheral *)object;
 
 @end
