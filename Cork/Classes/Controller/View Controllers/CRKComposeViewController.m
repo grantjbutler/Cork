@@ -98,6 +98,10 @@
                 NSLog(@"%@",error);
             }
         }];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self dismiss:nil];
+        });
+        
     }];
 }
 //- (IBAction)send:(id)button {
@@ -135,6 +139,9 @@
 //        }];
 //    }];
 //}
+- (IBAction)dismiss:(id)sender {
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (NSFetchedResultsController *)fetchedResultsController{
     if (!_fetchedResultsController) {
