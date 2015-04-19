@@ -18,6 +18,7 @@
 @dynamic text;
 @dynamic timeToLive;
 
+@dynamic conversation;
 @dynamic peripherals;
 @dynamic reciever;
 @dynamic sender;

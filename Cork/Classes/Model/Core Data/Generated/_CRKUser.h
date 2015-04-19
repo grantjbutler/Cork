@@ -10,6 +10,7 @@
 
 #import <CoreData/CoreData.h>
 
+@class CRKConversation;
 @class CRKMessage;
 @class CRKMessage;
 
@@ -19,6 +20,7 @@
 @property (nonatomic, copy) NSUUID* id;
 @property (nonatomic, assign) BOOL isContact;
 
+@property (nonatomic, strong) CRKConversation *conversation;
 @property (nonatomic, copy) NSSet *recievedMessages;
 @property (nonatomic, copy) NSSet *sentMessages;
 

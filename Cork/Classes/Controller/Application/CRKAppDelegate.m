@@ -20,6 +20,7 @@
 #import "CRKUser.h"
 #import "CRKMessage.h"
 #import "CRKPeripheral.h"
+#import "CRKConversation.h"
 
 #import "NSManagedObject+CRKAdditions.h"
 
@@ -60,6 +61,13 @@
 - (void)controller:(CRKPeripheralController *)controller didReceiveMessage:(id<CRKMessage>)message {
     CRKMessage *coreDataMessage = message;
     NSManagedObjectContext *context = coreDataMessage.managedObjectContext;
+    
+    if ([coreDataMessage.reciever isEqual:[CRKUser currentUserInContext:context]]) {
+        CRKConversation *conversation = [CRKConversation conversationWithUser:coreDataMessage.sender inContext:context];
+        [conversation addMessagesObject:coreDataMessage];
+        conversation.lastUpdatedDate = coreDataMessage.dateSent;
+    }
+    
     [context performBlock:^{
         NSError *saveError;
         if (![context save:&saveError]) {
@@ -87,6 +95,7 @@
     
     
     [[UIApplication sharedApplication] scheduleLocalNotification:localNote];
+
 }
 
 - (id<CRKMessage>)controller:(CRKBluetoothCentralController *)controller messageToTransmitToPeripheral:(CBPeripheral *)peripheral {
