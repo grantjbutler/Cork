@@ -29,13 +29,7 @@
     self.coreDataHelper = [CRKCoreDataHelper sharedHelper];
     self.managedObjectContext = self.coreDataHelper.persistenceController.managedObjectContext;
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"CRKUser"];
-    fetchRequest.predicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
-        CRKUser *user = (CRKUser *)evaluatedObject;
-        if (user.isContact){
-            return YES;
-        }
-        return NO;
-    }];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"isContact == YES"];
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
     self.resultsDataSource = [[MDMFetchedResultsTableDataSource alloc] initWithTableView:self.tableView fetchedResultsController:self.fetchedResultsController];
     self.resultsDataSource.delegate = self;
