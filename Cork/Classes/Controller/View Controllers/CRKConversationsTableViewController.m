@@ -19,6 +19,8 @@
 
 #import <SVProgressHUD/SVProgressHUD.h>
 
+#import "CRKSettingsViewController.h"
+
 @interface CRKConversationsTableViewController ()
 
 @property CRKCoreDataHelper *coreDataHelper;
@@ -78,10 +80,12 @@
 }
                                               
 - (void)userIDBarButtonPressed{
-    NSUUID *uuid = [CRKUser currentUserID];
-    
-    [[UIPasteboard generalPasteboard] setString:uuid.UUIDString];
-    [SVProgressHUD showInfoWithStatus:@"UserID copied to pasteboard"];
+//    NSUUID *uuid = [CRKUser currentUserID];
+//    
+//    [[UIPasteboard generalPasteboard] setString:uuid.UUIDString];
+//    [SVProgressHUD showInfoWithStatus:@"UserID copied to pasteboard"];
+    CRKSettingsViewController *settingsVC = [[CRKSettingsViewController alloc] init];
+    [self showViewController:settingsVC sender:nil];
 }
 
 #pragma mark - MDMFetchedResultsTableDataSourceDelegate
