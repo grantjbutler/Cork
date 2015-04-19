@@ -50,6 +50,26 @@
     
     
     self.navigationItem.leftBarButtonItem = myUserIDBarButtonItem;
+    
+    NSManagedObjectContext *context = [[[CRKCoreDataHelper sharedHelper] persistenceController] newPrivateChildManagedObjectContext];
+    //TODO: Remove block since it's just for testing.
+    for (int i = 0; i < 20; i++) {
+        NSLog(@"%i",i);
+        NSUUID *uuid = [NSUUID UUID];
+        CRKUser *user = [CRKUser uniqueObjectWithIdentifier:uuid inContext:context];
+        user.isContact = YES;
+        user.displayName = uuid.UUIDString;
+        NSLog(@"%@",user.displayName);
+    }
+    [context performBlock:^{
+        NSError *error;
+        [context save:&error];
+        if (error){
+            NSLog(@"%@",error);
+        }
+    }];
+    
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     

@@ -10,6 +10,7 @@ target 'Cork' do
     pod 'SVProgressHud'
     pod 'JVFloatLabeledTextField'
     pod 'JSQMessagesViewController'
+    pod 'TITokenField'
 end
 
 target 'CorkTests' do

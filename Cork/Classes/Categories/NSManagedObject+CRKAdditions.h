@@ -1,3 +1,4 @@
+
 //
 //  NSManagedObject+CRKAdditions.h
 //  Cork
