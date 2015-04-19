@@ -14,4 +14,6 @@
 
 @dynamic id;
 
+@dynamic peripheralMessages;
+
 @end
