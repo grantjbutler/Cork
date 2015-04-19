@@ -17,6 +17,8 @@
 #import "NSManagedObject+CRKAdditions.h"
 
 #import <JSQMessagesViewController/JSQSystemSoundPlayer+JSQMessages.h>
+#import <JSQMessagesViewController/JSQMessagesBubbleImageFactory.h>
+#import <JSQMessagesViewController/UIColor+JSQMessages.h>
 
 @interface CRKConversationViewController () <NSFetchedResultsControllerDelegate>
 
@@ -25,6 +27,9 @@
 
 @property (nonatomic) NSMutableDictionary *objectChanges;
 @property (nonatomic) NSMutableDictionary *sectionChanges;
+
+@property (nonatomic) JSQMessagesBubbleImage *outgoingBubbleImageData;
+@property (nonatomic) JSQMessagesBubbleImage *incomingBubbleImageData;
 
 @end
 
@@ -66,6 +71,11 @@
     self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero;
     
     self.inputToolbar.contentView.leftBarButtonItem = nil;
+    
+    JSQMessagesBubbleImageFactory *bubbleFactory = [[JSQMessagesBubbleImageFactory alloc] init];
+        
+    self.outgoingBubbleImageData = [bubbleFactory outgoingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleLightGrayColor]];
+    self.incomingBubbleImageData = [bubbleFactory incomingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleGreenColor]];
 }
 
 - (void)didPressSendButton:(UIButton *)button withMessageText:(NSString *)text senderId:(NSString *)senderId senderDisplayName:(NSString *)senderDisplayName date:(NSDate *)date {
@@ -96,6 +106,7 @@
         [[CRKCoreDataHelper sharedHelper].persistenceController saveContextAndWait:YES completion:nil];
     }];
     
+    [self.fetchedResultsController performFetch:nil];
     [self finishSendingMessageAnimated:YES];
 }
 
@@ -107,16 +118,37 @@
     return self.fetchedResultsController.fetchedObjects.count;
 }
 
-//- (UICollectionViewCell *)collectionView:(JSQMessagesCollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-//    JSQMessagesCollectionViewCell *cell = (JSQMessagesCollectionViewCell *)[super collectionView:collectionView cellForItemAtIndexPath:indexPath];
-//    
-//    CRKMessage *message = self.fetchedResultsController.fetchedObjects[indexPath.row];
-//    
-//    return cell;
-//}
+- (UICollectionViewCell *)collectionView:(JSQMessagesCollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    JSQMessagesCollectionViewCell *cell = (JSQMessagesCollectionViewCell *)[super collectionView:collectionView cellForItemAtIndexPath:indexPath];
+    
+    CRKMessage *message = self.fetchedResultsController.fetchedObjects[indexPath.row];
+    
+    if ([message.sender.id.UUIDString isEqualToString:self.senderId]) {
+        cell.textView.textColor = [UIColor blackColor];
+    }
+    else {
+        cell.textView.textColor = [UIColor whiteColor];
+    }
+        
+    return cell;
+}
 
-- (id<JSQMessageBubbleImageDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView messageBubbleImageDataForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return nil;
+- (id<JSQMessageBubbleImageDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView messageBubbleImageDataForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    /**
+     *  You may return nil here if you do not want bubbles.
+     *  In this case, you should set the background color of your collection view cell's textView.
+     *
+     *  Otherwise, return your previously created bubble image data objects.
+     */
+    
+    CRKMessage *message = self.fetchedResultsController.fetchedObjects[indexPath.item];
+    
+    if ([message.sender.id.UUIDString isEqualToString:self.senderId]) {
+        return self.outgoingBubbleImageData;
+    }
+    
+    return self.incomingBubbleImageData;
 }
 
 - (id<JSQMessageAvatarImageDataSource>)collectionView:(JSQMessagesCollectionView *)collectionView avatarImageDataForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -261,7 +293,9 @@
         for (NSArray *paths in moveItems) {
             [collectionView moveItemAtIndexPath:paths[0] toIndexPath:paths[1]];
         }
-    } completion:nil];
+    } completion:^(BOOL finished) {
+        [self scrollToBottomAnimated:YES];
+    }];
     
     self.objectChanges = nil;
     self.sectionChanges = nil;
