@@ -14,6 +14,7 @@ target 'Cork' do
     pod 'EncryptedCoreData', :git => 'https://github.com/project-imas/encrypted-core-data.git'
     pod 'JRSwizzle'
     pod 'JMStaticContentTableViewController'
+    pod 'CDZQRScanningViewController'
 end
 
 target 'CorkTests' do
