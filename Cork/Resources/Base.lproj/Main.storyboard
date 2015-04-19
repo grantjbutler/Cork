@@ -61,11 +61,35 @@
                             <outlet property="delegate" destination="juk-Mk-UG7" id="419-sP-ReP"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="xdG-Ef-Won"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="xdG-Ef-Won">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="TeK-dm-NVS">
+                            <connections>
+                                <segue destination="Jdd-Cr-fDn" kind="show" id="WzF-yS-dqo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tZj-et-tpe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="907" y="-218"/>
+        </scene>
+        <!--New Message-->
+        <scene sceneID="ioY-NM-6eY">
+            <objects>
+                <viewController title="New Message" id="Jdd-Cr-fDn" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jNL-uA-OxP"/>
+                        <viewControllerLayoutGuide type="bottom" id="daI-YG-Xok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aeL-ha-Pqn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SUk-5j-9Gh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1714" y="-218"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eCs-Wb-X9f">
