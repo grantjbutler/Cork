@@ -8,6 +8,22 @@
         <attribute name="timeToLive" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="reciever" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CRKUser" inverseName="recievedMessages" inverseEntity="CRKUser" syncable="YES"/>
         <relationship name="sender" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CRKUser" inverseName="sentMessages" inverseEntity="CRKUser" syncable="YES"/>
+        <compoundIndexes>
+            <compoundIndex>
+                <index value="id"/>
+            </compoundIndex>
+        </compoundIndexes>
+        <userInfo>
+            <entry key="identifierKeyPath" value="id"/>
+        </userInfo>
+    </entity>
+    <entity name="CRKPeripheral" representedClassName="CRKPeripheral" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <compoundIndexes>
+            <compoundIndex>
+                <index value="id"/>
+            </compoundIndex>
+        </compoundIndexes>
         <userInfo>
             <entry key="identifierKeyPath" value="id"/>
         </userInfo>
@@ -20,6 +36,11 @@
         </attribute>
         <relationship name="recievedMessages" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CRKMessage" inverseName="reciever" inverseEntity="CRKMessage" syncable="YES"/>
         <relationship name="sentMessages" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CRKMessage" inverseName="sender" inverseEntity="CRKMessage" syncable="YES"/>
+        <compoundIndexes>
+            <compoundIndex>
+                <index value="id"/>
+            </compoundIndex>
+        </compoundIndexes>
         <userInfo>
             <entry key="identifierKeyPath" value="id"/>
         </userInfo>
@@ -27,5 +48,6 @@
     <elements>
         <element name="CRKMessage" positionX="-45" positionY="-18" width="128" height="150"/>
         <element name="CRKUser" positionX="196" positionY="21" width="128" height="90"/>
+        <element name="CRKPeripheral" positionX="72" positionY="45" width="128" height="60"/>
     </elements>
 </model>
