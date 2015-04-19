@@ -12,6 +12,12 @@
 #define COCOAPODS_VERSION_MINOR_CCHBinaryData 0
 #define COCOAPODS_VERSION_PATCH_CCHBinaryData 1
 
+// CDZQRScanningViewController
+#define COCOAPODS_POD_AVAILABLE_CDZQRScanningViewController
+#define COCOAPODS_VERSION_MAJOR_CDZQRScanningViewController 1
+#define COCOAPODS_VERSION_MINOR_CDZQRScanningViewController 0
+#define COCOAPODS_VERSION_PATCH_CDZQRScanningViewController 7
+
 // CocoaLumberjack
 #define COCOAPODS_POD_AVAILABLE_CocoaLumberjack
 #define COCOAPODS_VERSION_MAJOR_CocoaLumberjack 2

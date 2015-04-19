@@ -7,12 +7,15 @@
 //
 
 #import "CRKSettingsViewController.h"
+#import <CDZQRScanningViewController/CDZQRScanningViewController.h>
 
 #import "CRKQRCardViewController.h"
 
 #import "CRKUser.h"
 
 #import "CRKCoreDataHelper.h"
+#import "CRKContactSerialization.h"
+
 
 @implementation CRKSettingsViewController
 
@@ -28,7 +31,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    __weak typeof(self) this = self;
+    [self addSection:^(JMStaticContentTableViewSection *section, NSUInteger sectionIndex) {
+        [section addCell:^(JMStaticContentTableViewCell *staticContentCell, UITableViewCell *cell, NSIndexPath *indexPath) {
+            /**
+             *  TODO: textfield
+             */
+        }];
+    }];
     [self addSection:^(JMStaticContentTableViewSection *section, NSUInteger sectionIndex) {
         [section addCell:^(JMStaticContentTableViewCell *staticContentCell, UITableViewCell *cell, NSIndexPath *indexPath) {
             cell.textLabel.text = NSLocalizedString(@"Share Contact Info", nil);
@@ -46,7 +56,29 @@
         [section addCell:^(JMStaticContentTableViewCell *staticContentCell, UITableViewCell *cell, NSIndexPath *indexPath) {
             cell.textLabel.text = NSLocalizedString(@"Add Contact", nil);
         } whenSelected:^(NSIndexPath *indexPath) {
-            // TODO: Show QR Code Scanner
+            CDZQRScanningViewController *scanningVC = [[CDZQRScanningViewController alloc] init];
+            UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:scanningVC];
+            
+            scanningVC.resultBlock = ^(NSString *result){
+                //TODO: handle getting a successful qr read
+                NSData *contactData = [result dataUsingEncoding:NSUTF8StringEncoding];
+                NSManagedObjectContext *context = [CRKCoreDataHelper sharedHelper].persistenceController.newPrivateChildManagedObjectContext;
+                CRKUser *user = [CRKContactSerialization userForContactData:contactData inContext:context];
+                [context performBlock:^{
+                    [context save:nil];
+                    [[CRKCoreDataHelper sharedHelper].persistenceController saveContextAndWait:NO completion:nil];
+                }];
+                [this dismissViewControllerAnimated:YES completion:nil];
+            };
+            scanningVC.errorBlock = ^(NSError *error){
+                NSLog(@"%@",error);
+                [this dismissViewControllerAnimated:YES completion:nil];
+            };
+            scanningVC.cancelBlock = ^(){
+                [this dismissViewControllerAnimated:YES completion:nil];
+            };
+            
+            [this presentViewController:navigationController animated:YES completion:nil];
         }];
         
         [section addCell:^(JMStaticContentTableViewCell *staticContentCell, UITableViewCell *cell, NSIndexPath *indexPath) {
