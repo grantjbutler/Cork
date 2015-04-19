@@ -84,3 +84,9 @@
 #define COCOAPODS_VERSION_MINOR_SAMCategories 5
 #define COCOAPODS_VERSION_PATCH_SAMCategories 2
 
+// SVProgressHud
+#define COCOAPODS_POD_AVAILABLE_SVProgressHud
+#define COCOAPODS_VERSION_MAJOR_SVProgressHud 1
+#define COCOAPODS_VERSION_MINOR_SVProgressHud 1
+#define COCOAPODS_VERSION_PATCH_SVProgressHud 3
+

@@ -26,7 +26,7 @@
         <!--Root View Controller-->
         <scene sceneID="eO9-c0-5Pn">
             <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="juk-Mk-UG7" sceneMemberID="viewController">
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="juk-Mk-UG7" customClass="CRKConversationsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="22" sectionFooterHeight="22" id="H31-ME-OUa">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

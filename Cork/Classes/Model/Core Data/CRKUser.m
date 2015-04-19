@@ -19,10 +19,13 @@ static NSString * const CRKUserIDKey = @"CRKUserIDKey";
 }
 
 + (NSUUID *)currentUserID{
-    NSUUID *userID = [[NSUserDefaults standardUserDefaults] objectForKey:CRKUserIDKey];
-    if (!userID){
+    NSString *userIDString = [[NSUserDefaults standardUserDefaults] objectForKey:CRKUserIDKey];
+    NSUUID *userID;
+    if (!userIDString){
         userID = [NSUUID UUID];
-        [[NSUserDefaults standardUserDefaults] setObject:userID forKey:CRKUserIDKey];
+        [[NSUserDefaults standardUserDefaults] setObject:[userID UUIDString] forKey:CRKUserIDKey];
+    } else {
+        userID = [[NSUUID alloc] initWithUUIDString:userIDString];
     }
     
     return userID;

@@ -25,6 +25,7 @@ PODS:
     - MDMCoreData/MDMCoreDataCore
   - NSHash (1.0.1)
   - SAMCategories (0.5.2)
+  - SVProgressHUD (1.1.3)
 
 DEPENDENCIES:
   - CCHBinaryData
@@ -32,6 +33,7 @@ DEPENDENCIES:
   - MDMCoreData
   - NSHash
   - SAMCategories
+  - SVProgressHud
 
 SPEC CHECKSUMS:
   CCHBinaryData: c9cb346a5d8fa0fcc3c840184cdb8fd8aafe4dc6
@@ -39,5 +41,6 @@ SPEC CHECKSUMS:
   MDMCoreData: 402f754cda90865026a209243f1667824e775649
   NSHash: d0112ce250f5d2618ab452718c6882f5276e2d4f
   SAMCategories: bf8287f7961a0b343168d1fee16338dc1626ea39
+  SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
 
 COCOAPODS: 0.36.4

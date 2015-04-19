@@ -11,6 +11,7 @@
 #import "NSManagedObject+CRKAdditions.h"
 #import "CRKUser.h"
 #import "CRKConversationTableViewCell.h"
+#import <SVProgressHUD/SVProgressHUD.h>
 
 @interface CRKConversationsTableViewController ()
 
@@ -30,6 +31,7 @@
     self.managedObjectContext = self.coreDataHelper.persistenceController.managedObjectContext;
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"CRKUser"];
     fetchRequest.predicate = [NSPredicate predicateWithFormat:@"isContact == YES"];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"displayName" ascending:YES]];
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
     self.resultsDataSource = [[MDMFetchedResultsTableDataSource alloc] initWithTableView:self.tableView fetchedResultsController:self.fetchedResultsController];
     self.resultsDataSource.delegate = self;
@@ -38,11 +40,29 @@
     self.tableView.dataSource = self.resultsDataSource;
     self.tableView.delegate = self;
     
+    
+    UIBarButtonItem *myUserIDBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(userIDBarButtonPressed)];
+    
+    UIBarButtonItem *composeBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(compose)];
+    
+    self.navigationItem.leftBarButtonItem = myUserIDBarButtonItem;
+    self.navigationItem.rightBarButtonItem = composeBarButtonItem;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+                                              
+- (void)userIDBarButtonPressed{
+    NSUUID *uuid = [CRKUser currentUserID];
+    
+    [[UIPasteboard generalPasteboard] setString:uuid.UUIDString];
+    [SVProgressHUD showInfoWithStatus:@"UserID copied to pasteboard"];
+}
+
+- (void)compose{
+    //TODO: Compose
 }
 
 - (void)didReceiveMemoryWarning {
