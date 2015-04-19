@@ -63,6 +63,7 @@
     if ([coreDataMessage.reciever isEqual:[CRKUser currentUserInContext:context]]) {
         CRKConversation *conversation = [CRKConversation conversationWithUser:coreDataMessage.sender inContext:context];
         [conversation addMessagesObject:coreDataMessage];
+        conversation.lastUpdatedDate = coreDataMessage.dateSent;
     }
     
     [context performBlock:^{
