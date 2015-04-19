@@ -12,6 +12,8 @@
 
 #import "NSManagedObject+CRKAdditions.h"
 
+static const uint16_t CRKMessageDefaultTimeToLive = 5;
+
 @implementation CRKMessage
 
 - (void)setSenderUUID:(NSUUID *)senderUUID {
@@ -34,6 +36,7 @@
     [super awakeFromInsert];
     
     self.dateReceived = [NSDate date];
+    self.timeToLive = CRKMessageDefaultTimeToLive;
 }
 
 @end
