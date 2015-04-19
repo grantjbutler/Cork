@@ -15,6 +15,7 @@ target 'Cork' do
     pod 'JRSwizzle'
     pod 'JMStaticContentTableViewController'
     pod 'CDZQRScanningViewController'
+    pod 'Masonry'
 end
 
 target 'CorkTests' do

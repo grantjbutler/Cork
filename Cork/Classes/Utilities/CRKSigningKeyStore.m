@@ -84,7 +84,7 @@ static const UInt8 privateKeyIdentifier[] = "com.grantjbutler.Cork.privatekey\0"
     if(privateKey) CFRelease(privateKey);                       // 14
 }
 
-- (NSDictionary *)publicKeyQuery {
+- (NSMutableDictionary *)publicKeyQuery {
     NSData * publicTag = [NSData dataWithBytes:publicKeyIdentifier
              length:strlen((const char *)publicKeyIdentifier)];
     
@@ -99,7 +99,7 @@ static const UInt8 privateKeyIdentifier[] = "com.grantjbutler.Cork.privatekey\0"
     return queryPublicKey;
 }
 
-- (NSDictionary *)publicKeyQueryForUser:(CRKUser *)user {
+- (NSMutableDictionary *)publicKeyQueryForUser:(CRKUser *)user {
     NSData * userTag = [user.id.UUIDString dataUsingEncoding:NSUTF8StringEncoding];
     
     NSMutableDictionary *queryPublicKey =
@@ -111,6 +111,51 @@ static const UInt8 privateKeyIdentifier[] = "com.grantjbutler.Cork.privatekey\0"
     [queryPublicKey setObject:[NSNumber numberWithBool:YES] forKey:(__bridge id)kSecReturnRef];
     
     return queryPublicKey;
+}
+
+- (NSData *)exportedPublicKey {
+    NSMutableDictionary *queryDictionary = self.publicKeyQuery;
+    [queryDictionary removeObjectForKey:(__bridge id)kSecReturnRef];
+    [queryDictionary setObject:@YES forKey:(__bridge id)kSecReturnData];
+    
+    CFDataRef publicKey;
+    OSStatus status = SecItemCopyMatching((__bridge CFDictionaryRef)queryDictionary, (CFTypeRef *)&publicKey);
+    if (status != noErr) {
+        return nil;
+    }
+    
+    return (__bridge NSData *)(publicKey);
+}
+
+- (NSData *)exportedPublicKeyForUser:(CRKUser *)user {
+    if ([user.id isEqual:[CRKUser currentUserID]]) {
+        return self.exportedPublicKey;
+    }
+    
+    NSMutableDictionary *queryDictionary = [self publicKeyQueryForUser:user];
+    [queryDictionary removeObjectForKey:(__bridge id)kSecReturnRef];
+    [queryDictionary setObject:@YES forKey:(__bridge id)kSecReturnData];
+    
+    CFDataRef publicKey;
+    OSStatus status = SecItemCopyMatching((__bridge CFDictionaryRef)queryDictionary, (CFTypeRef *)&publicKey);
+    if (status != noErr) {
+        return nil;
+    }
+    
+    return (__bridge NSData *)(publicKey);
+}
+
+- (BOOL)importPublicKey:(NSData *)publicKey forUser:(CRKUser *)user {
+    NSDictionary *saveDict = @{
+        (__bridge id) kSecClass : (__bridge id) kSecClassKey,
+        (__bridge id) kSecAttrKeyType : (__bridge id) kSecAttrKeyTypeRSA,
+        (__bridge id) kSecAttrApplicationTag : [user.id.UUIDString dataUsingEncoding:NSUTF8StringEncoding],
+        (__bridge id) kSecAttrKeyClass : (__bridge id) kSecAttrKeyClassPublic,
+        (__bridge id) kSecValueData : publicKey
+    };
+    
+    OSStatus sanityCheck = SecItemAdd((__bridge CFDictionaryRef) saveDict, NULL);
+    return sanityCheck != noErr;
 }
 
 - (NSData *)encryptString:(NSString *)string withPublicKeyOfUser:(CRKUser *)user {

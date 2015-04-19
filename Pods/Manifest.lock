@@ -17,6 +17,7 @@ PODS:
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
   - JVFloatLabeledTextField (1.0.2)
+  - Masonry (0.6.1)
   - MDMCoreData (1.5.0):
     - MDMCoreData/MDMCoreDataCore (= 1.5.0)
     - MDMCoreData/MDMFetchedResultsCollectionDataSource (= 1.5.0)
@@ -51,6 +52,7 @@ DEPENDENCIES:
   - JRSwizzle
   - JSQMessagesViewController
   - JVFloatLabeledTextField
+  - Masonry
   - MDMCoreData
   - NSHash
   - SAMCategories
@@ -76,6 +78,7 @@ SPEC CHECKSUMS:
   JSQMessagesViewController: 9fd7e9ac96e9fc91f2deca86928e2cc916aeebaa
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   JVFloatLabeledTextField: 58a3a32cfb800e5b224f676987e7c13abf50a14d
+  Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
   MDMCoreData: 402f754cda90865026a209243f1667824e775649
   NSHash: d0112ce250f5d2618ab452718c6882f5276e2d4f
   SAMCategories: bf8287f7961a0b343168d1fee16338dc1626ea39

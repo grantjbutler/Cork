@@ -9,7 +9,23 @@
 #import "CRKSettingsViewController.h"
 #import <CDZQRScanningViewController/CDZQRScanningViewController.h>
 
+#import "CRKQRCardViewController.h"
+
+#import "CRKUser.h"
+
+#import "CRKCoreDataHelper.h"
+
 @implementation CRKSettingsViewController
+
+- (instancetype)init {
+    self = [super initWithStyle:UITableViewStyleGrouped];
+    if (self) {
+        self.title = NSLocalizedString(@"Settings", nil);
+        
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismiss:)];
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -18,7 +34,12 @@
         [section addCell:^(JMStaticContentTableViewCell *staticContentCell, UITableViewCell *cell, NSIndexPath *indexPath) {
             cell.textLabel.text = NSLocalizedString(@"Share Contact Info", nil);
         } whenSelected:^(NSIndexPath *indexPath) {
-            // TODO: Show QR code
+            NSManagedObjectContext *context = [CRKCoreDataHelper sharedHelper].managedObjectContext;
+            CRKUser *user = [CRKUser currentUserInContext:context];
+            
+            CRKQRCardViewController *cardViewController = [[CRKQRCardViewController alloc] initWithUser:user];
+            cardViewController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+            [self presentViewController:cardViewController animated:YES completion:nil];
         }];
     }];
     
@@ -51,6 +72,10 @@
             // TODO: Show edit contacts UI
         }];
     }];
+}
+
+- (void)dismiss:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
