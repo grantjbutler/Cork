@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class CRKUser;
+
 @interface CRKQRCardViewController : UIViewController
+
+- (instancetype)initWithUser:(CRKUser *)user;
 
 @end

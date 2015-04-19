@@ -22,7 +22,11 @@ static NSString * const CRKContactSerializationPublicKeyKey = @"publicKey";
 
 + (NSData *)contactDataForUser:(CRKUser *)user {
     NSMutableDictionary *contactCard = [NSMutableDictionary dictionary];
-    contactCard[CRKContactSerializationDisplayNameKey] = user.displayName;
+    
+    if (user.displayName) {
+        contactCard[CRKContactSerializationDisplayNameKey] = user.displayName;
+    }
+    
     contactCard[CRKContactSerializationIDKey] = user.id.UUIDString;
     
     NSData *publicKey = [[CRKSigningKeyStore sharedStore] exportedPublicKeyForUser:user];

@@ -21,16 +21,17 @@
 		4C8E184E1AE360D700301951 /* CRKComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8E184D1AE360D700301951 /* CRKComposeViewController.m */; };
 		C3D12CF21AE2CF020061C385 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12CF11AE2CF020061C385 /* main.m */; };
 		C3D12CF51AE2CF020061C385 /* CRKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12CF41AE2CF020061C385 /* CRKAppDelegate.m */; };
-		C3D12CF81AE2CF020061C385 /* CRKRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12CF71AE2CF020061C385 /* CRKRootViewController.m */; };
 		C3D12CFB1AE2CF020061C385 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D12CF91AE2CF020061C385 /* Main.storyboard */; };
 		C3D12CFD1AE2CF020061C385 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3D12CFC1AE2CF020061C385 /* Images.xcassets */; };
 		C3D12D001AE2CF020061C385 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3D12CFE1AE2CF020061C385 /* LaunchScreen.xib */; };
 		C3D12D0C1AE2CF020061C385 /* CorkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12D0B1AE2CF020061C385 /* CorkTests.m */; };
 		C3D12D501AE2F4010061C385 /* NSArray+CRKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12D4F1AE2F4010061C385 /* NSArray+CRKAdditions.m */; };
 		C3E5B7441AE3E66B003D2C3E /* CRKSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E5B7431AE3E66B003D2C3E /* CRKSettingsViewController.m */; };
-		C3E5B7511AE3E8E0003D2C3E /* libQREncoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E5B74C1AE3E8BA003D2C3E /* libQREncoder.a */; };
-		C3E5B7551AE3EE9E003D2C3E /* CRKQRCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E5B7541AE3EE9E003D2C3E /* CRKQRCardViewController.m */; };
+		C3E5B7551AE3EE9E003D2C3E /* CRKQRCardViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3E5B7541AE3EE9E003D2C3E /* CRKQRCardViewController.mm */; };
 		C3E5B75C1AE3F316003D2C3E /* CRKContactSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E5B75B1AE3F316003D2C3E /* CRKContactSerialization.m */; };
+		C3E5B7641AE3FABD003D2C3E /* DataMatrix.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3E5B75F1AE3FABD003D2C3E /* DataMatrix.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C3E5B7651AE3FABD003D2C3E /* QR_Encode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C3E5B7601AE3FABD003D2C3E /* QR_Encode.cpp */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C3E5B7661AE3FABD003D2C3E /* QREncoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3E5B7631AE3FABD003D2C3E /* QREncoder.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C3FD16891AE30AEF003D22DD /* CRKBluetoothCentralController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12D4B1AE2E0680061C385 /* CRKBluetoothCentralController.m */; };
 		C3FD168A1AE30AF2003D22DD /* CRKPeripheralController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12D161AE2D3880061C385 /* CRKPeripheralController.m */; };
 		C3FD16911AE30E67003D22DD /* CRKBinaryMessageSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FD16901AE30E67003D22DD /* CRKBinaryMessageSerializer.m */; };
@@ -54,27 +55,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = C3D12CEB1AE2CF020061C385;
 			remoteInfo = Cork;
-		};
-		C3E5B74B1AE3E8BA003D2C3E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C3E5B7461AE3E8BA003D2C3E /* QREncoder.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D2AAC07E0554694100DB518D;
-			remoteInfo = QREncoder;
-		};
-		C3E5B74D1AE3E8BA003D2C3E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C3E5B7461AE3E8BA003D2C3E /* QREncoder.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EB7DA3AE10A4F5D90071984A;
-			remoteInfo = QREncoderTest;
-		};
-		C3E5B74F1AE3E8C8003D2C3E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C3E5B7461AE3E8BA003D2C3E /* QREncoder.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D;
-			remoteInfo = QREncoder;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -107,8 +87,6 @@
 		C3D12CF11AE2CF020061C385 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C3D12CF31AE2CF020061C385 /* CRKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRKAppDelegate.h; sourceTree = "<group>"; };
 		C3D12CF41AE2CF020061C385 /* CRKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CRKAppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		C3D12CF61AE2CF020061C385 /* CRKRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRKRootViewController.h; sourceTree = "<group>"; };
-		C3D12CF71AE2CF020061C385 /* CRKRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRKRootViewController.m; sourceTree = "<group>"; };
 		C3D12CFA1AE2CF020061C385 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C3D12CFC1AE2CF020061C385 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C3D12CFF1AE2CF020061C385 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -123,11 +101,16 @@
 		C3D12D4F1AE2F4010061C385 /* NSArray+CRKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+CRKAdditions.m"; sourceTree = "<group>"; };
 		C3E5B7421AE3E66B003D2C3E /* CRKSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKSettingsViewController.h; sourceTree = "<group>"; };
 		C3E5B7431AE3E66B003D2C3E /* CRKSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKSettingsViewController.m; sourceTree = "<group>"; };
-		C3E5B7461AE3E8BA003D2C3E /* QREncoder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = QREncoder.xcodeproj; path = Vendor/ObjQREncoder/src/QREncoder.xcodeproj; sourceTree = "<group>"; };
 		C3E5B7531AE3EE9E003D2C3E /* CRKQRCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKQRCardViewController.h; sourceTree = "<group>"; };
-		C3E5B7541AE3EE9E003D2C3E /* CRKQRCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKQRCardViewController.m; sourceTree = "<group>"; };
+		C3E5B7541AE3EE9E003D2C3E /* CRKQRCardViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CRKQRCardViewController.mm; sourceTree = "<group>"; };
 		C3E5B75A1AE3F316003D2C3E /* CRKContactSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKContactSerialization.h; sourceTree = "<group>"; };
 		C3E5B75B1AE3F316003D2C3E /* CRKContactSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKContactSerialization.m; sourceTree = "<group>"; };
+		C3E5B75E1AE3FABD003D2C3E /* DataMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataMatrix.h; path = "Vendor/QR-Code-Encoder-for-Objective-C/QRCodeEncoderObjectiveCAtGithub/DataMatrix.h"; sourceTree = "<group>"; };
+		C3E5B75F1AE3FABD003D2C3E /* DataMatrix.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = DataMatrix.mm; path = "Vendor/QR-Code-Encoder-for-Objective-C/QRCodeEncoderObjectiveCAtGithub/DataMatrix.mm"; sourceTree = "<group>"; };
+		C3E5B7601AE3FABD003D2C3E /* QR_Encode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = QR_Encode.cpp; path = "Vendor/QR-Code-Encoder-for-Objective-C/QRCodeEncoderObjectiveCAtGithub/QR_Encode.cpp"; sourceTree = "<group>"; };
+		C3E5B7611AE3FABD003D2C3E /* QR_Encode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QR_Encode.h; path = "Vendor/QR-Code-Encoder-for-Objective-C/QRCodeEncoderObjectiveCAtGithub/QR_Encode.h"; sourceTree = "<group>"; };
+		C3E5B7621AE3FABD003D2C3E /* QREncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QREncoder.h; path = "Vendor/QR-Code-Encoder-for-Objective-C/QRCodeEncoderObjectiveCAtGithub/QREncoder.h"; sourceTree = "<group>"; };
+		C3E5B7631AE3FABD003D2C3E /* QREncoder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = QREncoder.mm; path = "Vendor/QR-Code-Encoder-for-Objective-C/QRCodeEncoderObjectiveCAtGithub/QREncoder.mm"; sourceTree = "<group>"; };
 		C3FD168C1AE30DC0003D22DD /* CRKMessageSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKMessageSerializer.h; sourceTree = "<group>"; };
 		C3FD168D1AE30DFC003D22DD /* CRKMessageDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKMessageDeserializer.h; sourceTree = "<group>"; };
 		C3FD168F1AE30E67003D22DD /* CRKBinaryMessageSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKBinaryMessageSerializer.h; sourceTree = "<group>"; };
@@ -162,7 +145,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3E5B7511AE3E8E0003D2C3E /* libQREncoder.a in Frameworks */,
 				4C5B1E7F1AE2EF5A00567980 /* CoreData.framework in Frameworks */,
 				1C358FF67BFAFFFFF8160501 /* libPods-Cork.a in Frameworks */,
 			);
@@ -380,14 +362,12 @@
 				4C8E184D1AE360D700301951 /* CRKComposeViewController.m */,
 				4C8E18401AE330C900301951 /* CRKConversationsTableViewController.h */,
 				4C8E18411AE330C900301951 /* CRKConversationsTableViewController.m */,
-				C3D12CF61AE2CF020061C385 /* CRKRootViewController.h */,
-				C3D12CF71AE2CF020061C385 /* CRKRootViewController.m */,
 				C3FD16B21AE3A564003D22DD /* CRKConversationViewController.h */,
 				C3FD16B31AE3A564003D22DD /* CRKConversationViewController.m */,
 				C3E5B7421AE3E66B003D2C3E /* CRKSettingsViewController.h */,
 				C3E5B7431AE3E66B003D2C3E /* CRKSettingsViewController.m */,
 				C3E5B7531AE3EE9E003D2C3E /* CRKQRCardViewController.h */,
-				C3E5B7541AE3EE9E003D2C3E /* CRKQRCardViewController.m */,
+				C3E5B7541AE3EE9E003D2C3E /* CRKQRCardViewController.mm */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -406,18 +386,9 @@
 		C3E5B7451AE3E8AC003D2C3E /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				C3E5B7461AE3E8BA003D2C3E /* QREncoder.xcodeproj */,
+				C3E5B75D1AE3FAB4003D2C3E /* QRCode */,
 			);
 			name = Vendor;
-			sourceTree = "<group>";
-		};
-		C3E5B7471AE3E8BA003D2C3E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C3E5B74C1AE3E8BA003D2C3E /* libQREncoder.a */,
-				C3E5B74E1AE3E8BA003D2C3E /* QREncoderTest.octest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		C3E5B7581AE3F300003D2C3E /* Keys */ = {
@@ -427,6 +398,19 @@
 				C3FD16B61AE3CC28003D22DD /* CRKSigningKeyStore.m */,
 			);
 			name = Keys;
+			sourceTree = "<group>";
+		};
+		C3E5B75D1AE3FAB4003D2C3E /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				C3E5B75E1AE3FABD003D2C3E /* DataMatrix.h */,
+				C3E5B75F1AE3FABD003D2C3E /* DataMatrix.mm */,
+				C3E5B7601AE3FABD003D2C3E /* QR_Encode.cpp */,
+				C3E5B7611AE3FABD003D2C3E /* QR_Encode.h */,
+				C3E5B7621AE3FABD003D2C3E /* QREncoder.h */,
+				C3E5B7631AE3FABD003D2C3E /* QREncoder.mm */,
+			);
+			name = QRCode;
 			sourceTree = "<group>";
 		};
 		C3FD168B1AE30B0B003D22DD /* Resources */ = {
@@ -487,7 +471,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				C3E5B7501AE3E8C8003D2C3E /* PBXTargetDependency */,
 			);
 			name = Cork;
 			productName = Cork;
@@ -548,12 +531,6 @@
 			mainGroup = C3D12CE31AE2CF020061C385;
 			productRefGroup = C3D12CED1AE2CF020061C385 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = C3E5B7471AE3E8BA003D2C3E /* Products */;
-					ProjectRef = C3E5B7461AE3E8BA003D2C3E /* QREncoder.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				C3D12CEB1AE2CF020061C385 /* Cork */,
@@ -561,23 +538,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		C3E5B74C1AE3E8BA003D2C3E /* libQREncoder.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libQREncoder.a;
-			remoteRef = C3E5B74B1AE3E8BA003D2C3E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C3E5B74E1AE3E8BA003D2C3E /* QREncoderTest.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = QREncoderTest.octest;
-			remoteRef = C3E5B74D1AE3E8BA003D2C3E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C3D12CEA1AE2CF020061C385 /* Resources */ = {
@@ -651,12 +611,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3D12CF81AE2CF020061C385 /* CRKRootViewController.m in Sources */,
+				C3E5B7661AE3FABD003D2C3E /* QREncoder.mm in Sources */,
 				C3D12D501AE2F4010061C385 /* NSArray+CRKAdditions.m in Sources */,
 				C3FD168A1AE30AF2003D22DD /* CRKPeripheralController.m in Sources */,
 				4C8E18421AE330C900301951 /* CRKConversationsTableViewController.m in Sources */,
+				C3E5B7641AE3FABD003D2C3E /* DataMatrix.mm in Sources */,
 				4C28CE921AE318F8005A79FB /* _CRKUser.m in Sources */,
 				C3FD16971AE31859003D22DD /* CRKBinaryMessageDeserializer.m in Sources */,
+				C3E5B7651AE3FABD003D2C3E /* QR_Encode.cpp in Sources */,
 				C3FD16BB1AE3D44E003D22DD /* MDMPersistenceController+CRKAdditions.m in Sources */,
 				4C5B1E8D1AE2F5BE00567980 /* CRKMessage.m in Sources */,
 				C3FD16B11AE3947A003D22DD /* _CRKConversation.m in Sources */,
@@ -667,7 +629,7 @@
 				C3FD169F1AE3316B003D22DD /* CRKPeripheral.m in Sources */,
 				4C8E18481AE355A200301951 /* CRKConversationTableViewCell.m in Sources */,
 				4C5B1E861AE2F09600567980 /* Cork.xcdatamodeld in Sources */,
-				C3E5B7551AE3EE9E003D2C3E /* CRKQRCardViewController.m in Sources */,
+				C3E5B7551AE3EE9E003D2C3E /* CRKQRCardViewController.mm in Sources */,
 				C3FD169B1AE31E58003D22DD /* NSManagedObject+CRKAdditions.m in Sources */,
 				C3FD16891AE30AEF003D22DD /* CRKBluetoothCentralController.m in Sources */,
 				C3FD16AE1AE39474003D22DD /* CRKConversation.m in Sources */,
@@ -700,11 +662,6 @@
 			isa = PBXTargetDependency;
 			target = C3D12CEB1AE2CF020061C385 /* Cork */;
 			targetProxy = C3D12D061AE2CF020061C385 /* PBXContainerItemProxy */;
-		};
-		C3E5B7501AE3E8C8003D2C3E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = QREncoder;
-			targetProxy = C3E5B74F1AE3E8C8003D2C3E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -841,6 +798,43 @@
 				INFOPLIST_FILE = "Cork/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"Pods-Cork-CCHBinaryData\"",
+					"-l\"Pods-Cork-CocoaLumberjack\"",
+					"-l\"Pods-Cork-EncryptedCoreData\"",
+					"-l\"Pods-Cork-JMStaticContentTableViewController\"",
+					"-l\"Pods-Cork-JRSwizzle\"",
+					"-l\"Pods-Cork-JSQMessagesViewController\"",
+					"-l\"Pods-Cork-JSQSystemSoundPlayer\"",
+					"-l\"Pods-Cork-JVFloatLabeledTextField\"",
+					"-l\"Pods-Cork-MDMCoreData\"",
+					"-l\"Pods-Cork-Masonry\"",
+					"-l\"Pods-Cork-NSHash\"",
+					"-l\"Pods-Cork-SAMCategories\"",
+					"-l\"Pods-Cork-SQLCipher\"",
+					"-l\"Pods-Cork-SVProgressHUD\"",
+					"-l\"Pods-Cork-TITokenField\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"CoreData\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"MapKit\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"UIKit\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -877,6 +871,43 @@
 				INFOPLIST_FILE = "Cork/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"Pods-Cork-CCHBinaryData\"",
+					"-l\"Pods-Cork-CocoaLumberjack\"",
+					"-l\"Pods-Cork-EncryptedCoreData\"",
+					"-l\"Pods-Cork-JMStaticContentTableViewController\"",
+					"-l\"Pods-Cork-JRSwizzle\"",
+					"-l\"Pods-Cork-JSQMessagesViewController\"",
+					"-l\"Pods-Cork-JSQSystemSoundPlayer\"",
+					"-l\"Pods-Cork-JVFloatLabeledTextField\"",
+					"-l\"Pods-Cork-MDMCoreData\"",
+					"-l\"Pods-Cork-Masonry\"",
+					"-l\"Pods-Cork-NSHash\"",
+					"-l\"Pods-Cork-SAMCategories\"",
+					"-l\"Pods-Cork-SQLCipher\"",
+					"-l\"Pods-Cork-SVProgressHUD\"",
+					"-l\"Pods-Cork-TITokenField\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"CoreData\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"MapKit\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"UIKit\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

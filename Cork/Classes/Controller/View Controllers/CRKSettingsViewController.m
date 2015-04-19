@@ -8,6 +8,12 @@
 
 #import "CRKSettingsViewController.h"
 
+#import "CRKQRCardViewController.h"
+
+#import "CRKUser.h"
+
+#import "CRKCoreDataHelper.h"
+
 @implementation CRKSettingsViewController
 
 - (instancetype)init {
@@ -27,7 +33,12 @@
         [section addCell:^(JMStaticContentTableViewCell *staticContentCell, UITableViewCell *cell, NSIndexPath *indexPath) {
             cell.textLabel.text = NSLocalizedString(@"Share Contact Info", nil);
         } whenSelected:^(NSIndexPath *indexPath) {
-            // TODO: Show QR code
+            NSManagedObjectContext *context = [CRKCoreDataHelper sharedHelper].managedObjectContext;
+            CRKUser *user = [CRKUser currentUserInContext:context];
+            
+            CRKQRCardViewController *cardViewController = [[CRKQRCardViewController alloc] initWithUser:user];
+            cardViewController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+            [self presentViewController:cardViewController animated:YES completion:nil];
         }];
     }];
     

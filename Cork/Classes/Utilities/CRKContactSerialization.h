@@ -6,7 +6,8 @@
 //  Copyright (c) 2015 Grant Butler. All rights reserved.
 //
 
-@import Foundation;
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
 @class CRKUser;
 
