@@ -82,11 +82,16 @@ static NSInteger CRKBinaryMessageDeserializerUUIDLength = 16;
     
     messageText = [dataReader readStringWithNumberOfBytes:messageLength encoding:NSUTF8StringEncoding];
 	
-	CRKUser *sender = [CRKUser unique]
-	
-    // TODO: Turn all these variables into a CRKMessage instance.
+	CRKUser *sender = [CRKUser uniqueObjectWithIdentifier:senderID inContext:self.context];
+    CRKUser *recipient = [CRKUser uniqueObjectWithIdentifier:recipientID inContext:self.context];
     
-    return nil;
+    CRKMessage *message = [[CRKMessage alloc] initWithEntity:[CRKMessage entityDescriptionInContext:self.context] insertIntoManagedObjectContext:self.context];
+    message.messageText = messageText;
+    message.sentDate = [NSDate dateWithTimeIntervalSince1970:sentTimestamp];
+    message.sender = sender;
+    message.reciever = recipient;
+	
+    return message;
 }
 
 @end
