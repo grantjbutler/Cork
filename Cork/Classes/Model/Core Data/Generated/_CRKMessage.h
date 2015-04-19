@@ -10,6 +10,7 @@
 
 #import <CoreData/CoreData.h>
 
+@class CRKConversation;
 @class CRKPeripheral;
 @class CRKUser;
 @class CRKUser;
@@ -22,6 +23,7 @@
 @property (nonatomic, copy) NSString* text;
 @property (nonatomic, assign) int16_t timeToLive;
 
+@property (nonatomic, strong) CRKConversation *conversation;
 @property (nonatomic, copy) NSSet *peripherals;
 @property (nonatomic, strong) CRKUser *reciever;
 @property (nonatomic, strong) CRKUser *sender;
