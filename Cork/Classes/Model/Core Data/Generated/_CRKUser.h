@@ -15,6 +15,8 @@
 
 @interface _CRKUser : NSManagedObject
 
+@property (nonatomic, copy) NSString* displayName;
+@property (nonatomic, assign) BOOL isContact;
 @property (nonatomic, copy) NSUUID* userID;
 
 @property (nonatomic, copy) NSSet *recievedMessages;

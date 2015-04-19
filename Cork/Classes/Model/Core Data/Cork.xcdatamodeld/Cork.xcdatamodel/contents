@@ -8,6 +8,8 @@
         <relationship name="sender" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="sentMessages" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName="CRKUser" syncable="YES">
+        <attribute name="displayName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isContact" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="userID" optional="YES" attributeType="Transformable" syncable="YES">
             <userInfo>
                 <entry key="attributeValueClassName" value="NSUUID"/>
@@ -18,6 +20,6 @@
     </entity>
     <elements>
         <element name="Message" positionX="-45" positionY="-18" width="128" height="118"/>
-        <element name="User" positionX="196" positionY="21" width="128" height="88"/>
+        <element name="User" positionX="196" positionY="21" width="128" height="118"/>
     </elements>
 </model>

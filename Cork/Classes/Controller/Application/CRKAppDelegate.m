@@ -18,6 +18,8 @@
 #import "CRKBinaryMessageSerializer.h"
 #import "CRKBinaryMessageDeserializer.h"
 
+#import "CRKUser.h"
+
 @interface CRKAppDelegate () <CRKBluetoothCentralControllerDelegate, CRKPeripheralControllerDelegate>
 
 @property (nonatomic) CRKPeripheralController *controller;
