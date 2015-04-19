@@ -53,6 +53,8 @@
     [DDLog addLogger:[DDASLLogger sharedInstance]];
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
     
+    [self setUpNotifications];
+    
     return YES;
 }
 
@@ -76,6 +78,24 @@
         
         [[CRKCoreDataHelper sharedHelper].persistenceController saveContextAndWait:NO completion:nil];
     }];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Got Message" message:message.text preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [self.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
+        }]];
+        [self.window.rootViewController presentViewController:alertController animated:YES completion:nil];
+    });
+    
+    UILocalNotification *localNote = [[UILocalNotification alloc] init];
+    localNote.fireDate = [NSDate dateWithTimeIntervalSinceNow:10];
+    localNote.timeZone = [NSTimeZone defaultTimeZone];
+    localNote.alertTitle = [NSString stringWithFormat:@"New message from %@", coreDataMessage.sender.displayName];
+    localNote.alertBody = coreDataMessage.text;
+    
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNote];
+
 }
 
 - (id<CRKMessage>)controller:(CRKBluetoothCentralController *)controller messageToTransmitToPeripheral:(CBPeripheral *)peripheral {
@@ -124,6 +144,15 @@
         CRKMessage *message = (CRKMessage *)object;
         [self.central broadastMessage:message];
     }
+}
+     
+- (void)setUpNotifications{
+    UIUserNotificationType type = UIUserNotificationTypeAlert;
+    
+    UIUserNotificationSettings *notificationSettings = [UIUserNotificationSettings settingsForTypes:type categories:nil];
+    
+    [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
+    
 }
 
 @end
