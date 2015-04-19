@@ -1,0 +1,3 @@
+[submodule "Vendor/ObjQREncoder"]
+	path = Vendor/ObjQREncoder
+	url = git@github.com:jverkoey/ObjQREncoder.git

@@ -42,7 +42,8 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleContextDidSaveNotification:) name:NSManagedObjectContextDidSaveNotification object:context];
     
-    CRKBinaryMessageDeserializer *deserializer = [[CRKBinaryMessageDeserializer alloc] initWithContext:[helper.persistenceController newPrivateChildManagedObjectContext]];
+    NSManagedObjectContext *privateContext = [helper.persistenceController newPrivateChildManagedObjectContext];
+    CRKBinaryMessageDeserializer *deserializer = [[CRKBinaryMessageDeserializer alloc] initWithContext:privateContext currentUser:[CRKUser currentUserInContext:privateContext]];
     self.controller = [[CRKPeripheralController alloc] initWithMessageDeserializer:deserializer];
     self.controller.delegate = self;
     

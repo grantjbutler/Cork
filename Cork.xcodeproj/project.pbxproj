@@ -27,6 +27,8 @@
 		C3D12D001AE2CF020061C385 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3D12CFE1AE2CF020061C385 /* LaunchScreen.xib */; };
 		C3D12D0C1AE2CF020061C385 /* CorkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12D0B1AE2CF020061C385 /* CorkTests.m */; };
 		C3D12D501AE2F4010061C385 /* NSArray+CRKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12D4F1AE2F4010061C385 /* NSArray+CRKAdditions.m */; };
+		C3E5B7441AE3E66B003D2C3E /* CRKSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E5B7431AE3E66B003D2C3E /* CRKSettingsViewController.m */; };
+		C3E5B7511AE3E8E0003D2C3E /* libQREncoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E5B74C1AE3E8BA003D2C3E /* libQREncoder.a */; };
 		C3FD16891AE30AEF003D22DD /* CRKBluetoothCentralController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12D4B1AE2E0680061C385 /* CRKBluetoothCentralController.m */; };
 		C3FD168A1AE30AF2003D22DD /* CRKPeripheralController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12D161AE2D3880061C385 /* CRKPeripheralController.m */; };
 		C3FD16911AE30E67003D22DD /* CRKBinaryMessageSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FD16901AE30E67003D22DD /* CRKBinaryMessageSerializer.m */; };
@@ -39,6 +41,8 @@
 		C3FD16AE1AE39474003D22DD /* CRKConversation.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FD16AD1AE39474003D22DD /* CRKConversation.m */; };
 		C3FD16B11AE3947A003D22DD /* _CRKConversation.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FD16B01AE3947A003D22DD /* _CRKConversation.m */; };
 		C3FD16B41AE3A564003D22DD /* CRKConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FD16B31AE3A564003D22DD /* CRKConversationViewController.m */; };
+		C3FD16B71AE3CC28003D22DD /* CRKSigningKeyStore.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FD16B61AE3CC28003D22DD /* CRKSigningKeyStore.m */; };
+		C3FD16BB1AE3D44E003D22DD /* MDMPersistenceController+CRKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FD16BA1AE3D44E003D22DD /* MDMPersistenceController+CRKAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = C3D12CEB1AE2CF020061C385;
 			remoteInfo = Cork;
+		};
+		C3E5B74B1AE3E8BA003D2C3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3E5B7461AE3E8BA003D2C3E /* QREncoder.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = QREncoder;
+		};
+		C3E5B74D1AE3E8BA003D2C3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3E5B7461AE3E8BA003D2C3E /* QREncoder.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB7DA3AE10A4F5D90071984A;
+			remoteInfo = QREncoderTest;
+		};
+		C3E5B74F1AE3E8C8003D2C3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3E5B7461AE3E8BA003D2C3E /* QREncoder.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = QREncoder;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -94,6 +119,9 @@
 		C3D12D4B1AE2E0680061C385 /* CRKBluetoothCentralController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKBluetoothCentralController.m; sourceTree = "<group>"; };
 		C3D12D4E1AE2F4010061C385 /* NSArray+CRKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+CRKAdditions.h"; sourceTree = "<group>"; };
 		C3D12D4F1AE2F4010061C385 /* NSArray+CRKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+CRKAdditions.m"; sourceTree = "<group>"; };
+		C3E5B7421AE3E66B003D2C3E /* CRKSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKSettingsViewController.h; sourceTree = "<group>"; };
+		C3E5B7431AE3E66B003D2C3E /* CRKSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKSettingsViewController.m; sourceTree = "<group>"; };
+		C3E5B7461AE3E8BA003D2C3E /* QREncoder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = QREncoder.xcodeproj; path = Vendor/ObjQREncoder/src/QREncoder.xcodeproj; sourceTree = "<group>"; };
 		C3FD168C1AE30DC0003D22DD /* CRKMessageSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKMessageSerializer.h; sourceTree = "<group>"; };
 		C3FD168D1AE30DFC003D22DD /* CRKMessageDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKMessageDeserializer.h; sourceTree = "<group>"; };
 		C3FD168F1AE30E67003D22DD /* CRKBinaryMessageSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKBinaryMessageSerializer.h; sourceTree = "<group>"; };
@@ -117,6 +145,10 @@
 		C3FD16B01AE3947A003D22DD /* _CRKConversation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _CRKConversation.m; sourceTree = "<group>"; };
 		C3FD16B21AE3A564003D22DD /* CRKConversationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKConversationViewController.h; sourceTree = "<group>"; };
 		C3FD16B31AE3A564003D22DD /* CRKConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKConversationViewController.m; sourceTree = "<group>"; };
+		C3FD16B51AE3CC28003D22DD /* CRKSigningKeyStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKSigningKeyStore.h; sourceTree = "<group>"; };
+		C3FD16B61AE3CC28003D22DD /* CRKSigningKeyStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKSigningKeyStore.m; sourceTree = "<group>"; };
+		C3FD16B91AE3D44E003D22DD /* MDMPersistenceController+CRKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MDMPersistenceController+CRKAdditions.h"; sourceTree = "<group>"; };
+		C3FD16BA1AE3D44E003D22DD /* MDMPersistenceController+CRKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MDMPersistenceController+CRKAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3E5B7511AE3E8E0003D2C3E /* libQREncoder.a in Frameworks */,
 				4C5B1E7F1AE2EF5A00567980 /* CoreData.framework in Frameworks */,
 				1C358FF67BFAFFFFF8160501 /* libPods-Cork.a in Frameworks */,
 			);
@@ -164,6 +197,7 @@
 				C3D12D081AE2CF020061C385 /* CorkTests */,
 				C3D12CED1AE2CF020061C385 /* Products */,
 				31D78458FA2693B94F77E4E7 /* Pods */,
+				C3E5B7451AE3E8AC003D2C3E /* Vendor */,
 				2E01F517831C73ED5F5BF0B3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -261,6 +295,7 @@
 		C3D12D571AE309BC0061C385 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				C3FD16B81AE3D42E003D22DD /* Other */,
 				C3FD16981AE31E2D003D22DD /* Core Data */,
 				C3D12D581AE309BF0061C385 /* Foundation */,
 			);
@@ -284,6 +319,8 @@
 				4C7B68021AE3016800DA4AE5 /* CRKCoreDataHelper.m */,
 				C3FD16921AE3105C003D22DD /* crc32.c */,
 				C3FD16931AE3105C003D22DD /* crc32.h */,
+				C3FD16B51AE3CC28003D22DD /* CRKSigningKeyStore.h */,
+				C3FD16B61AE3CC28003D22DD /* CRKSigningKeyStore.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -340,6 +377,8 @@
 				C3D12CF71AE2CF020061C385 /* CRKRootViewController.m */,
 				C3FD16B21AE3A564003D22DD /* CRKConversationViewController.h */,
 				C3FD16B31AE3A564003D22DD /* CRKConversationViewController.m */,
+				C3E5B7421AE3E66B003D2C3E /* CRKSettingsViewController.h */,
+				C3E5B7431AE3E66B003D2C3E /* CRKSettingsViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -353,6 +392,23 @@
 				C3D12D4B1AE2E0680061C385 /* CRKBluetoothCentralController.m */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		C3E5B7451AE3E8AC003D2C3E /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				C3E5B7461AE3E8BA003D2C3E /* QREncoder.xcodeproj */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		C3E5B7471AE3E8BA003D2C3E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C3E5B74C1AE3E8BA003D2C3E /* libQREncoder.a */,
+				C3E5B74E1AE3E8BA003D2C3E /* QREncoderTest.octest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		C3FD168B1AE30B0B003D22DD /* Resources */ = {
@@ -387,6 +443,15 @@
 			name = "Core Data";
 			sourceTree = "<group>";
 		};
+		C3FD16B81AE3D42E003D22DD /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				C3FD16B91AE3D44E003D22DD /* MDMPersistenceController+CRKAdditions.h */,
+				C3FD16BA1AE3D44E003D22DD /* MDMPersistenceController+CRKAdditions.m */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -404,6 +469,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C3E5B7501AE3E8C8003D2C3E /* PBXTargetDependency */,
 			);
 			name = Cork;
 			productName = Cork;
@@ -464,6 +530,12 @@
 			mainGroup = C3D12CE31AE2CF020061C385;
 			productRefGroup = C3D12CED1AE2CF020061C385 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = C3E5B7471AE3E8BA003D2C3E /* Products */;
+					ProjectRef = C3E5B7461AE3E8BA003D2C3E /* QREncoder.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				C3D12CEB1AE2CF020061C385 /* Cork */,
@@ -471,6 +543,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		C3E5B74C1AE3E8BA003D2C3E /* libQREncoder.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libQREncoder.a;
+			remoteRef = C3E5B74B1AE3E8BA003D2C3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C3E5B74E1AE3E8BA003D2C3E /* QREncoderTest.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = QREncoderTest.octest;
+			remoteRef = C3E5B74D1AE3E8BA003D2C3E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C3D12CEA1AE2CF020061C385 /* Resources */ = {
@@ -550,6 +639,7 @@
 				4C8E18421AE330C900301951 /* CRKConversationsTableViewController.m in Sources */,
 				4C28CE921AE318F8005A79FB /* _CRKUser.m in Sources */,
 				C3FD16971AE31859003D22DD /* CRKBinaryMessageDeserializer.m in Sources */,
+				C3FD16BB1AE3D44E003D22DD /* MDMPersistenceController+CRKAdditions.m in Sources */,
 				4C5B1E8D1AE2F5BE00567980 /* CRKMessage.m in Sources */,
 				C3FD16B11AE3947A003D22DD /* _CRKConversation.m in Sources */,
 				C3FD16AB1AE354D8003D22DD /* CRKBluetoothPeripheral.m in Sources */,
@@ -566,7 +656,9 @@
 				4C8E184E1AE360D700301951 /* CRKComposeViewController.m in Sources */,
 				C3FD16941AE3105C003D22DD /* crc32.c in Sources */,
 				C3FD16A21AE33181003D22DD /* _CRKPeripheral.m in Sources */,
+				C3E5B7441AE3E66B003D2C3E /* CRKSettingsViewController.m in Sources */,
 				C3D12CF51AE2CF020061C385 /* CRKAppDelegate.m in Sources */,
+				C3FD16B71AE3CC28003D22DD /* CRKSigningKeyStore.m in Sources */,
 				C3D12CF21AE2CF020061C385 /* main.m in Sources */,
 				4C28CE8F1AE318EE005A79FB /* CRKUser.m in Sources */,
 				C3FD16B41AE3A564003D22DD /* CRKConversationViewController.m in Sources */,
@@ -588,6 +680,11 @@
 			isa = PBXTargetDependency;
 			target = C3D12CEB1AE2CF020061C385 /* Cork */;
 			targetProxy = C3D12D061AE2CF020061C385 /* PBXContainerItemProxy */;
+		};
+		C3E5B7501AE3E8C8003D2C3E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = QREncoder;
+			targetProxy = C3E5B74F1AE3E8C8003D2C3E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -698,8 +795,29 @@
 			baseConfigurationReference = 0583C7E99BC856D27BFB4D3C /* Pods-Cork.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/CCHBinaryData\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Public/EncryptedCoreData\"",
+					"\"${PODS_ROOT}/Headers/Public/JMStaticContentTableViewController\"",
+					"\"${PODS_ROOT}/Headers/Public/JRSwizzle\"",
+					"\"${PODS_ROOT}/Headers/Public/JSQMessagesViewController\"",
+					"\"${PODS_ROOT}/Headers/Public/JSQSystemSoundPlayer\"",
+					"\"${PODS_ROOT}/Headers/Public/JVFloatLabeledTextField\"",
+					"\"${PODS_ROOT}/Headers/Public/MDMCoreData\"",
+					"\"${PODS_ROOT}/Headers/Public/NSHash\"",
+					"\"${PODS_ROOT}/Headers/Public/SAMCategories\"",
+					"\"${PODS_ROOT}/Headers/Public/SQLCipher\"",
+					"\"${PODS_ROOT}/Headers/Public/SVProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/TITokenField\"",
+					Vendor/ObjQREncoder/src/Classes,
+				);
 				INFOPLIST_FILE = "Cork/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -713,8 +831,29 @@
 			baseConfigurationReference = 8B652B19C4D89FEF4445EFEF /* Pods-Cork.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/CCHBinaryData\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Public/EncryptedCoreData\"",
+					"\"${PODS_ROOT}/Headers/Public/JMStaticContentTableViewController\"",
+					"\"${PODS_ROOT}/Headers/Public/JRSwizzle\"",
+					"\"${PODS_ROOT}/Headers/Public/JSQMessagesViewController\"",
+					"\"${PODS_ROOT}/Headers/Public/JSQSystemSoundPlayer\"",
+					"\"${PODS_ROOT}/Headers/Public/JVFloatLabeledTextField\"",
+					"\"${PODS_ROOT}/Headers/Public/MDMCoreData\"",
+					"\"${PODS_ROOT}/Headers/Public/NSHash\"",
+					"\"${PODS_ROOT}/Headers/Public/SAMCategories\"",
+					"\"${PODS_ROOT}/Headers/Public/SQLCipher\"",
+					"\"${PODS_ROOT}/Headers/Public/SVProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/TITokenField\"",
+					Vendor/ObjQREncoder/src/Classes,
+				);
 				INFOPLIST_FILE = "Cork/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

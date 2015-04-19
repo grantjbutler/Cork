@@ -36,6 +36,24 @@
 #define COCOAPODS_VERSION_MINOR_CocoaLumberjack_Extensions 0
 #define COCOAPODS_VERSION_PATCH_CocoaLumberjack_Extensions 0
 
+// EncryptedCoreData
+#define COCOAPODS_POD_AVAILABLE_EncryptedCoreData
+#define COCOAPODS_VERSION_MAJOR_EncryptedCoreData 3
+#define COCOAPODS_VERSION_MINOR_EncryptedCoreData 0
+#define COCOAPODS_VERSION_PATCH_EncryptedCoreData 0
+
+// JMStaticContentTableViewController
+#define COCOAPODS_POD_AVAILABLE_JMStaticContentTableViewController
+#define COCOAPODS_VERSION_MAJOR_JMStaticContentTableViewController 0
+#define COCOAPODS_VERSION_MINOR_JMStaticContentTableViewController 3
+#define COCOAPODS_VERSION_PATCH_JMStaticContentTableViewController 1
+
+// JRSwizzle
+#define COCOAPODS_POD_AVAILABLE_JRSwizzle
+#define COCOAPODS_VERSION_MAJOR_JRSwizzle 1
+#define COCOAPODS_VERSION_MINOR_JRSwizzle 0
+#define COCOAPODS_VERSION_PATCH_JRSwizzle 0
+
 // JSQMessagesViewController
 #define COCOAPODS_POD_AVAILABLE_JSQMessagesViewController
 #define COCOAPODS_VERSION_MAJOR_JSQMessagesViewController 7
@@ -101,6 +119,24 @@
 #define COCOAPODS_VERSION_MAJOR_SAMCategories 0
 #define COCOAPODS_VERSION_MINOR_SAMCategories 5
 #define COCOAPODS_VERSION_PATCH_SAMCategories 2
+
+// SQLCipher
+#define COCOAPODS_POD_AVAILABLE_SQLCipher
+#define COCOAPODS_VERSION_MAJOR_SQLCipher 3
+#define COCOAPODS_VERSION_MINOR_SQLCipher 1
+#define COCOAPODS_VERSION_PATCH_SQLCipher 0
+
+// SQLCipher/common
+#define COCOAPODS_POD_AVAILABLE_SQLCipher_common
+#define COCOAPODS_VERSION_MAJOR_SQLCipher_common 3
+#define COCOAPODS_VERSION_MINOR_SQLCipher_common 1
+#define COCOAPODS_VERSION_PATCH_SQLCipher_common 0
+
+// SQLCipher/standard
+#define COCOAPODS_POD_AVAILABLE_SQLCipher_standard
+#define COCOAPODS_VERSION_MAJOR_SQLCipher_standard 3
+#define COCOAPODS_VERSION_MINOR_SQLCipher_standard 1
+#define COCOAPODS_VERSION_PATCH_SQLCipher_standard 0
 
 // SVProgressHud
 #define COCOAPODS_POD_AVAILABLE_SVProgressHud

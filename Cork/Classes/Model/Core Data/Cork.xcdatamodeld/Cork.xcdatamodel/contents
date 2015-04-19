@@ -8,6 +8,7 @@
     <entity name="CRKMessage" representedClassName="CRKMessage" syncable="YES">
         <attribute name="dateReceived" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="dateSent" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="encryptedText" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="timeToLive" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -57,9 +58,9 @@
         </userInfo>
     </entity>
     <elements>
-        <element name="CRKMessage" positionX="-45" positionY="-18" width="128" height="180"/>
+        <element name="CRKConversation" positionX="90" positionY="72" width="128" height="90"/>
+        <element name="CRKMessage" positionX="-45" positionY="-18" width="128" height="195"/>
         <element name="CRKPeripheral" positionX="72" positionY="45" width="128" height="75"/>
         <element name="CRKUser" positionX="196" positionY="21" width="128" height="135"/>
-        <element name="CRKConversation" positionX="90" positionY="72" width="128" height="90"/>
     </elements>
 </model>

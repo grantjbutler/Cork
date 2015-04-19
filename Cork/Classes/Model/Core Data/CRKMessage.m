@@ -13,17 +13,26 @@
 #import "NSManagedObject+CRKAdditions.h"
 
 #import <NSHash/NSString+NSHash.h>
+#import <NSHash/NSData+NSHash.h>
 
 static const uint16_t CRKMessageDefaultTimeToLive = 5;
 
+@interface NSString ()
+
+- (NSString*) toHexString:(unsigned char*) data length: (unsigned int) length;
+
+@end
+
 @implementation CRKMessage
 
-+ (NSString *)messageIdentifierForSenderUUID:(NSUUID *)senderUUID recipientUUID:(NSUUID *)recipientUUID sentDate:(NSDate *)sentDate text:(NSString *)text {
++ (NSString *)messageIdentifierForSenderUUID:(NSUUID *)senderUUID recipientUUID:(NSUUID *)recipientUUID sentDate:(NSDate *)sentDate body:(NSData *)body {
     NSMutableString *stringToHash = [[NSMutableString alloc] init];
     [stringToHash appendString:senderUUID.UUIDString];
     [stringToHash appendString:recipientUUID.UUIDString];
     [stringToHash appendFormat:@"%f", [sentDate timeIntervalSince1970]];
-    [stringToHash appendString:text];
+    
+    NSString *hexedData = [[[NSString alloc] init] toHexString:(unsigned char *)body.bytes length:(unsigned int)body.length];
+    [stringToHash appendString:hexedData.SHA1];
     
     return [stringToHash SHA1];
 }

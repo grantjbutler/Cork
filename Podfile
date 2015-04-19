@@ -11,6 +11,9 @@ target 'Cork' do
     pod 'JVFloatLabeledTextField'
     pod 'JSQMessagesViewController'
     pod 'TITokenField'
+    pod 'EncryptedCoreData', :git => 'https://github.com/project-imas/encrypted-core-data.git'
+    pod 'JRSwizzle'
+    pod 'JMStaticContentTableViewController'
 end
 
 target 'CorkTests' do

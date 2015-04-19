@@ -1,0 +1,1 @@
+../../../JMStaticContentTableViewController/JMStaticContentTableViewController/JMStaticContentTableViewCell.h
