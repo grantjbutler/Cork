@@ -78,7 +78,7 @@
     CRKUser *currentUser = [CRKUser currentUserInContext:context];
     
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:[CRKMessage entityName]];
-    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"%K != %@ AND %@ NOT IN %K", @"receiver", currentUser, coreDataPeripheral, @"peripherals"];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"%K != %@ AND %K > 0 AND %@ NOT IN %K", @"receiver", currentUser, @"timeToLive", coreDataPeripheral, @"peripherals"];
     fetchRequest.fetchLimit = 1;
     
     NSError *fetchError;
