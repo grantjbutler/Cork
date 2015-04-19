@@ -25,6 +25,10 @@
 		C3D12D501AE2F4010061C385 /* NSArray+CRKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12D4F1AE2F4010061C385 /* NSArray+CRKAdditions.m */; };
 		C3FD16891AE30AEF003D22DD /* CRKBluetoothCentralController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12D4B1AE2E0680061C385 /* CRKBluetoothCentralController.m */; };
 		C3FD168A1AE30AF2003D22DD /* CRKPeripheralController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D12D161AE2D3880061C385 /* CRKPeripheralController.m */; };
+		C3FD16911AE30E67003D22DD /* CRKBinaryMessageSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FD16901AE30E67003D22DD /* CRKBinaryMessageSerializer.m */; };
+		C3FD16941AE3105C003D22DD /* crc32.c in Sources */ = {isa = PBXBuildFile; fileRef = C3FD16921AE3105C003D22DD /* crc32.c */; };
+		C3FD16971AE31859003D22DD /* CRKBinaryMessageDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FD16961AE31859003D22DD /* CRKBinaryMessageDeserializer.m */; };
+		C3FD169B1AE31E58003D22DD /* NSManagedObject+CRKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FD169A1AE31E58003D22DD /* NSManagedObject+CRKAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +76,17 @@
 		C3D12D4B1AE2E0680061C385 /* CRKBluetoothCentralController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKBluetoothCentralController.m; sourceTree = "<group>"; };
 		C3D12D4E1AE2F4010061C385 /* NSArray+CRKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+CRKAdditions.h"; sourceTree = "<group>"; };
 		C3D12D4F1AE2F4010061C385 /* NSArray+CRKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+CRKAdditions.m"; sourceTree = "<group>"; };
-		C3D12D5F1AE30A430061C385 /* CRKMessageProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKMessageProtocol.h; sourceTree = "<group>"; };
+		C3FD168C1AE30DC0003D22DD /* CRKMessageSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKMessageSerializer.h; sourceTree = "<group>"; };
+		C3FD168D1AE30DFC003D22DD /* CRKMessageDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKMessageDeserializer.h; sourceTree = "<group>"; };
+		C3FD168F1AE30E67003D22DD /* CRKBinaryMessageSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKBinaryMessageSerializer.h; sourceTree = "<group>"; };
+		C3FD16901AE30E67003D22DD /* CRKBinaryMessageSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKBinaryMessageSerializer.m; sourceTree = "<group>"; };
+		C3FD16921AE3105C003D22DD /* crc32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = crc32.c; sourceTree = "<group>"; };
+		C3FD16931AE3105C003D22DD /* crc32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crc32.h; sourceTree = "<group>"; };
+		C3FD16951AE31859003D22DD /* CRKBinaryMessageDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKBinaryMessageDeserializer.h; sourceTree = "<group>"; };
+		C3FD16961AE31859003D22DD /* CRKBinaryMessageDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKBinaryMessageDeserializer.m; sourceTree = "<group>"; };
+		C3FD16991AE31E58003D22DD /* NSManagedObject+CRKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+CRKAdditions.h"; sourceTree = "<group>"; };
+		C3FD169A1AE31E58003D22DD /* NSManagedObject+CRKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+CRKAdditions.m"; sourceTree = "<group>"; };
+		C3FD169C1AE328C9003D22DD /* CRKMessageProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRKMessageProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,8 +209,8 @@
 		C3D12D551AE309A00061C385 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C3FD169C1AE328C9003D22DD /* CRKMessageProtocol.h */,
 				C3D12D5B1AE309E40061C385 /* Core Data */,
-				C3D12D5F1AE30A430061C385 /* CRKMessageProtocol.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -211,6 +225,7 @@
 		C3D12D571AE309BC0061C385 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				C3FD16981AE31E2D003D22DD /* Core Data */,
 				C3D12D581AE309BF0061C385 /* Foundation */,
 			);
 			path = Categories;
@@ -228,8 +243,11 @@
 		C3D12D591AE309C90061C385 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				C3FD168E1AE30E31003D22DD /* Serialization */,
 				4C7B68011AE3016800DA4AE5 /* CRKCoreDataHelper.h */,
 				4C7B68021AE3016800DA4AE5 /* CRKCoreDataHelper.m */,
+				C3FD16921AE3105C003D22DD /* crc32.c */,
+				C3FD16931AE3105C003D22DD /* crc32.h */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -295,6 +313,28 @@
 				C3D12CFE1AE2CF020061C385 /* LaunchScreen.xib */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		C3FD168E1AE30E31003D22DD /* Serialization */ = {
+			isa = PBXGroup;
+			children = (
+				C3FD168C1AE30DC0003D22DD /* CRKMessageSerializer.h */,
+				C3FD168D1AE30DFC003D22DD /* CRKMessageDeserializer.h */,
+				C3FD168F1AE30E67003D22DD /* CRKBinaryMessageSerializer.h */,
+				C3FD16901AE30E67003D22DD /* CRKBinaryMessageSerializer.m */,
+				C3FD16951AE31859003D22DD /* CRKBinaryMessageDeserializer.h */,
+				C3FD16961AE31859003D22DD /* CRKBinaryMessageDeserializer.m */,
+			);
+			path = Serialization;
+			sourceTree = "<group>";
+		};
+		C3FD16981AE31E2D003D22DD /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				C3FD16991AE31E58003D22DD /* NSManagedObject+CRKAdditions.h */,
+				C3FD169A1AE31E58003D22DD /* NSManagedObject+CRKAdditions.m */,
+			);
+			name = "Core Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -457,11 +497,15 @@
 				C3D12D501AE2F4010061C385 /* NSArray+CRKAdditions.m in Sources */,
 				C3FD168A1AE30AF2003D22DD /* CRKPeripheralController.m in Sources */,
 				4C28CE921AE318F8005A79FB /* _CRKUser.m in Sources */,
+				C3FD16971AE31859003D22DD /* CRKBinaryMessageDeserializer.m in Sources */,
 				4C5B1E8D1AE2F5BE00567980 /* CRKMessage.m in Sources */,
+				C3FD16911AE30E67003D22DD /* CRKBinaryMessageSerializer.m in Sources */,
 				4C7B68031AE3016800DA4AE5 /* CRKCoreDataHelper.m in Sources */,
 				4C5B1E8E1AE2F5BE00567980 /* _CRKMessage.m in Sources */,
 				4C5B1E861AE2F09600567980 /* Cork.xcdatamodeld in Sources */,
+				C3FD169B1AE31E58003D22DD /* NSManagedObject+CRKAdditions.m in Sources */,
 				C3FD16891AE30AEF003D22DD /* CRKBluetoothCentralController.m in Sources */,
+				C3FD16941AE3105C003D22DD /* crc32.c in Sources */,
 				C3D12CF51AE2CF020061C385 /* CRKAppDelegate.m in Sources */,
 				C3D12CF21AE2CF020061C385 /* main.m in Sources */,
 				4C28CE8F1AE318EE005A79FB /* CRKUser.m in Sources */,

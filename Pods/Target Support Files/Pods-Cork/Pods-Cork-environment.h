@@ -6,6 +6,12 @@
 // project.
 
 
+// CCHBinaryData
+#define COCOAPODS_POD_AVAILABLE_CCHBinaryData
+#define COCOAPODS_VERSION_MAJOR_CCHBinaryData 1
+#define COCOAPODS_VERSION_MINOR_CCHBinaryData 0
+#define COCOAPODS_VERSION_PATCH_CCHBinaryData 1
+
 // CocoaLumberjack
 #define COCOAPODS_POD_AVAILABLE_CocoaLumberjack
 #define COCOAPODS_VERSION_MAJOR_CocoaLumberjack 2

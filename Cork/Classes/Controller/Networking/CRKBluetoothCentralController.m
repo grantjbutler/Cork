@@ -21,13 +21,16 @@ static NSString * const CRKPeripheralControllerMessagesCharacteristicUUIDString 
 
 @property (nonatomic) NSMutableArray *connectedPeripherals;
 
+@property (nonatomic) id <CRKMessageSerializer> messageSerializer;
+
 @end
 
 @implementation CRKBluetoothCentralController
 
-- (instancetype)init {
+- (instancetype)initWithMessageSerializer:(id <CRKMessageSerializer>)serializer {
     self = [super init];
     if (self) {
+        _messageSerializer = serializer;
         _connectedPeripherals = [NSMutableArray array];
         
         [self setUpCentralManager];
@@ -58,9 +61,9 @@ static NSString * const CRKPeripheralControllerMessagesCharacteristicUUIDString 
         return;
     }
     
-    // TODO: Serialize the message.
-    
-    [peripheral writeValue:[NSData data] forCharacteristic:characteristic type:CBCharacteristicWriteWithResponse];
+    NSData *serializedMessage = [self.messageSerializer serializedDataForMessage:message];
+
+    [peripheral writeValue:serializedMessage forCharacteristic:characteristic type:CBCharacteristicWriteWithResponse];
 }
 
 - (void)disconectPeripheral:(CBPeripheral *)peripheral {

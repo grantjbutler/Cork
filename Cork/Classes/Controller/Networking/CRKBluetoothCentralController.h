@@ -10,12 +10,15 @@
 @import CoreBluetooth;
 
 #import "CRKMessageProtocol.h"
+#import "CRKMessageSerializer.h"
 
 @protocol CRKBluetoothCentralControllerDelegate;
 
 @interface CRKBluetoothCentralController : NSObject
 
 @property (nonatomic, weak) id <CRKBluetoothCentralControllerDelegate> delegate;
+
+- (instancetype)initWithMessageSerializer:(id <CRKMessageSerializer>)serializer NS_DESIGNATED_INITIALIZER;
 
 @end
 

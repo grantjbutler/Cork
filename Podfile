@@ -5,6 +5,7 @@ target 'Cork' do
     pod 'SAMCategories'
     pod 'MDMCoreData'
     pod 'CocoaLumberjack'
+    pod 'CCHBinaryData'
 end
 
 target 'CorkTests' do
