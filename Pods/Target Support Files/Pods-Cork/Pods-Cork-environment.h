@@ -42,6 +42,12 @@
 #define COCOAPODS_VERSION_MINOR_EncryptedCoreData 0
 #define COCOAPODS_VERSION_PATCH_EncryptedCoreData 0
 
+// JMStaticContentTableViewController
+#define COCOAPODS_POD_AVAILABLE_JMStaticContentTableViewController
+#define COCOAPODS_VERSION_MAJOR_JMStaticContentTableViewController 0
+#define COCOAPODS_VERSION_MINOR_JMStaticContentTableViewController 3
+#define COCOAPODS_VERSION_PATCH_JMStaticContentTableViewController 1
+
 // JRSwizzle
 #define COCOAPODS_POD_AVAILABLE_JRSwizzle
 #define COCOAPODS_VERSION_MAJOR_JRSwizzle 1
@@ -107,12 +113,6 @@
 #define COCOAPODS_VERSION_MAJOR_NSHash 1
 #define COCOAPODS_VERSION_MINOR_NSHash 0
 #define COCOAPODS_VERSION_PATCH_NSHash 1
-
-// QR-Code-Encoder-for-Objective-C
-#define COCOAPODS_POD_AVAILABLE_QR_Code_Encoder_for_Objective_C
-#define COCOAPODS_VERSION_MAJOR_QR_Code_Encoder_for_Objective_C 1
-#define COCOAPODS_VERSION_MINOR_QR_Code_Encoder_for_Objective_C 0
-#define COCOAPODS_VERSION_PATCH_QR_Code_Encoder_for_Objective_C 0
 
 // SAMCategories
 #define COCOAPODS_POD_AVAILABLE_SAMCategories

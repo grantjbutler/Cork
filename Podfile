@@ -13,7 +13,7 @@ target 'Cork' do
     pod 'TITokenField'
     pod 'EncryptedCoreData', :git => 'https://github.com/project-imas/encrypted-core-data.git'
     pod 'JRSwizzle'
-    pod 'QR-Code-Encoder-for-Objective-C'
+    pod 'JMStaticContentTableViewController'
 end
 
 target 'CorkTests' do
