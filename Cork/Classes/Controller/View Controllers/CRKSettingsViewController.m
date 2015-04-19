@@ -40,7 +40,6 @@
             };
             
             [this presentViewController:navigationController animated:YES completion:nil];
-            // TODO: Show QR Code Scanner
         }];
         
         [section addCell:^(JMStaticContentTableViewCell *staticContentCell, UITableViewCell *cell, NSIndexPath *indexPath) {
