@@ -59,7 +59,8 @@
                                               
 - (void)showSettings:(id)sender {
     CRKSettingsViewController *settingsVC = [[CRKSettingsViewController alloc] init];
-    [self presentViewController:settingsVC animated:YES completion:nil];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:settingsVC];
+    [self presentViewController:navController animated:YES completion:nil];
 }
 
 #pragma mark - MDMFetchedResultsTableDataSourceDelegate

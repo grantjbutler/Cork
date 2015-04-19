@@ -10,6 +10,16 @@
 
 @implementation CRKSettingsViewController
 
+- (instancetype)init {
+    self = [super initWithStyle:UITableViewStyleGrouped];
+    if (self) {
+        self.title = NSLocalizedString(@"Settings", nil);
+        
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismiss:)];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -34,6 +44,10 @@
             // TODO: Show edit contacts UI
         }];
     }];
+}
+
+- (void)dismiss:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
