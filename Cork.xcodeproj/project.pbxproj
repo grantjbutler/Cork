@@ -33,6 +33,7 @@
 		C3FD169B1AE31E58003D22DD /* NSManagedObject+CRKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FD169A1AE31E58003D22DD /* NSManagedObject+CRKAdditions.m */; };
 		C3FD169F1AE3316B003D22DD /* CRKPeripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FD169E1AE3316B003D22DD /* CRKPeripheral.m */; };
 		C3FD16A21AE33181003D22DD /* _CRKPeripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FD16A11AE33181003D22DD /* _CRKPeripheral.m */; };
+		C3FD16AB1AE354D8003D22DD /* CRKBluetoothPeripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FD16AA1AE354D8003D22DD /* CRKBluetoothPeripheral.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,8 @@
 		C3FD169E1AE3316B003D22DD /* CRKPeripheral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKPeripheral.m; sourceTree = "<group>"; };
 		C3FD16A01AE33181003D22DD /* _CRKPeripheral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _CRKPeripheral.h; sourceTree = "<group>"; };
 		C3FD16A11AE33181003D22DD /* _CRKPeripheral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _CRKPeripheral.m; sourceTree = "<group>"; };
+		C3FD16A91AE354D8003D22DD /* CRKBluetoothPeripheral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKBluetoothPeripheral.h; sourceTree = "<group>"; };
+		C3FD16AA1AE354D8003D22DD /* CRKBluetoothPeripheral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKBluetoothPeripheral.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +226,8 @@
 			children = (
 				C3D12D5B1AE309E40061C385 /* Core Data */,
 				C3FD169C1AE328C9003D22DD /* CRKMessageProtocol.h */,
+				C3FD16A91AE354D8003D22DD /* CRKBluetoothPeripheral.h */,
+				C3FD16AA1AE354D8003D22DD /* CRKBluetoothPeripheral.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -521,6 +526,7 @@
 				C3FD16971AE31859003D22DD /* CRKBinaryMessageDeserializer.m in Sources */,
 				4C5B1E8D1AE2F5BE00567980 /* CRKMessage.m in Sources */,
 				4C8E18451AE349E200301951 /* CRKConversationTableViewCell.m in Sources */,
+				C3FD16AB1AE354D8003D22DD /* CRKBluetoothPeripheral.m in Sources */,
 				C3FD16911AE30E67003D22DD /* CRKBinaryMessageSerializer.m in Sources */,
 				4C7B68031AE3016800DA4AE5 /* CRKCoreDataHelper.m in Sources */,
 				4C5B1E8E1AE2F5BE00567980 /* _CRKMessage.m in Sources */,
