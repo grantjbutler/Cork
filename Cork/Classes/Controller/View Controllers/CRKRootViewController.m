@@ -7,8 +7,11 @@
 //
 
 #import "CRKRootViewController.h"
+#import "CRKUser.h"
 
 @interface CRKRootViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *userIDLabel;
+@property (weak, nonatomic) IBOutlet UITextField *recieversIDField;
 
 @end
 
@@ -16,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.userIDLabel.text = [[CRKUser currentUserID] UUIDString];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
