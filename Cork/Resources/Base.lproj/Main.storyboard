@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fbF-cR-M87">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Root View Controller-->
@@ -29,17 +30,50 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send Message To:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1y-Vt-81l">
+                                <rect key="frame" x="229" y="200" width="142" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Reciever's Cork ID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z1K-et-xQq">
+                                <rect key="frame" x="16" y="242" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEV-Ek-kj3">
+                                <rect key="frame" x="265" y="289" width="70" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DEX-tV-ajA">
+                                <rect key="frame" x="16" y="326" width="563" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="eEV-Ek-kj3" firstAttribute="top" secondItem="Z1K-et-xQq" secondAttribute="bottom" constant="17" id="1da-Bq-Yhv"/>
+                            <constraint firstItem="Z1K-et-xQq" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="178" id="9ku-HQ-Ivh"/>
+                            <constraint firstItem="DEX-tV-ajA" firstAttribute="centerX" secondItem="Z1K-et-xQq" secondAttribute="centerX" constant="-2.5" id="BzC-Ps-WHy"/>
+                            <constraint firstItem="Z1K-et-xQq" firstAttribute="centerX" secondItem="j1y-Vt-81l" secondAttribute="centerX" id="HNH-W0-hMk"/>
+                            <constraint firstItem="DEX-tV-ajA" firstAttribute="top" secondItem="eEV-Ek-kj3" secondAttribute="bottom" constant="16" id="IQL-4x-Fyo"/>
                             <constraint firstItem="0d8-zK-2nn" firstAttribute="top" secondItem="wjw-yD-CS0" secondAttribute="bottom" constant="15" id="MAu-wr-xXF"/>
+                            <constraint firstItem="eEV-Ek-kj3" firstAttribute="centerX" secondItem="Z1K-et-xQq" secondAttribute="centerX" id="Sk4-Xq-f2Z"/>
+                            <constraint firstItem="Z1K-et-xQq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="ZaB-bQ-xOP"/>
+                            <constraint firstItem="j1y-Vt-81l" firstAttribute="top" secondItem="0d8-zK-2nn" secondAttribute="bottom" constant="33" id="oy9-pc-lJY"/>
+                            <constraint firstItem="DEX-tV-ajA" firstAttribute="leading" secondItem="Z1K-et-xQq" secondAttribute="leading" id="pKl-EI-Tnr"/>
                             <constraint firstItem="wjw-yD-CS0" firstAttribute="centerX" secondItem="0d8-zK-2nn" secondAttribute="centerX" id="tng-M9-ZEi"/>
                             <constraint firstAttribute="centerX" secondItem="wjw-yD-CS0" secondAttribute="centerX" id="wNH-Wu-x7z"/>
+                            <constraint firstItem="j1y-Vt-81l" firstAttribute="centerX" secondItem="0d8-zK-2nn" secondAttribute="centerX" id="yJr-Yq-se7"/>
                             <constraint firstItem="wjw-yD-CS0" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="46" id="yk5-v6-fS4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="K8F-1h-tv8"/>
                     <connections>
+                        <outlet property="recieversIDField" destination="Z1K-et-xQq" id="Uu1-sD-iqK"/>
                         <outlet property="userIDLabel" destination="0d8-zK-2nn" id="9UT-Jb-qYN"/>
                     </connections>
                 </viewController>

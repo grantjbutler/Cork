@@ -11,6 +11,7 @@
 
 @interface CRKRootViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *userIDLabel;
+@property (weak, nonatomic) IBOutlet UITextField *recieversIDField;
 
 @end
 
