@@ -8,13 +8,15 @@
 
 #import "CRKBluetoothCentralController.h"
 
+#import "CRKBluetoothPeripheral.h"
+
 #import "NSArray+CRKAdditions.h"
 
 static NSString * const CRKBluetoothCentralMessagesServiceUUIDString = @"E95B2A3C-7978-4BA4-A6EB-6C8A194AFAAD";
 
 static NSString * const CRKPeripheralControllerMessagesCharacteristicUUIDString = @"CF885323-2B65-45A9-AADA-409EF7EFCD73";
 
-@interface CRKBluetoothCentralController () <CBCentralManagerDelegate, CBPeripheralDelegate>
+@interface CRKBluetoothCentralController () <CBCentralManagerDelegate, CRKBluetoothPeripheralDelegate>
 
 @property (nonatomic) dispatch_queue_t delegateQueue;
 @property (nonatomic) CBCentralManager *centralManager;
@@ -49,27 +51,40 @@ static NSString * const CRKPeripheralControllerMessagesCharacteristicUUIDString 
     ] options:nil];
 }
 
-- (void)sendMessageToCharacteristic:(CBCharacteristic *)characteristic ofPeripheral:(CBPeripheral *)peripheral {
-    if (peripheral.state != CBPeripheralStateConnected) {
-        return;
+- (void)disconnectPeripheral:(CBPeripheral *)peripheral {
+    for (CRKBluetoothPeripheral *bluetoothPeripheral in self.connectedPeripherals) {
+        if ([bluetoothPeripheral.identifier isEqual:peripheral.identifier]) {
+            [self disconnectBluetoothPeripheral:bluetoothPeripheral];
+            
+            return;
+        }
     }
-    
-    id <CRKMessage> message = [self.delegate controller:self messageToTransmitToPeripheral:peripheral];
-    if (!message) {
-        [self disconectPeripheral:peripheral];
-        
-        return;
-    }
-    
-    NSData *serializedMessage = [self.messageSerializer serializedDataForMessage:message];
-
-    [peripheral writeValue:serializedMessage forCharacteristic:characteristic type:CBCharacteristicWriteWithResponse];
 }
 
-- (void)disconectPeripheral:(CBPeripheral *)peripheral {
+- (void)disconnectBluetoothPeripheral:(CRKBluetoothPeripheral *)peripheral {
+    [peripheral disconnectFromCentralManager:self.centralManager];
     [self.connectedPeripherals removeObject:peripheral];
+}
+
+- (void)sendRandomMessageToPeripheral:(CRKBluetoothPeripheral *)peripheral {
+    id <CRKMessage> message = [self.delegate controller:self messageToTransmitToPeripheral:peripheral];
+    if (!message) {
+        return;
+    }
     
-    [self.centralManager cancelPeripheralConnection:peripheral];
+    [self sendMessage:message toPeripheral:peripheral];
+}
+
+- (void)sendMessage:(id <CRKMessage>)message toPeripheral:(CRKBluetoothPeripheral *)peripheral {
+    NSData *serializedMessage = [self.messageSerializer serializedDataForMessage:message];
+    
+    [peripheral sendData:serializedMessage];
+}
+
+- (void)broadastMessage:(id <CRKMessage>)message {
+    for (CRKBluetoothPeripheral *peripheral in self.connectedPeripherals) {
+        [self sendMessage:message toPeripheral:peripheral];
+    }
 }
 
 #pragma mark - CBCentralManagerDelegate
@@ -88,12 +103,12 @@ static NSString * const CRKPeripheralControllerMessagesCharacteristicUUIDString 
 - (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI {
     [central connectPeripheral:peripheral options:nil];
     
-    [self.connectedPeripherals addObject:peripheral];
+    CRKBluetoothPeripheral *bluetoothPeripheral = [[CRKBluetoothPeripheral alloc] initWithPeripheral:peripheral];
+    bluetoothPeripheral.delegate = self;
+    [self.connectedPeripherals addObject:bluetoothPeripheral];
 }
 
 - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral {
-    peripheral.delegate = self;
-    
     [peripheral discoverServices:@[
         [CBUUID UUIDWithString:CRKBluetoothCentralMessagesServiceUUIDString]
     ]];
@@ -105,50 +120,24 @@ static NSString * const CRKPeripheralControllerMessagesCharacteristicUUIDString 
 
 - (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error {
     NSLog(@"disconnect error: %@", error);
+    
+    [self disconnectPeripheral:peripheral];
 }
 
 #pragma mark - CBPeripheralDelegate
 
-- (void)peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error {
-    CBService *service = [peripheral.services firstObjectPassingTest:^BOOL(CBService *service) {
-        return [service.UUID isEqual:[CBUUID UUIDWithString:CRKBluetoothCentralMessagesServiceUUIDString]];
-    }];
-    
-    if (!service) {
-        [self disconectPeripheral:peripheral];
-        
-        return;
-    }
-    
-    [peripheral discoverCharacteristics:@[
-        [CBUUID UUIDWithString:CRKPeripheralControllerMessagesCharacteristicUUIDString]
-    ] forService:service];
+- (void)peripheralDidConnect:(CRKBluetoothPeripheral *)peripheral {
+    [self sendRandomMessageToPeripheral:peripheral];
 }
 
-- (void)peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error {
-    CBCharacteristic *characteristic = [service.characteristics firstObjectPassingTest:^BOOL(CBCharacteristic *characteristic) {
-        return [characteristic.UUID isEqual:[CBUUID UUIDWithString:CRKPeripheralControllerMessagesCharacteristicUUIDString]];
-    }];
-    
-    if (!characteristic) {
-        [self disconectPeripheral:peripheral];
-        
-        return;
-    }
-    
-    [self sendMessageToCharacteristic:characteristic ofPeripheral:peripheral];
+- (void)peripheral:(CRKBluetoothPeripheral *)peripheral didFailToConnectWithError:(NSError *)error {
+    [self disconnectBluetoothPeripheral:peripheral];
 }
 
-- (void)peripheral:(CBPeripheral *)peripheral didWriteValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
-    if (error) {
-        NSLog(@"Error writing value to characteristic '%@': %@", characteristic, error);
-        
-        [self disconectPeripheral:peripheral];
-        
-        return;
+- (void)peripheral:(CRKBluetoothPeripheral *)peripheral didSendDataWithError:(NSError *)error {
+    if (!error) {
+        [self sendRandomMessageToPeripheral:peripheral];
     }
-    
-    [self sendMessageToCharacteristic:characteristic ofPeripheral:peripheral];
 }
 
 @end

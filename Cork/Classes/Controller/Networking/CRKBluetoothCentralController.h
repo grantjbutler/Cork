@@ -12,6 +12,8 @@
 #import "CRKMessageProtocol.h"
 #import "CRKMessageSerializer.h"
 
+@class CRKBluetoothPeripheral;
+
 @protocol CRKBluetoothCentralControllerDelegate;
 
 @interface CRKBluetoothCentralController : NSObject
@@ -20,10 +22,12 @@
 
 - (instancetype)initWithMessageSerializer:(id <CRKMessageSerializer>)serializer NS_DESIGNATED_INITIALIZER;
 
+- (void)broadastMessage:(id <CRKMessage>)message;
+
 @end
 
 @protocol CRKBluetoothCentralControllerDelegate <NSObject>
 
-- (id <CRKMessage>)controller:(CRKBluetoothCentralController *)controller messageToTransmitToPeripheral:(CBPeripheral *)peripheral;
+- (id <CRKMessage>)controller:(CRKBluetoothCentralController *)controller messageToTransmitToPeripheral:(CRKBluetoothPeripheral *)peripheral;
 
 @end
