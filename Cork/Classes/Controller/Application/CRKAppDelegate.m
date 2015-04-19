@@ -39,6 +39,8 @@
     CRKCoreDataHelper *helper = [CRKCoreDataHelper sharedHelper];
     NSManagedObjectContext * context = helper.managedObjectContext;
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleContextDidSaveNotification:) name:NSManagedObjectContextDidSaveNotification object:context];
+    
     CRKBinaryMessageDeserializer *deserializer = [[CRKBinaryMessageDeserializer alloc] initWithContext:[helper.persistenceController newPrivateChildManagedObjectContext]];
     self.controller = [[CRKPeripheralController alloc] initWithMessageDeserializer:deserializer];
     self.controller.delegate = self;
@@ -85,7 +87,7 @@
     CRKUser *currentUser = [CRKUser currentUserInContext:context];
     
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:[CRKMessage entityName]];
-    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"%K != %@ AND %K > 0 AND %@ NOT IN %K", @"receiver", currentUser, @"timeToLive", coreDataPeripheral, @"peripherals"];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"(%K != %@) AND (%K > 0) AND (SUBQUERY(%K, $p, $p == %@).@count == 0)", @"reciever", currentUser, @"timeToLive", @"peripherals.id", hashedDeviceIdentifier];
     fetchRequest.fetchLimit = 1;
     
     NSError *fetchError;
@@ -111,6 +113,17 @@
     }];
     
     return message;
+}
+
+- (void)handleContextDidSaveNotification:(NSNotification *)notification {
+    for (NSManagedObject *object in notification.userInfo[NSInsertedObjectsKey]) {
+        if (![object isKindOfClass:[CRKMessage class]]) {
+            continue;
+        }
+        
+        CRKMessage *message = (CRKMessage *)object;
+        [self.central broadastMessage:message];
+    }
 }
 
 @end

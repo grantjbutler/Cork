@@ -73,6 +73,7 @@ static NSString * const CRKPeripheralControllerMessagesCharacteristicUUIDString 
 
 - (void)stopAdvertising {
     [self.peripheralManager stopAdvertising];
+    [self.peripheralManager removeAllServices];
 }
 
 #pragma mark - CBPeripheralManagerDelegate
@@ -85,6 +86,7 @@ static NSString * const CRKPeripheralControllerMessagesCharacteristicUUIDString 
             break;
             
         default:
+            [self stopAdvertising];
             break;
     }
 }
