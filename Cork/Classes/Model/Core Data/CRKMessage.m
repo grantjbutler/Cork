@@ -12,9 +12,21 @@
 
 #import "NSManagedObject+CRKAdditions.h"
 
+#import <NSHash/NSString+NSHash.h>
+
 static const uint16_t CRKMessageDefaultTimeToLive = 5;
 
 @implementation CRKMessage
+
++ (NSString *)messageIdentifierForSenderUUID:(NSUUID *)senderUUID recipientUUID:(NSUUID *)recipientUUID sentDate:(NSDate *)sentDate text:(NSString *)text {
+    NSMutableString *stringToHash = [[NSMutableString alloc] init];
+    [stringToHash appendString:senderUUID.UUIDString];
+    [stringToHash appendString:recipientUUID.UUIDString];
+    [stringToHash appendFormat:@"%f", [sentDate timeIntervalSince1970]];
+    [stringToHash appendString:text];
+    
+    return [stringToHash SHA1];
+}
 
 - (void)setSenderUUID:(NSUUID *)senderUUID {
     self.sender = [CRKUser uniqueObjectWithIdentifier:senderUUID inContext:self.managedObjectContext];

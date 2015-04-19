@@ -40,9 +40,8 @@ static NSInteger CRKBinaryMessageDeserializerUUIDLength = 36;
     
     uint16_t ttl;
     uint32_t crcHash, messageLength;
-    uint64_t sentTimestamp;
-    NSString *senderID;
-    NSString *recipientID;
+    NSDate *sentDate;
+    NSUUID *senderUUID, *recipientUUID;
     NSString *messageText;
     
     if (![dataReader canReadNumberOfBytes:sizeof(uint32_t)]) {
@@ -66,19 +65,19 @@ static NSInteger CRKBinaryMessageDeserializerUUIDLength = 36;
         return nil;
     }
     
-    senderID = [dataReader readStringWithNumberOfBytes:CRKBinaryMessageDeserializerUUIDLength encoding:NSUTF8StringEncoding];
+    senderUUID = [[NSUUID alloc] initWithUUIDString:[dataReader readStringWithNumberOfBytes:CRKBinaryMessageDeserializerUUIDLength encoding:NSUTF8StringEncoding]];
     
     if (![dataReader canReadNumberOfBytes:CRKBinaryMessageDeserializerUUIDLength]) {
         return nil;
     }
     
-    recipientID = [dataReader readStringWithNumberOfBytes:CRKBinaryMessageDeserializerUUIDLength encoding:NSUTF8StringEncoding];
+    recipientUUID = [[NSUUID alloc] initWithUUIDString:[dataReader readStringWithNumberOfBytes:CRKBinaryMessageDeserializerUUIDLength encoding:NSUTF8StringEncoding]];
     
     if (![dataReader canReadNumberOfBytes:sizeof(uint64_t)]) {
         return nil;
     }
     
-    sentTimestamp = [dataReader readUnsignedLongLong];
+    sentDate = [NSDate dateWithTimeIntervalSince1970:[dataReader readUnsignedLongLong]];
     
     if (![dataReader canReadNumberOfBytes:sizeof(uint32_t)]) {
         return nil;
@@ -91,13 +90,19 @@ static NSInteger CRKBinaryMessageDeserializerUUIDLength = 36;
     }
     
     messageText = [dataReader readStringWithNumberOfBytes:messageLength encoding:NSUTF8StringEncoding];
-	
-	CRKUser *sender = [CRKUser uniqueObjectWithIdentifier:[[NSUUID alloc] initWithUUIDString:senderID] inContext:self.context];
-    CRKUser *recipient = [CRKUser uniqueObjectWithIdentifier:[[NSUUID alloc] initWithUUIDString:recipientID] inContext:self.context];
     
-    CRKMessage *message = [[CRKMessage alloc] initWithEntity:[CRKMessage entityDescriptionInContext:self.context] insertIntoManagedObjectContext:self.context];
+    NSString *messageID = [CRKMessage messageIdentifierForSenderUUID:senderUUID recipientUUID:recipientUUID sentDate:sentDate text:messageText];
+    CRKMessage *message = [CRKMessage existingObjectWithIdentifier:messageID inContext:self.context];
+    if (message) {
+        return nil;
+    }
+	
+	CRKUser *sender = [CRKUser uniqueObjectWithIdentifier:senderUUID inContext:self.context];
+    CRKUser *recipient = [CRKUser uniqueObjectWithIdentifier:recipientUUID inContext:self.context];
+    
+    message = [[CRKMessage alloc] initWithEntity:[CRKMessage entityDescriptionInContext:self.context] insertIntoManagedObjectContext:self.context];
     message.text = messageText;
-    message.dateSent = [NSDate dateWithTimeIntervalSince1970:sentTimestamp];
+    message.dateSent = sentDate;
     message.sender = sender;
     message.reciever = recipient;
 	

@@ -11,4 +11,6 @@
 
 @interface CRKMessage : _CRKMessage <CRKMessage>
 
++ (NSString *)messageIdentifierForSenderUUID:(NSUUID *)senderUUID recipientUUID:(NSUUID *)recipientUUID sentDate:(NSDate *)sentDate text:(NSString *)text;
+
 @end
