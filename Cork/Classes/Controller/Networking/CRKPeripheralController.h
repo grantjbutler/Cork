@@ -10,12 +10,15 @@
 @import CoreBluetooth;
 
 #import "CRKMessageProtocol.h"
+#import "CRKMessageDeserializer.h"
 
 @protocol CRKPeripheralControllerDelegate;
 
 @interface CRKPeripheralController : NSObject
 
 @property (nonatomic, weak) id <CRKPeripheralControllerDelegate> delegate;
+
+- (instancetype)initWithMessageDeserializer:(id <CRKMessageDeserializer>)deserializer;
 
 - (void)startAdvertising;
 - (void)stopAdvertising;

@@ -21,13 +21,17 @@ static NSString * const CRKPeripheralControllerMessagesCharacteristicUUIDString 
 
 @property (nonatomic) CBMutableCharacteristic *messagesCharacteristic;
 
+@property (nonatomic) id <CRKMessageDeserializer> messageDeserializer;
+
 @end
 
 @implementation CRKPeripheralController
 
-- (instancetype)init {
+- (instancetype)initWithMessageDeserializer:(id <CRKMessageDeserializer>)deserializer {
     self = [super init];
     if (self) {
+        _messageDeserializer = deserializer;
+        
         [self setUpPeripheralManager];
     }
     return self;
@@ -106,14 +110,17 @@ static NSString * const CRKPeripheralControllerMessagesCharacteristicUUIDString 
         [NSSortDescriptor sortDescriptorWithKey:@"offset" ascending:YES]
     ]];
     
-    NSMutableData *message = [NSMutableData data];
+    NSMutableData *messageData = [NSMutableData data];
     for (CBATTRequest *request in sortedRequests) {
-        [message appendData:request.value];
+        [messageData appendData:request.value];
     }
     
-    // TODO: Deserialize the data.
+    id <CRKMessage> message = [self.messageDeserializer messageFromSerializedData:messageData];
+    if (!message) {
+        return;
+    }
     
-    [self.delegate controller:self didReceiveMessage:nil];
+    [self.delegate controller:self didReceiveMessage:message];
 }
 
 @end
