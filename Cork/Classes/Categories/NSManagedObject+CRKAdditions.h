@@ -10,6 +10,8 @@
 
 @interface NSManagedObject (CRKAdditions)
 
++ (NSString *)entityName;
+
 + (NSEntityDescription *)entityDescriptionInContext:(NSManagedObjectContext *)context;
 
 + (instancetype)uniqueObjectWithIdentifier:(id)identifier inContext:(NSManagedObjectContext *)context;

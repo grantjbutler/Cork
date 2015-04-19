@@ -12,10 +12,13 @@
 
 @implementation _CRKMessage
 
-@dynamic messageID;
-@dynamic messageText;
-@dynamic sentDate;
+@dynamic dateReceived;
+@dynamic dateSent;
+@dynamic id;
+@dynamic text;
+@dynamic timeToLive;
 
+@dynamic peripherals;
 @dynamic reciever;
 @dynamic sender;
 

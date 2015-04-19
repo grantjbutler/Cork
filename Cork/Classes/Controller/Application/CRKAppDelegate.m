@@ -8,15 +8,24 @@
 
 #import "CRKAppDelegate.h"
 
+#import <CocoaLumberjack/CocoaLumberjack.h>
+#import <NSHash/NSString+NSHash.h>
+
 #import "CRKPeripheralController.h"
 #import "CRKBluetoothCentralController.h"
-#import <CocoaLumberjack/CocoaLumberjack.h>
+
 #import "CRKCoreDataHelper.h"
 
 #import "CRKMessageProtocol.h"
 
 #import "CRKBinaryMessageSerializer.h"
 #import "CRKBinaryMessageDeserializer.h"
+
+#import "CRKMessage.h"
+#import "CRKPeripheral.h"
+#import "CRKUser.h"
+
+#import "NSManagedObject+CRKAdditions.h"
 
 @interface CRKAppDelegate () <CRKBluetoothCentralControllerDelegate, CRKPeripheralControllerDelegate>
 
@@ -46,13 +55,55 @@
 }
 
 - (void)controller:(CRKPeripheralController *)controller didReceiveMessage:(id<CRKMessage>)message {
-    NSLog(@"Did receive: %@", message);
+    CRKMessage *coreDataMessage = message;
+    NSManagedObjectContext *context = coreDataMessage.managedObjectContext;
+    [context performBlock:^{
+        NSError *saveError;
+        if (![context save:&saveError]) {
+            NSLog(@"Error saving: %@", saveError);
+            
+            return;
+        }
+        
+        [[CRKCoreDataHelper sharedHelper].persistenceController saveContextAndWait:NO completion:nil];
+    }];
 }
 
 - (id<CRKMessage>)controller:(CRKBluetoothCentralController *)controller messageToTransmitToPeripheral:(CBPeripheral *)peripheral {
-    // TODO: Hook this up to Core Data.
+    NSManagedObjectContext *context = [[CRKCoreDataHelper sharedHelper].persistenceController newPrivateChildManagedObjectContext];
     
-    return nil;
+    NSString *hashedDeviceIdentifier = peripheral.identifier.UUIDString.SHA1;
+    CRKPeripheral *coreDataPeripheral = [CRKPeripheral uniqueObjectWithIdentifier:hashedDeviceIdentifier inContext:context];
+    
+    CRKUser *currentUser = [CRKUser currentUserInContext:context];
+    
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:[CRKMessage entityName]];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"%K != %@ AND %K > 0 AND %@ NOT IN %K", @"receiver", currentUser, @"timeToLive", coreDataPeripheral, @"peripherals"];
+    fetchRequest.fetchLimit = 1;
+    
+    NSError *fetchError;
+    NSArray *results = [context executeFetchRequest:fetchRequest error:&fetchError];
+    if (!results) {
+        NSLog(@"Error fetching: %@", fetchError);
+        
+        return nil;
+    }
+    
+    CRKMessage *message = results.firstObject;
+    [message addPeripheralsObject:coreDataPeripheral];
+    
+    [context performBlock:^{
+        NSError *saveError;
+        if (![context save:&saveError]) {
+            NSLog(@"Error saving: %@", saveError);
+            
+            return;
+        }
+        
+        [[CRKCoreDataHelper sharedHelper].persistenceController saveContextAndWait:NO completion:nil];
+    }];
+    
+    return message;
 }
 
 @end

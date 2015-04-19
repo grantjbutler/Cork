@@ -38,6 +38,7 @@ static NSInteger CRKBinaryMessageDeserializerUUIDLength = 16;
 - (id<CRKMessage>)messageFromSerializedData:(NSData *)data {
 	CCHBinaryDataReader *dataReader = [[CCHBinaryDataReader alloc] initWithData:data options:CCHBinaryDataReaderBigEndian];
     
+    uint8_t ttl;
     uint32_t crcHash, sentTimestamp, messageLength;
     NSString *senderID, *recipientID, *messageText;
     
@@ -51,6 +52,12 @@ static NSInteger CRKBinaryMessageDeserializerUUIDLength = 16;
     if (crc32(0, messageData.bytes, messageData.length) != crcHash) {
         return nil;
     }
+    
+    if (![dataReader canReadNumberOfBytes:sizeof(uint8_t)]) {
+        return nil;
+    }
+    
+    ttl = [dataReader readUnsignedChar];
     
     if (![dataReader canReadNumberOfBytes:CRKBinaryMessageDeserializerUUIDLength]) {
         return nil;
@@ -86,8 +93,8 @@ static NSInteger CRKBinaryMessageDeserializerUUIDLength = 16;
     CRKUser *recipient = [CRKUser uniqueObjectWithIdentifier:recipientID inContext:self.context];
     
     CRKMessage *message = [[CRKMessage alloc] initWithEntity:[CRKMessage entityDescriptionInContext:self.context] insertIntoManagedObjectContext:self.context];
-    message.messageText = messageText;
-    message.sentDate = [NSDate dateWithTimeIntervalSince1970:sentTimestamp];
+    message.text = messageText;
+    message.dateSent = [NSDate dateWithTimeIntervalSince1970:sentTimestamp];
     message.sender = sender;
     message.reciever = recipient;
 	

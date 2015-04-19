@@ -72,6 +72,12 @@
 #define COCOAPODS_VERSION_MINOR_MDMCoreData_NSManagedObject_MDMCoreDataAdditions 5
 #define COCOAPODS_VERSION_PATCH_MDMCoreData_NSManagedObject_MDMCoreDataAdditions 0
 
+// NSHash
+#define COCOAPODS_POD_AVAILABLE_NSHash
+#define COCOAPODS_VERSION_MAJOR_NSHash 1
+#define COCOAPODS_VERSION_MINOR_NSHash 0
+#define COCOAPODS_VERSION_PATCH_NSHash 1
+
 // SAMCategories
 #define COCOAPODS_POD_AVAILABLE_SAMCategories
 #define COCOAPODS_VERSION_MAJOR_SAMCategories 0

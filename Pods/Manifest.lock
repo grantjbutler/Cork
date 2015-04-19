@@ -23,18 +23,21 @@ PODS:
     - MDMCoreData/MDMCoreDataCore
   - MDMCoreData/NSManagedObject+MDMCoreDataAdditions (1.5.0):
     - MDMCoreData/MDMCoreDataCore
+  - NSHash (1.0.1)
   - SAMCategories (0.5.2)
 
 DEPENDENCIES:
   - CCHBinaryData
   - CocoaLumberjack
   - MDMCoreData
+  - NSHash
   - SAMCategories
 
 SPEC CHECKSUMS:
   CCHBinaryData: c9cb346a5d8fa0fcc3c840184cdb8fd8aafe4dc6
   CocoaLumberjack: a6f77d987d65dc7ba86b0f84db7d0b9084f77bcb
   MDMCoreData: 402f754cda90865026a209243f1667824e775649
+  NSHash: d0112ce250f5d2618ab452718c6882f5276e2d4f
   SAMCategories: bf8287f7961a0b343168d1fee16338dc1626ea39
 
 COCOAPODS: 0.36.4
