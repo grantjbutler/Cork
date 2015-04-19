@@ -90,22 +90,39 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="94Z-Q6-e4D">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="94Z-Q6-e4D" customClass="JVFloatLabeledTextField">
                                 <rect key="frame" x="16" y="136" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AeL-u4-SdF">
+                                <rect key="frame" x="277" y="182" width="46" height="30"/>
+                                <state key="normal" title="Send">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="send:" destination="Jdd-Cr-fDn" eventType="touchUpInside" id="x0Y-wn-bir"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="94Z-Q6-e4D" firstAttribute="centerX" secondItem="AeL-u4-SdF" secondAttribute="centerX" id="D6j-cz-da6"/>
                             <constraint firstItem="E71-s9-gAf" firstAttribute="top" secondItem="jNL-uA-OxP" secondAttribute="bottom" constant="34" id="EQR-bW-vAe"/>
                             <constraint firstItem="E71-s9-gAf" firstAttribute="leading" secondItem="aeL-ha-Pqn" secondAttribute="leadingMargin" id="IrY-os-6Mr"/>
+                            <constraint firstItem="AeL-u4-SdF" firstAttribute="top" secondItem="94Z-Q6-e4D" secondAttribute="bottom" constant="16" id="MyN-0Q-Lwk"/>
                             <constraint firstItem="E71-s9-gAf" firstAttribute="trailing" secondItem="aeL-ha-Pqn" secondAttribute="trailingMargin" id="Pop-s3-JeR"/>
                             <constraint firstItem="94Z-Q6-e4D" firstAttribute="trailing" secondItem="E71-s9-gAf" secondAttribute="trailing" id="TeN-br-YU9"/>
                             <constraint firstItem="94Z-Q6-e4D" firstAttribute="top" secondItem="E71-s9-gAf" secondAttribute="bottom" constant="8" id="eag-Q5-52Z"/>
                             <constraint firstItem="94Z-Q6-e4D" firstAttribute="leading" secondItem="E71-s9-gAf" secondAttribute="leading" id="mkF-SH-QWN"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="messageTextField" destination="94Z-Q6-e4D" id="Vf3-Hj-Cog"/>
+                        <outlet property="userIDTextField" destination="E71-s9-gAf" id="EBM-XL-LdV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SUk-5j-9Gh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

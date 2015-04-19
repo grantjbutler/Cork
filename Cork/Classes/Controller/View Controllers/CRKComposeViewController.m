@@ -7,8 +7,11 @@
 //
 
 #import "CRKComposeViewController.h"
+#import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
 
 @interface CRKComposeViewController ()
+@property (weak, nonatomic) IBOutlet JVFloatLabeledTextField *userIDTextField;
+@property (weak, nonatomic) IBOutlet JVFloatLabeledTextField *messageTextField;
 
 @end
 
@@ -22,6 +25,9 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)send:(id)sender {
+    //TODO: send
 }
 
 /*
