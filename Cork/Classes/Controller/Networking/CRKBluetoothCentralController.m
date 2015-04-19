@@ -96,6 +96,7 @@ static NSString * const CRKPeripheralControllerMessagesCharacteristicUUIDString 
             break;
             
         default:
+            [self.centralManager stopScan];
             break;
     }
 }
@@ -122,6 +123,10 @@ static NSString * const CRKPeripheralControllerMessagesCharacteristicUUIDString 
     NSLog(@"disconnect error: %@", error);
     
     [self disconnectPeripheral:peripheral];
+    
+    if (error) {
+        [self centralManager:central didDiscoverPeripheral:peripheral advertisementData:nil RSSI:nil];
+    }
 }
 
 #pragma mark - CBPeripheralDelegate

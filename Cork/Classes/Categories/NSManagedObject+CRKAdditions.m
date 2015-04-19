@@ -45,6 +45,7 @@ static NSString * CRKNSManagedObjectIdentifierKeyPathKey = @"identifierKeyPath";
     NSManagedObject *object = [self existingObjectWithIdentifier:identifier inContext:context];
     if (!object) {
         object = [[self alloc] initWithEntity:[self entityDescriptionInContext:context] insertIntoManagedObjectContext:context];
+        [object setValue:identifier forKey:[self identifierKeyPathInContext:context]];
     }
     
     return object;

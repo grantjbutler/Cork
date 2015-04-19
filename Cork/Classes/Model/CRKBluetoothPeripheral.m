@@ -37,6 +37,12 @@ static NSString * const CRKPeripheralControllerMessagesCharacteristicUUIDString 
         return;
     }
     
+    if (!self.characteristic) {
+        NSLog(@"No characteristic. Bailing.");
+        
+        return;
+    }
+    
     [self.peripheral writeValue:data forCharacteristic:self.characteristic type:CBCharacteristicWriteWithResponse];
 }
 

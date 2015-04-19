@@ -15,7 +15,7 @@ static NSString * const CRKUserIDKey = @"CRKUserIDKey";
 @implementation CRKUser
 
 + (instancetype)currentUserInContext:(NSManagedObjectContext *)context {
-    return [self existingObjectWithIdentifier:[self currentUserID] inContext:context];
+    return [self uniqueObjectWithIdentifier:[self currentUserID] inContext:context];
 }
 
 + (NSUUID *)currentUserID{

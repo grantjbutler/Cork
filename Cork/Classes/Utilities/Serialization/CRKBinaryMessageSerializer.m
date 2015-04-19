@@ -22,7 +22,7 @@
     uint16_t ttl = CFSwapInt16HostToBig(message.timeToLive);
     NSString *senderString = message.senderUUID.UUIDString;
     NSString *recipientString = message.recipientUUID.UUIDString;
-    uint32_t sentTimestamp = CFSwapInt32HostToBig(floor([message.dateSent timeIntervalSince1970]));
+    uint64_t sentTimestamp = CFSwapInt64HostToBig(floor([message.dateSent timeIntervalSince1970]));
     NSString *messageText = message.text;
     
     [serializedData appendBytes:&ttl length:sizeof(ttl)];
@@ -35,7 +35,7 @@
     [serializedData appendBytes:&messageLength length:sizeof(messageLength)];
     [serializedData appendData:messageData];
     
-    uint32_t crcHash = CFSwapInt32HostToBig(crc32(0, messageData.bytes, messageData.length));
+    uint32_t crcHash = CFSwapInt32HostToBig(crc32(0, serializedData.bytes, serializedData.length));
     [serializedData replaceBytesInRange:NSMakeRange(0, 0) withBytes:&crcHash length:sizeof(crcHash)];
     
     return serializedData;

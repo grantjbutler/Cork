@@ -17,7 +17,7 @@
 
 #include "crc32.h"
 
-static NSInteger CRKBinaryMessageDeserializerUUIDLength = 16;
+static NSInteger CRKBinaryMessageDeserializerUUIDLength = 36;
 
 @interface CRKBinaryMessageDeserializer ()
 
@@ -38,9 +38,12 @@ static NSInteger CRKBinaryMessageDeserializerUUIDLength = 16;
 - (id<CRKMessage>)messageFromSerializedData:(NSData *)data {
 	CCHBinaryDataReader *dataReader = [[CCHBinaryDataReader alloc] initWithData:data options:CCHBinaryDataReaderBigEndian];
     
-    uint8_t ttl;
-    uint32_t crcHash, sentTimestamp, messageLength;
-    NSString *senderID, *recipientID, *messageText;
+    uint16_t ttl;
+    uint32_t crcHash, messageLength;
+    uint64_t sentTimestamp;
+    NSString *senderID;
+    NSString *recipientID;
+    NSString *messageText;
     
     if (![dataReader canReadNumberOfBytes:sizeof(uint32_t)]) {
         return nil;
@@ -53,11 +56,11 @@ static NSInteger CRKBinaryMessageDeserializerUUIDLength = 16;
         return nil;
     }
     
-    if (![dataReader canReadNumberOfBytes:sizeof(uint8_t)]) {
+    if (![dataReader canReadNumberOfBytes:sizeof(uint16_t)]) {
         return nil;
     }
     
-    ttl = [dataReader readUnsignedChar];
+    ttl = [dataReader readUnsignedShort];
     
     if (![dataReader canReadNumberOfBytes:CRKBinaryMessageDeserializerUUIDLength]) {
         return nil;
@@ -71,11 +74,11 @@ static NSInteger CRKBinaryMessageDeserializerUUIDLength = 16;
     
     recipientID = [dataReader readStringWithNumberOfBytes:CRKBinaryMessageDeserializerUUIDLength encoding:NSUTF8StringEncoding];
     
-    if (![dataReader canReadNumberOfBytes:sizeof(uint32_t)]) {
+    if (![dataReader canReadNumberOfBytes:sizeof(uint64_t)]) {
         return nil;
     }
     
-    sentTimestamp = [dataReader readUnsignedInt];
+    sentTimestamp = [dataReader readUnsignedLongLong];
     
     if (![dataReader canReadNumberOfBytes:sizeof(uint32_t)]) {
         return nil;
@@ -89,8 +92,8 @@ static NSInteger CRKBinaryMessageDeserializerUUIDLength = 16;
     
     messageText = [dataReader readStringWithNumberOfBytes:messageLength encoding:NSUTF8StringEncoding];
 	
-	CRKUser *sender = [CRKUser uniqueObjectWithIdentifier:senderID inContext:self.context];
-    CRKUser *recipient = [CRKUser uniqueObjectWithIdentifier:recipientID inContext:self.context];
+	CRKUser *sender = [CRKUser uniqueObjectWithIdentifier:[[NSUUID alloc] initWithUUIDString:senderID] inContext:self.context];
+    CRKUser *recipient = [CRKUser uniqueObjectWithIdentifier:[[NSUUID alloc] initWithUUIDString:recipientID] inContext:self.context];
     
     CRKMessage *message = [[CRKMessage alloc] initWithEntity:[CRKMessage entityDescriptionInContext:self.context] insertIntoManagedObjectContext:self.context];
     message.text = messageText;
