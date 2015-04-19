@@ -108,6 +108,12 @@
 #define COCOAPODS_VERSION_MINOR_NSHash 0
 #define COCOAPODS_VERSION_PATCH_NSHash 1
 
+// QR-Code-Encoder-for-Objective-C
+#define COCOAPODS_POD_AVAILABLE_QR_Code_Encoder_for_Objective_C
+#define COCOAPODS_VERSION_MAJOR_QR_Code_Encoder_for_Objective_C 1
+#define COCOAPODS_VERSION_MINOR_QR_Code_Encoder_for_Objective_C 0
+#define COCOAPODS_VERSION_PATCH_QR_Code_Encoder_for_Objective_C 0
+
 // SAMCategories
 #define COCOAPODS_POD_AVAILABLE_SAMCategories
 #define COCOAPODS_VERSION_MAJOR_SAMCategories 0
