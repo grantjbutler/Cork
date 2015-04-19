@@ -10,6 +10,8 @@
 
 @interface CRKUser : _CRKUser
 
++ (instancetype)currentUserInContext:(NSManagedObjectContext *)context;
+
 + (NSUUID *)currentUserID;
 
 @end

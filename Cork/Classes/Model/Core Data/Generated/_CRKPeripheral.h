@@ -10,21 +10,21 @@
 
 #import <CoreData/CoreData.h>
 
-@class CRKPeripheralMessage;
+@class CRKMessage;
 
 @interface _CRKPeripheral : NSManagedObject
 
 @property (nonatomic, copy) NSString* id;
 
-@property (nonatomic, copy) NSSet *peripheralMessages;
+@property (nonatomic, copy) NSSet *messages;
 
 @end
 
 @interface _CRKPeripheral (_CRKPeripheralCoreDataGeneratedAccessors)
 
-- (void)addPeripheralMessages:(NSSet *)objects;
-- (void)removePeripheralMessages:(NSSet *)objects;
-- (void)addPeripheralMessagesObject:(CRKPeripheralMessage *)object;
-- (void)removePeripheralMessagesObject:(CRKPeripheralMessage *)object;
+- (void)addMessages:(NSSet *)objects;
+- (void)removeMessages:(NSSet *)objects;
+- (void)addMessagesObject:(CRKMessage *)object;
+- (void)removeMessagesObject:(CRKMessage *)object;
 
 @end

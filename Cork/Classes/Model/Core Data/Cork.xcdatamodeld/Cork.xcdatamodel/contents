@@ -6,7 +6,7 @@
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="timeToLive" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="peripheralMessages" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CRKPeripheralMessage" inverseName="message" inverseEntity="CRKPeripheralMessage" syncable="YES"/>
+        <relationship name="peripherals" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CRKPeripheral" inverseName="messages" inverseEntity="CRKPeripheral" syncable="YES"/>
         <relationship name="reciever" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CRKUser" inverseName="recievedMessages" inverseEntity="CRKUser" syncable="YES"/>
         <relationship name="sender" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CRKUser" inverseName="sentMessages" inverseEntity="CRKUser" syncable="YES"/>
         <compoundIndexes>
@@ -20,7 +20,7 @@
     </entity>
     <entity name="CRKPeripheral" representedClassName="CRKPeripheral" syncable="YES">
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="peripheralMessages" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CRKPeripheralMessage" inverseName="peripheral" inverseEntity="CRKPeripheralMessage" syncable="YES"/>
+        <relationship name="messages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CRKMessage" inverseName="peripherals" inverseEntity="CRKMessage" syncable="YES"/>
         <compoundIndexes>
             <compoundIndex>
                 <index value="id"/>
@@ -29,10 +29,6 @@
         <userInfo>
             <entry key="identifierKeyPath" value="id"/>
         </userInfo>
-    </entity>
-    <entity name="CRKPeripheralMessage" representedClassName="CRKPeripheralMessage" syncable="YES">
-        <relationship name="message" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CRKMessage" inverseName="peripheralMessages" inverseEntity="CRKMessage" syncable="YES"/>
-        <relationship name="peripheral" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CRKPeripheral" inverseName="peripheralMessages" inverseEntity="CRKPeripheral" syncable="YES"/>
     </entity>
     <entity name="CRKUser" representedClassName="CRKUser" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Transformable" syncable="YES">
@@ -55,6 +51,5 @@
         <element name="CRKMessage" positionX="-45" positionY="-18" width="128" height="165"/>
         <element name="CRKUser" positionX="196" positionY="21" width="128" height="90"/>
         <element name="CRKPeripheral" positionX="72" positionY="45" width="128" height="75"/>
-        <element name="CRKPeripheralMessage" positionX="81" positionY="54" width="128" height="75"/>
     </elements>
 </model>
