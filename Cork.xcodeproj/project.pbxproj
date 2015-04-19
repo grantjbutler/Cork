@@ -38,6 +38,8 @@
 		C3FD16AE1AE39474003D22DD /* CRKConversation.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FD16AD1AE39474003D22DD /* CRKConversation.m */; };
 		C3FD16B11AE3947A003D22DD /* _CRKConversation.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FD16B01AE3947A003D22DD /* _CRKConversation.m */; };
 		C3FD16B41AE3A564003D22DD /* CRKConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FD16B31AE3A564003D22DD /* CRKConversationViewController.m */; };
+		C3FD16B71AE3CC28003D22DD /* CRKSigningKeyStore.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FD16B61AE3CC28003D22DD /* CRKSigningKeyStore.m */; };
+		C3FD16BB1AE3D44E003D22DD /* MDMPersistenceController+CRKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FD16BA1AE3D44E003D22DD /* MDMPersistenceController+CRKAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +116,10 @@
 		C3FD16B01AE3947A003D22DD /* _CRKConversation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _CRKConversation.m; sourceTree = "<group>"; };
 		C3FD16B21AE3A564003D22DD /* CRKConversationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKConversationViewController.h; sourceTree = "<group>"; };
 		C3FD16B31AE3A564003D22DD /* CRKConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKConversationViewController.m; sourceTree = "<group>"; };
+		C3FD16B51AE3CC28003D22DD /* CRKSigningKeyStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKSigningKeyStore.h; sourceTree = "<group>"; };
+		C3FD16B61AE3CC28003D22DD /* CRKSigningKeyStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKSigningKeyStore.m; sourceTree = "<group>"; };
+		C3FD16B91AE3D44E003D22DD /* MDMPersistenceController+CRKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MDMPersistenceController+CRKAdditions.h"; sourceTree = "<group>"; };
+		C3FD16BA1AE3D44E003D22DD /* MDMPersistenceController+CRKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MDMPersistenceController+CRKAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +262,7 @@
 		C3D12D571AE309BC0061C385 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				C3FD16B81AE3D42E003D22DD /* Other */,
 				C3FD16981AE31E2D003D22DD /* Core Data */,
 				C3D12D581AE309BF0061C385 /* Foundation */,
 			);
@@ -279,6 +286,8 @@
 				4C7B68021AE3016800DA4AE5 /* CRKCoreDataHelper.m */,
 				C3FD16921AE3105C003D22DD /* crc32.c */,
 				C3FD16931AE3105C003D22DD /* crc32.h */,
+				C3FD16B51AE3CC28003D22DD /* CRKSigningKeyStore.h */,
+				C3FD16B61AE3CC28003D22DD /* CRKSigningKeyStore.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -380,6 +389,15 @@
 				C3FD169A1AE31E58003D22DD /* NSManagedObject+CRKAdditions.m */,
 			);
 			name = "Core Data";
+			sourceTree = "<group>";
+		};
+		C3FD16B81AE3D42E003D22DD /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				C3FD16B91AE3D44E003D22DD /* MDMPersistenceController+CRKAdditions.h */,
+				C3FD16BA1AE3D44E003D22DD /* MDMPersistenceController+CRKAdditions.m */,
+			);
+			name = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -545,6 +563,7 @@
 				4C8E18421AE330C900301951 /* CRKConversationsTableViewController.m in Sources */,
 				4C28CE921AE318F8005A79FB /* _CRKUser.m in Sources */,
 				C3FD16971AE31859003D22DD /* CRKBinaryMessageDeserializer.m in Sources */,
+				C3FD16BB1AE3D44E003D22DD /* MDMPersistenceController+CRKAdditions.m in Sources */,
 				4C5B1E8D1AE2F5BE00567980 /* CRKMessage.m in Sources */,
 				C3FD16B11AE3947A003D22DD /* _CRKConversation.m in Sources */,
 				C3FD16AB1AE354D8003D22DD /* CRKBluetoothPeripheral.m in Sources */,
@@ -561,6 +580,7 @@
 				C3FD16941AE3105C003D22DD /* crc32.c in Sources */,
 				C3FD16A21AE33181003D22DD /* _CRKPeripheral.m in Sources */,
 				C3D12CF51AE2CF020061C385 /* CRKAppDelegate.m in Sources */,
+				C3FD16B71AE3CC28003D22DD /* CRKSigningKeyStore.m in Sources */,
 				C3D12CF21AE2CF020061C385 /* main.m in Sources */,
 				4C28CE8F1AE318EE005A79FB /* CRKUser.m in Sources */,
 				C3FD16B41AE3A564003D22DD /* CRKConversationViewController.m in Sources */,

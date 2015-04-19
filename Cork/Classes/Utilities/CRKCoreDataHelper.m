@@ -9,6 +9,8 @@
 #import "CRKCoreDataHelper.h"
 #import <CocoaLumberjack/CocoaLumberjack.h>
 
+#import "MDMPersistenceController+CRKAdditions.h"
+
 @implementation CRKCoreDataHelper
 
 @synthesize managedObjectContext = _managedObjectContext;
@@ -61,7 +63,7 @@
     }
     
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Cork.sqlite"];
-    _persistenceController = [[MDMPersistenceController alloc] initWithStoreURL:storeURL model:[self managedObjectModel]];
+    _persistenceController = [[MDMPersistenceController alloc] initWithEncryptedStoreURL:storeURL model:[self managedObjectModel]];
     if (!_persistenceController){
         DDLogError(@"MDMPersistenceController failed");
         abort();
