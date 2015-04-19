@@ -17,6 +17,7 @@
 #import "CRKMessage.h"
 
 #import "NSManagedObject+CRKAdditions.h"
+#import "CRKFloatLabeledTextField.h"
 
 
 
@@ -28,7 +29,7 @@
 @property MDMFetchedResultsTableDataSource *fetchedResultsTableDataSource;
 @property CRKUser *selectedUser;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
-@property (weak, nonatomic) IBOutlet JVFloatLabeledTextField *messageTextField;
+@property (weak, nonatomic) IBOutlet CRKFloatLabeledTextField *messageTextField;
 
 @end
 
