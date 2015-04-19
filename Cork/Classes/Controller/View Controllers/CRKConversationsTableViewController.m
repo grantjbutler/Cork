@@ -48,29 +48,7 @@
     self.tableView.delegate = self;
     
     
-    UIBarButtonItem *myUserIDBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(userIDBarButtonPressed)];
-    
-    
-    self.navigationItem.leftBarButtonItem = myUserIDBarButtonItem;
-    
-    NSManagedObjectContext *context = [[[CRKCoreDataHelper sharedHelper] persistenceController] newPrivateChildManagedObjectContext];
-    //TODO: Remove block since it's just for testing.
-    for (int i = 0; i < 20; i++) {
-        NSLog(@"%i",i);
-        NSUUID *uuid = [NSUUID UUID];
-        CRKUser *user = [CRKUser uniqueObjectWithIdentifier:uuid inContext:context];
-        user.isContact = YES;
-        user.displayName = uuid.UUIDString;
-        NSLog(@"%@",user.displayName);
-    }
-    [context performBlock:^{
-        NSError *error;
-        [context save:&error];
-        if (error){
-            NSLog(@"%@",error);
-        }
-    }];
-    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Settings"] style:UIBarButtonItemStylePlain target:self action:@selector(showSettings:)];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -79,13 +57,9 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
                                               
-- (void)userIDBarButtonPressed{
-//    NSUUID *uuid = [CRKUser currentUserID];
-//    
-//    [[UIPasteboard generalPasteboard] setString:uuid.UUIDString];
-//    [SVProgressHUD showInfoWithStatus:@"UserID copied to pasteboard"];
+- (void)showSettings:(id)sender {
     CRKSettingsViewController *settingsVC = [[CRKSettingsViewController alloc] init];
-    [self showViewController:settingsVC sender:nil];
+    [self presentViewController:settingsVC animated:YES completion:nil];
 }
 
 #pragma mark - MDMFetchedResultsTableDataSourceDelegate
