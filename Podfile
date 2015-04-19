@@ -8,6 +8,7 @@ target 'Cork' do
     pod 'CCHBinaryData'
     pod 'NSHash'
     pod 'SVProgressHud'
+    pod 'JVFloatLabeledTextField'
 end
 
 target 'CorkTests' do

@@ -1,6 +1,6 @@
 #include "Pods-Cork-CCHBinaryData.xcconfig"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/CCHBinaryData" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/CCHBinaryData" "${PODS_ROOT}/Headers/Public/CocoaLumberjack" "${PODS_ROOT}/Headers/Public/MDMCoreData" "${PODS_ROOT}/Headers/Public/NSHash" "${PODS_ROOT}/Headers/Public/SAMCategories" "${PODS_ROOT}/Headers/Public/SVProgressHUD"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/CCHBinaryData" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/CCHBinaryData" "${PODS_ROOT}/Headers/Public/CocoaLumberjack" "${PODS_ROOT}/Headers/Public/JVFloatLabeledTextField" "${PODS_ROOT}/Headers/Public/MDMCoreData" "${PODS_ROOT}/Headers/Public/NSHash" "${PODS_ROOT}/Headers/Public/SAMCategories" "${PODS_ROOT}/Headers/Public/SVProgressHUD"
 OTHER_LDFLAGS = -ObjC
 PODS_ROOT = ${SRCROOT}
 SKIP_INSTALL = YES

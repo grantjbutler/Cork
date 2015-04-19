@@ -43,10 +43,8 @@
     
     UIBarButtonItem *myUserIDBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(userIDBarButtonPressed)];
     
-    UIBarButtonItem *composeBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(compose)];
     
     self.navigationItem.leftBarButtonItem = myUserIDBarButtonItem;
-    self.navigationItem.rightBarButtonItem = composeBarButtonItem;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -59,10 +57,6 @@
     
     [[UIPasteboard generalPasteboard] setString:uuid.UUIDString];
     [SVProgressHUD showInfoWithStatus:@"UserID copied to pasteboard"];
-}
-
-- (void)compose{
-    //TODO: Compose
 }
 
 - (void)didReceiveMemoryWarning {
