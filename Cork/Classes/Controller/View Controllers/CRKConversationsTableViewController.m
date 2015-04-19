@@ -11,6 +11,7 @@
 #import "NSManagedObject+CRKAdditions.h"
 #import "CRKUser.h"
 #import "CRKConversationTableViewCell.h"
+#import <SVProgressHUD/SVProgressHUD.h>
 
 @interface CRKConversationsTableViewController ()
 
@@ -57,6 +58,7 @@
     NSUUID *uuid = [CRKUser currentUserID];
     
     [[UIPasteboard generalPasteboard] setString:uuid.UUIDString];
+    [SVProgressHUD showInfoWithStatus:@"UserID copied to pasteboard"];
 }
 
 - (void)compose{
