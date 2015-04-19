@@ -101,6 +101,7 @@ static NSInteger CRKBinaryMessageDeserializerUUIDLength = 36;
     CRKUser *recipient = [CRKUser uniqueObjectWithIdentifier:recipientUUID inContext:self.context];
     
     message = [[CRKMessage alloc] initWithEntity:[CRKMessage entityDescriptionInContext:self.context] insertIntoManagedObjectContext:self.context];
+    message.id = messageID;
     message.text = messageText;
     message.dateSent = sentDate;
     message.sender = sender;
