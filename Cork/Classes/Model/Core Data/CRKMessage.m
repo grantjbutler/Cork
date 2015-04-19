@@ -10,9 +10,10 @@
 
 @implementation CRKMessage
 
-@synthesize sender;
-@synthesize recipient;
+@synthesize senderUUID;
+@synthesize recipientUUID;
 @synthesize dateSent;
 @synthesize message;
+@synthesize timeToLive;
 
 @end

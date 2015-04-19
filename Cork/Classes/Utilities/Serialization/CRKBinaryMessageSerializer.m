@@ -19,8 +19,9 @@
 - (NSData *)serializedDataForMessage:(id<CRKMessage>)message {
     NSMutableData *serializedData = [NSMutableData data];
     
-    NSString *senderString = message.sender.UUIDString;
-    NSString *recipientString = message.recipient.UUIDString;
+    uint8_t ttl = message.timeToLive;
+    NSString *senderString = message.senderUUID.UUIDString;
+    NSString *recipientString = message.recipientUUID.UUIDString;
     uint32_t sentTimestamp = CFSwapInt32HostToBig(floor([message.dateSent timeIntervalSince1970]));
     NSString *messageText = message.message;
     
