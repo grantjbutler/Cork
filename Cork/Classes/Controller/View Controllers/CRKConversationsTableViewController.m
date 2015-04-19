@@ -14,6 +14,9 @@
 #import "CRKUser.h"
 #import "CRKConversation.h"
 #import "CRKConversationTableViewCell.h"
+
+#import "CRKConversationViewController.h"
+
 #import <SVProgressHUD/SVProgressHUD.h>
 
 @interface CRKConversationsTableViewController ()
@@ -88,7 +91,7 @@
     
     CRKConversationTableViewCell *uCell = (CRKConversationTableViewCell *)cell;
     
-    uCell.contactNameLabel.text = conversation.user.displayName;
+    uCell.contactNameLabel.text = conversation.user.displayName ?: conversation.user.id.UUIDString;
 }
 
 #pragma mark - UITableViewDelegate
@@ -142,14 +145,19 @@
 }
 */
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.destinationViewController isKindOfClass:[CRKConversationViewController class]]) {
+        NSIndexPath *selectedIndexPath = self.tableView.indexPathForSelectedRow;
+        CRKConversation *conversation = [self.fetchedResultsController objectAtIndexPath:selectedIndexPath];
+        
+        CRKConversationViewController *viewController = (CRKConversationViewController *)segue.destinationViewController;
+        viewController.conversation = conversation;
+        viewController.readContext = [CRKCoreDataHelper sharedHelper].managedObjectContext;
+        viewController.sender = [CRKUser currentUserInContext:viewController.readContext];
+    }
 }
-*/
 
 @end

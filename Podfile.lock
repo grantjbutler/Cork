@@ -8,6 +8,9 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.0.0):
     - CocoaLumberjack/Default
+  - JSQMessagesViewController (7.0.0):
+    - JSQSystemSoundPlayer (~> 2.0.1)
+  - JSQSystemSoundPlayer (2.0.1)
   - JVFloatLabeledTextField (1.0.2)
   - MDMCoreData (1.5.0):
     - MDMCoreData/MDMCoreDataCore (= 1.5.0)
@@ -32,6 +35,7 @@ PODS:
 DEPENDENCIES:
   - CCHBinaryData
   - CocoaLumberjack
+  - JSQMessagesViewController
   - JVFloatLabeledTextField
   - MDMCoreData
   - NSHash
@@ -42,6 +46,8 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   CCHBinaryData: c9cb346a5d8fa0fcc3c840184cdb8fd8aafe4dc6
   CocoaLumberjack: a6f77d987d65dc7ba86b0f84db7d0b9084f77bcb
+  JSQMessagesViewController: 9fd7e9ac96e9fc91f2deca86928e2cc916aeebaa
+  JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   JVFloatLabeledTextField: 58a3a32cfb800e5b224f676987e7c13abf50a14d
   MDMCoreData: 402f754cda90865026a209243f1667824e775649
   NSHash: d0112ce250f5d2618ab452718c6882f5276e2d4f

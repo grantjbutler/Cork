@@ -28,6 +28,8 @@ static const uint16_t CRKMessageDefaultTimeToLive = 5;
     return [stringToHash SHA1];
 }
 
+#pragma mark - CRKMessage
+
 - (void)setSenderUUID:(NSUUID *)senderUUID {
     self.sender = [CRKUser uniqueObjectWithIdentifier:senderUUID inContext:self.managedObjectContext];
 }
@@ -43,6 +45,30 @@ static const uint16_t CRKMessageDefaultTimeToLive = 5;
 - (NSUUID *)recipientUUID {
     return self.reciever.id;
 }
+
+#pragma mark - JSQMessageData
+
+- (NSString *)senderId {
+    return self.sender.id.UUIDString;
+}
+
+- (NSString *)senderDisplayName {
+    return self.sender.displayName;
+}
+
+- (BOOL)isMediaMessage {
+    return NO;
+}
+
+- (NSDate *)date {
+    return self.dateSent;
+}
+
+- (NSUInteger)messageHash {
+    return self.text.hash;
+}
+
+#pragma mark - NSManagedObject
 
 - (void)awakeFromInsert {
     [super awakeFromInsert];
