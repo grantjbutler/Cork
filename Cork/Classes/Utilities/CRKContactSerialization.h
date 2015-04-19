@@ -13,6 +13,6 @@
 @interface CRKContactSerialization : NSObject
 
 + (NSData *)contactDataForUser:(CRKUser *)user;
-+ (CRKUser *)userForContactData:(NSData *)data;
++ (CRKUser *)userForContactData:(NSData *)data inContext:(NSManagedObjectContext *)context;
 
 @end

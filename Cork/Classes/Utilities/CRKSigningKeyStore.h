@@ -15,6 +15,11 @@
 
 + (instancetype)sharedStore;
 
+- (NSData *)exportedPublicKey;
+- (NSData *)exportedPublicKeyForUser:(CRKUser *)user;
+
+- (BOOL)importPublicKey:(NSData *)publicKey forUser:(CRKUser *)user;
+
 - (NSData *)encryptStringWithPublicKey:(NSString *)string;
 - (NSData *)encryptString:(NSString *)string withPublicKeyOfUser:(CRKUser *)user;
 
