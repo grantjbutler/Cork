@@ -15,8 +15,11 @@
 
 #import "CRKUser.h"
 #import "CRKMessage.h"
+#import "CRKConversation.h"
 
 #import "NSManagedObject+CRKAdditions.h"
+#import "CRKFloatLabeledTextField.h"
+#import "CRKConversationViewController.h"
 
 
 
@@ -28,7 +31,7 @@
 @property MDMFetchedResultsTableDataSource *fetchedResultsTableDataSource;
 @property CRKUser *selectedUser;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
-@property (weak, nonatomic) IBOutlet JVFloatLabeledTextField *messageTextField;
+@property (weak, nonatomic) IBOutlet CRKFloatLabeledTextField *messageTextField;
 
 @end
 
@@ -79,11 +82,13 @@
     CRKUser *recipient = [CRKUser uniqueObjectWithIdentifier:recipientUUID inContext:context];
     
     CRKMessage *message = [[CRKMessage alloc] initWithEntity:[CRKMessage entityDescriptionInContext:context] insertIntoManagedObjectContext:context];
+    CRKConversation *convo = [CRKConversation conversationWithUser:recipient inContext:context];
     
     message.dateSent = [NSDate date];
     message.text = self.messageTextField.text;
     message.sender = sender;
     message.reciever = recipient;
+    message.conversation = convo;
     
     [context performBlock:^{
         NSError *saveError;
@@ -98,6 +103,21 @@
                 NSLog(@"%@",error);
             }
         }];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSManagedObjectContext *mainContext = [CRKCoreDataHelper sharedHelper].persistenceController.managedObjectContext;
+            CRKUser *user = [CRKUser uniqueObjectWithIdentifier:sender.id inContext:mainContext];
+            CRKConversation *convo = [CRKConversation conversationWithUser:user inContext:mainContext];
+            
+            CRKConversationViewController *convoVC = [[CRKConversationViewController alloc] init];
+            convoVC.conversation = convo;
+            convoVC.readContext = mainContext;
+            convoVC.sender = user;
+            
+            [self.presentingViewController showViewController:convoVC sender:nil];
+            
+            [self dismiss:nil];
+        });
+        
     }];
 }
 //- (IBAction)send:(id)button {
@@ -135,6 +155,9 @@
 //        }];
 //    }];
 //}
+- (IBAction)dismiss:(id)sender {
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (NSFetchedResultsController *)fetchedResultsController{
     if (!_fetchedResultsController) {

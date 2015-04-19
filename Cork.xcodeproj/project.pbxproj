@@ -10,6 +10,7 @@
 		1C358FF67BFAFFFFF8160501 /* libPods-Cork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 560A0B895822B23F235EBCEC /* libPods-Cork.a */; };
 		4C28CE8F1AE318EE005A79FB /* CRKUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C28CE8E1AE318EE005A79FB /* CRKUser.m */; };
 		4C28CE921AE318F8005A79FB /* _CRKUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C28CE911AE318F8005A79FB /* _CRKUser.m */; };
+		4C30405B1AE3D017007E6623 /* CRKFloatLabeledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C30405A1AE3D017007E6623 /* CRKFloatLabeledTextField.m */; };
 		4C5B1E7F1AE2EF5A00567980 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C5B1E7E1AE2EF5A00567980 /* CoreData.framework */; };
 		4C5B1E861AE2F09600567980 /* Cork.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C5B1E841AE2F09600567980 /* Cork.xcdatamodeld */; };
 		4C5B1E8D1AE2F5BE00567980 /* CRKMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5B1E891AE2F5BE00567980 /* CRKMessage.m */; };
@@ -56,6 +57,8 @@
 		4C28CE8E1AE318EE005A79FB /* CRKUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRKUser.m; sourceTree = "<group>"; };
 		4C28CE901AE318F8005A79FB /* _CRKUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _CRKUser.h; sourceTree = "<group>"; };
 		4C28CE911AE318F8005A79FB /* _CRKUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _CRKUser.m; sourceTree = "<group>"; };
+		4C3040591AE3D017007E6623 /* CRKFloatLabeledTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRKFloatLabeledTextField.h; path = Cork/CRKFloatLabeledTextField.h; sourceTree = SOURCE_ROOT; };
+		4C30405A1AE3D017007E6623 /* CRKFloatLabeledTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CRKFloatLabeledTextField.m; path = Cork/CRKFloatLabeledTextField.m; sourceTree = SOURCE_ROOT; };
 		4C5B1E7E1AE2EF5A00567980 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		4C5B1E851AE2F09600567980 /* Cork.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cork.xcdatamodel; sourceTree = "<group>"; };
 		4C5B1E881AE2F5BE00567980 /* CRKMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRKMessage.h; sourceTree = "<group>"; };
@@ -247,6 +250,8 @@
 		C3D12D561AE309A30061C385 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4C3040591AE3D017007E6623 /* CRKFloatLabeledTextField.h */,
+				4C30405A1AE3D017007E6623 /* CRKFloatLabeledTextField.m */,
 				4C8E18461AE355A200301951 /* CRKConversationTableViewCell.h */,
 				4C8E18471AE355A200301951 /* CRKConversationTableViewCell.m */,
 			);
@@ -557,6 +562,7 @@
 				C3FD169B1AE31E58003D22DD /* NSManagedObject+CRKAdditions.m in Sources */,
 				C3FD16891AE30AEF003D22DD /* CRKBluetoothCentralController.m in Sources */,
 				C3FD16AE1AE39474003D22DD /* CRKConversation.m in Sources */,
+				4C30405B1AE3D017007E6623 /* CRKFloatLabeledTextField.m in Sources */,
 				4C8E184E1AE360D700301951 /* CRKComposeViewController.m in Sources */,
 				C3FD16941AE3105C003D22DD /* crc32.c in Sources */,
 				C3FD16A21AE33181003D22DD /* _CRKPeripheral.m in Sources */,

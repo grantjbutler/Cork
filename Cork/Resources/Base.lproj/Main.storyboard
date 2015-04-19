@@ -46,7 +46,7 @@
                     <navigationItem key="navigationItem" title="Root View Controller" id="xdG-Ef-Won">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="TeK-dm-NVS">
                             <connections>
-                                <segue destination="Jdd-Cr-fDn" kind="show" id="WzF-yS-dqo"/>
+                                <segue destination="nFW-oV-D3r" kind="presentation" id="Owj-NX-Pi7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -54,6 +54,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tZj-et-tpe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="907" y="-218"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wwW-Qe-Xy2">
+            <objects>
+                <navigationController id="nFW-oV-D3r" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7bJ-k6-zfc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Jdd-Cr-fDn" kind="relationship" relationship="rootViewController" id="vup-1j-djL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gCc-7P-DLg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1566" y="-218"/>
         </scene>
         <!--New Message-->
         <scene sceneID="ioY-NM-6eY">
@@ -88,7 +104,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Message" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WqI-Gw-HDI" customClass="JVFloatLabeledTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Message" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WqI-Gw-HDI" customClass="CRKFloatLabeledTextField">
                                 <rect key="frame" x="16" y="518" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -112,6 +128,13 @@
                         </variation>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="eVh-6E-g8h">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="oxR-if-k1W">
+                            <connections>
+                                <action selector="dismiss:" destination="Jdd-Cr-fDn" id="ujl-iA-P0A"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="bottomConstraint" destination="AI8-di-OAO" id="4cU-6L-sac"/>
@@ -121,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SUk-5j-9Gh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1714" y="-218"/>
+            <point key="canvasLocation" x="2343" y="-233"/>
         </scene>
         <!--Conversation View Controller-->
         <scene sceneID="ITB-8l-R3a">
