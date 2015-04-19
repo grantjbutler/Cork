@@ -12,6 +12,8 @@
 
 @implementation _CRKConversation
 
+@dynamic lastUpdatedDate;
+
 @dynamic messages;
 @dynamic user;
 

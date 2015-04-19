@@ -15,6 +15,8 @@
 
 @interface _CRKConversation : NSManagedObject
 
+@property (nonatomic, copy) NSDate* lastUpdatedDate;
+
 @property (nonatomic, copy) NSSet *messages;
 @property (nonatomic, strong) CRKUser *user;
 

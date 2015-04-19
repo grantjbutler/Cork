@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14C109" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="CRKConversation" representedClassName="CRKConversation" syncable="YES">
+        <attribute name="lastUpdatedDate" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="messages" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CRKMessage" inverseName="conversation" inverseEntity="CRKMessage" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CRKUser" inverseName="conversation" inverseEntity="CRKUser" syncable="YES"/>
     </entity>
@@ -59,6 +60,6 @@
         <element name="CRKMessage" positionX="-45" positionY="-18" width="128" height="180"/>
         <element name="CRKPeripheral" positionX="72" positionY="45" width="128" height="75"/>
         <element name="CRKUser" positionX="196" positionY="21" width="128" height="135"/>
-        <element name="CRKConversation" positionX="90" positionY="72" width="128" height="75"/>
+        <element name="CRKConversation" positionX="90" positionY="72" width="128" height="90"/>
     </elements>
 </model>
