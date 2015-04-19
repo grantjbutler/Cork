@@ -53,6 +53,8 @@
     [DDLog addLogger:[DDASLLogger sharedInstance]];
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
     
+    self.window.tintColor = [UIColor colorWithRed:24.0/255.0 green:159.0/255.0 blue:142.0/255.0 alpha:1.0];
+    
     [self setUpNotifications];
     
     return YES;
