@@ -10,4 +10,6 @@
 
 @interface CRKConversation : _CRKConversation
 
++ (instancetype)conversationWithUser:(CRKUser *)user inContext:(NSManagedObjectContext *)context;
+
 @end
